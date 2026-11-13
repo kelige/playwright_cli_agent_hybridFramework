@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "receiving_subject_scripts (POST response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "script_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "script_code": {
+      "type": "string"
+    },
+    "group_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "group_number": {
+      "type": "integer"
+    },
+    "group_count": {
+      "type": "integer"
+    },
+    "packet_size": {
+      "type": "integer"
+    },
+    "version": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "script_id",
+    "script_code",
+    "group_id",
+    "group_number",
+    "group_count",
+    "packet_size",
+    "version"
+  ],
+  "additionalProperties": true
+}

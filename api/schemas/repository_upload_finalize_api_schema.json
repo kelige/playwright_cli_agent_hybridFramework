@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "repository_upload_finalize (POST response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "status": {
+      "type": "string"
+    },
+    "version": {
+      "type": "integer"
+    },
+    "asset_id": {
+      "type": "null"
+    },
+    "sha256": {
+      "type": "string"
+    },
+    "byte_size": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "id",
+    "status",
+    "version",
+    "asset_id",
+    "sha256",
+    "byte_size"
+  ],
+  "additionalProperties": true
+}

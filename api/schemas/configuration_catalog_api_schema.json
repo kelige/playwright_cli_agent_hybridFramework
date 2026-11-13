@@ -1,0 +1,1141 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "configuration_catalog (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "academic_years": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "label": {
+            "type": "string"
+          },
+          "starts_on": {
+            "type": "null"
+          },
+          "ends_on": {
+            "type": "null"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "integer"
+          },
+          "regulations": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "starts_on",
+          "ends_on",
+          "is_active",
+          "version",
+          "regulations"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "academic_year_regulations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "academic_year_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "regulation_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "integer"
+          },
+          "academic_year": {
+            "type": "string"
+          },
+          "regulation": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "academic_year_id",
+          "regulation_id",
+          "is_active",
+          "version",
+          "academic_year",
+          "regulation"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "regulations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "effective_from": {
+            "type": "null"
+          },
+          "effective_to": {
+            "type": "null"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "code",
+          "title",
+          "effective_from",
+          "effective_to",
+          "is_active",
+          "version"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "terms": {
+      "type": "array",
+      "items": {}
+    },
+    "sessions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "programme_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "academic_year_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "term_record_id": {
+            "type": "null"
+          },
+          "name": {
+            "type": "string"
+          },
+          "term": {
+            "type": "string"
+          },
+          "evaluation_starts_at": {
+            "type": "null"
+          },
+          "evaluation_ends_at": {
+            "type": "null"
+          },
+          "status": {
+            "type": "string"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "integer"
+          },
+          "programme": {
+            "type": "string"
+          },
+          "academic_year": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "programme_id",
+          "academic_year_id",
+          "term_record_id",
+          "name",
+          "term",
+          "evaluation_starts_at",
+          "evaluation_ends_at",
+          "status",
+          "is_active",
+          "version",
+          "programme",
+          "academic_year"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {}
+    },
+    "programmes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "regulation": {
+            "type": "string"
+          },
+          "regulation_record_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "code",
+          "name",
+          "regulation",
+          "regulation_record_id",
+          "is_active",
+          "version"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "courses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "programme_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "regulation_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "duration_terms": {
+            "type": "null"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "integer"
+          },
+          "programme": {
+            "type": "string"
+          },
+          "regulation": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "programme_id",
+          "regulation_id",
+          "code",
+          "name",
+          "duration_terms",
+          "is_active",
+          "version",
+          "programme",
+          "regulation"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "subjects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "programme_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "course_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "source_academic_year_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "source_term_id": {
+            "type": "null"
+          },
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "semester": {
+            "type": "integer"
+          },
+          "session_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "related_subject_ids": {
+            "type": "array",
+            "items": {}
+          },
+          "availability_type": {
+            "type": "string"
+          },
+          "is_legacy_scheme_subject": {
+            "type": "boolean"
+          },
+          "equivalent_subject_id": {
+            "type": "null"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "version": {
+            "type": "integer"
+          },
+          "programme": {
+            "type": "string"
+          },
+          "course": {
+            "type": "string"
+          },
+          "regulation_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "regulation_code": {
+            "type": "string"
+          },
+          "regulation_title": {
+            "type": "string"
+          },
+          "regulation_label": {
+            "type": "string"
+          },
+          "programme_code": {
+            "type": "string"
+          },
+          "programme_name": {
+            "type": "string"
+          },
+          "programme_label": {
+            "type": "string"
+          },
+          "course_code": {
+            "type": "string"
+          },
+          "course_name": {
+            "type": "string"
+          },
+          "course_label": {
+            "type": "string"
+          },
+          "source_academic_year_label": {
+            "type": "string"
+          },
+          "source_term_label": {
+            "type": "string"
+          },
+          "availability_label": {
+            "type": "string"
+          },
+          "equivalent_subject_label": {
+            "type": "string"
+          },
+          "academic_group_label": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "programme_id",
+          "course_id",
+          "source_academic_year_id",
+          "source_term_id",
+          "code",
+          "name",
+          "semester",
+          "session_ids",
+          "related_subject_ids",
+          "availability_type",
+          "is_legacy_scheme_subject",
+          "equivalent_subject_id",
+          "is_active",
+          "version",
+          "programme",
+          "course",
+          "regulation_id",
+          "regulation_code",
+          "regulation_title",
+          "regulation_label",
+          "programme_code",
+          "programme_name",
+          "programme_label",
+          "course_code",
+          "course_name",
+          "course_label",
+          "source_academic_year_label",
+          "source_term_label",
+          "availability_label",
+          "equivalent_subject_label",
+          "academic_group_label"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "centres": {
+      "type": "array",
+      "items": {}
+    },
+    "papers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "session_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "subject_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "paper_type": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "max_marks": {
+            "type": "string"
+          },
+          "pass_marks": {
+            "type": "string"
+          },
+          "valuation_rounds": {
+            "type": "integer"
+          },
+          "discrepancy_threshold": {
+            "type": "string"
+          },
+          "moderation_required": {
+            "type": "boolean"
+          },
+          "rules": {
+            "type": "object",
+            "properties": {
+              "module_wise": {
+                "type": "boolean"
+              },
+              "revaluation": {
+                "type": "boolean"
+              },
+              "section_wise": {
+                "type": "boolean"
+              },
+              "section_config": {
+                "type": "object",
+                "properties": {
+                  "sections": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "max_marks": {
+                          "type": "integer"
+                        },
+                        "questions": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "section_id": {
+                          "type": "string"
+                        },
+                        "instructions": {
+                          "type": "string"
+                        },
+                        "attempt_count": {
+                          "type": "integer"
+                        },
+                        "question_count": {
+                          "type": "integer"
+                        },
+                        "question_marks": {
+                          "type": "object",
+                          "properties": {
+                            "1": {
+                              "type": "integer"
+                            },
+                            "2": {
+                              "type": "integer"
+                            },
+                            "3": {
+                              "type": "integer"
+                            },
+                            "4": {
+                              "type": "integer"
+                            },
+                            "5": {
+                              "type": "integer"
+                            },
+                            "6": {
+                              "type": "integer"
+                            },
+                            "7": {
+                              "type": "integer"
+                            },
+                            "8": {
+                              "type": "integer"
+                            },
+                            "9": {
+                              "type": "integer"
+                            },
+                            "10": {
+                              "type": "integer"
+                            },
+                            "11": {
+                              "type": "integer"
+                            },
+                            "12": {
+                              "type": "integer"
+                            },
+                            "13": {
+                              "type": "integer"
+                            },
+                            "14": {
+                              "type": "integer"
+                            },
+                            "15": {
+                              "type": "integer"
+                            },
+                            "16": {
+                              "type": "integer"
+                            },
+                            "17": {
+                              "type": "integer"
+                            },
+                            "18": {
+                              "type": "integer"
+                            },
+                            "19": {
+                              "type": "integer"
+                            },
+                            "20": {
+                              "type": "integer"
+                            },
+                            "21": {
+                              "type": "integer"
+                            },
+                            "22": {
+                              "type": "integer"
+                            },
+                            "23": {
+                              "type": "integer"
+                            },
+                            "24": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "1",
+                            "2",
+                            "3",
+                            "4",
+                            "5",
+                            "6",
+                            "7",
+                            "8",
+                            "9",
+                            "10",
+                            "11",
+                            "12",
+                            "13",
+                            "14",
+                            "15",
+                            "16",
+                            "17",
+                            "18",
+                            "19",
+                            "20",
+                            "21",
+                            "22",
+                            "23",
+                            "24"
+                          ],
+                          "additionalProperties": true
+                        },
+                        "selection_rule": {
+                          "type": "string"
+                        },
+                        "marks_per_question": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "max_marks",
+                        "questions",
+                        "section_id",
+                        "instructions",
+                        "attempt_count",
+                        "question_count",
+                        "question_marks",
+                        "selection_rule",
+                        "marks_per_question"
+                      ],
+                      "additionalProperties": true
+                    }
+                  },
+                  "question_marks": {
+                    "type": "object",
+                    "properties": {
+                      "1": {
+                        "type": "integer"
+                      },
+                      "2": {
+                        "type": "integer"
+                      },
+                      "3": {
+                        "type": "integer"
+                      },
+                      "4": {
+                        "type": "integer"
+                      },
+                      "5": {
+                        "type": "integer"
+                      },
+                      "6": {
+                        "type": "integer"
+                      },
+                      "7": {
+                        "type": "integer"
+                      },
+                      "8": {
+                        "type": "integer"
+                      },
+                      "9": {
+                        "type": "integer"
+                      },
+                      "10": {
+                        "type": "integer"
+                      },
+                      "11": {
+                        "type": "integer"
+                      },
+                      "12": {
+                        "type": "integer"
+                      },
+                      "13": {
+                        "type": "integer"
+                      },
+                      "14": {
+                        "type": "integer"
+                      },
+                      "15": {
+                        "type": "integer"
+                      },
+                      "16": {
+                        "type": "integer"
+                      },
+                      "17": {
+                        "type": "integer"
+                      },
+                      "18": {
+                        "type": "integer"
+                      },
+                      "19": {
+                        "type": "integer"
+                      },
+                      "20": {
+                        "type": "integer"
+                      },
+                      "21": {
+                        "type": "integer"
+                      },
+                      "22": {
+                        "type": "integer"
+                      },
+                      "23": {
+                        "type": "integer"
+                      },
+                      "24": {
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "1",
+                      "2",
+                      "3",
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8",
+                      "9",
+                      "10",
+                      "11",
+                      "12",
+                      "13",
+                      "14",
+                      "15",
+                      "16",
+                      "17",
+                      "18",
+                      "19",
+                      "20",
+                      "21",
+                      "22",
+                      "23",
+                      "24"
+                    ],
+                    "additionalProperties": true
+                  },
+                  "question_parts": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": true
+                  },
+                  "total_maximum_marks": {
+                    "type": "integer"
+                  },
+                  "subquestion_attempts": {
+                    "type": "object",
+                    "properties": {},
+                    "required": [],
+                    "additionalProperties": true
+                  }
+                },
+                "required": [
+                  "sections",
+                  "question_marks",
+                  "question_parts",
+                  "total_maximum_marks",
+                  "subquestion_attempts"
+                ],
+                "additionalProperties": true
+              },
+              "structure_type": {
+                "type": "string"
+              },
+              "critical_change": {
+                "type": "boolean"
+              },
+              "evaluation_mode": {
+                "type": "string"
+              },
+              "answer_selection": {
+                "type": "object",
+                "properties": {
+                  "best_of_per_group": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "best_of_per_group"
+                ],
+                "additionalProperties": true
+              },
+              "pages_per_script": {
+                "type": "integer"
+              },
+              "scripts_per_packet": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "module_wise",
+              "revaluation",
+              "section_wise",
+              "section_config",
+              "structure_type",
+              "critical_change",
+              "evaluation_mode",
+              "answer_selection",
+              "pages_per_script",
+              "scripts_per_packet"
+            ],
+            "additionalProperties": true
+          },
+          "status": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer"
+          },
+          "effective_from": {
+            "type": "null"
+          },
+          "submitted_by_id": {
+            "type": "string"
+          },
+          "approved_by_id": {
+            "type": "null"
+          },
+          "frozen_by_id": {
+            "type": "string"
+          },
+          "frozen_at": {
+            "type": "string"
+          },
+          "session": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "subject_name": {
+            "type": "string"
+          },
+          "regulation_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "regulation_code": {
+            "type": "string"
+          },
+          "regulation_title": {
+            "type": "string"
+          },
+          "regulation_label": {
+            "type": "string"
+          },
+          "programme_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "programme_code": {
+            "type": "string"
+          },
+          "programme_name": {
+            "type": "string"
+          },
+          "programme_label": {
+            "type": "string"
+          },
+          "course_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "course_code": {
+            "type": "string"
+          },
+          "course_name": {
+            "type": "string"
+          },
+          "course_label": {
+            "type": "string"
+          },
+          "semester": {
+            "type": "integer"
+          },
+          "source_academic_year_label": {
+            "type": "string"
+          },
+          "source_term_label": {
+            "type": "string"
+          },
+          "availability_label": {
+            "type": "string"
+          },
+          "equivalent_subject_label": {
+            "type": "string"
+          },
+          "academic_group_label": {
+            "type": "string"
+          },
+          "questions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "number": {
+                  "type": "string"
+                },
+                "sub_question": {
+                  "type": "string"
+                },
+                "max_marks": {
+                  "type": "string"
+                },
+                "question_type": {
+                  "type": "string"
+                },
+                "required": {
+                  "type": "boolean"
+                },
+                "position": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "id",
+                "number",
+                "sub_question",
+                "max_marks",
+                "question_type",
+                "required",
+                "position"
+              ],
+              "additionalProperties": true
+            }
+          },
+          "documents": {
+            "type": "object",
+            "properties": {
+              "question_paper": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "kind": {
+                    "type": "string"
+                  },
+                  "file_name": {
+                    "type": "string"
+                  },
+                  "content_type": {
+                    "type": "string"
+                  },
+                  "byte_size": {
+                    "type": "integer"
+                  },
+                  "uploaded_at": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "kind",
+                  "file_name",
+                  "content_type",
+                  "byte_size",
+                  "uploaded_at",
+                  "url"
+                ],
+                "additionalProperties": true
+              },
+              "evaluation_scheme": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "kind": {
+                    "type": "string"
+                  },
+                  "file_name": {
+                    "type": "string"
+                  },
+                  "content_type": {
+                    "type": "string"
+                  },
+                  "byte_size": {
+                    "type": "integer"
+                  },
+                  "uploaded_at": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "kind",
+                  "file_name",
+                  "content_type",
+                  "byte_size",
+                  "uploaded_at",
+                  "url"
+                ],
+                "additionalProperties": true
+              }
+            },
+            "required": [
+              "question_paper",
+              "evaluation_scheme"
+            ],
+            "additionalProperties": true
+          },
+          "approval_count": {
+            "type": "integer"
+          },
+          "readiness": {
+            "type": "object",
+            "properties": {
+              "ready": {
+                "type": "boolean"
+              },
+              "issues": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "ready",
+              "issues"
+            ],
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "id",
+          "session_id",
+          "subject_id",
+          "paper_type",
+          "code",
+          "title",
+          "max_marks",
+          "pass_marks",
+          "valuation_rounds",
+          "discrepancy_threshold",
+          "moderation_required",
+          "rules",
+          "status",
+          "version",
+          "effective_from",
+          "submitted_by_id",
+          "approved_by_id",
+          "frozen_by_id",
+          "frozen_at",
+          "session",
+          "subject",
+          "subject_name",
+          "regulation_id",
+          "regulation_code",
+          "regulation_title",
+          "regulation_label",
+          "programme_id",
+          "programme_code",
+          "programme_name",
+          "programme_label",
+          "course_id",
+          "course_code",
+          "course_name",
+          "course_label",
+          "semester",
+          "source_academic_year_label",
+          "source_term_label",
+          "availability_label",
+          "equivalent_subject_label",
+          "academic_group_label",
+          "questions",
+          "documents",
+          "approval_count",
+          "readiness"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "change_requests": {
+      "type": "array",
+      "items": {}
+    },
+    "calendar_exceptions": {
+      "type": "array",
+      "items": {}
+    }
+  },
+  "required": [
+    "academic_years",
+    "academic_year_regulations",
+    "regulations",
+    "terms",
+    "sessions",
+    "events",
+    "programmes",
+    "courses",
+    "subjects",
+    "centres",
+    "papers",
+    "change_requests",
+    "calendar_exceptions"
+  ],
+  "additionalProperties": true
+}

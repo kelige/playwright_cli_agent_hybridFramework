@@ -1,0 +1,61 @@
+{
+  "_notes": [
+    "Paper payload matches the verified POST /api/v1/configuration/papers shape.",
+    "Sections match the verified POST /api/v1/configuration/papers/{id}/setup-sections shape.",
+    "Provide the two PDF assets at the paths below before running upload steps.",
+    "Module split options observed in the UI: a(10)+b(10)=20, a(7)+b(7)+c(6)=20, a(5)+b(5)+c(5)+d(5)=20, No subparts (Full question)."
+  ],
+  "paper": {
+    "paperType": "regular",
+    "code": "DVS-AUTO-KAN001",
+    "title": "Automation Test Paper",
+    "subjectCode": "DVS-AUTO-SUB001",
+    "sessionName": "DVS Automation Session 01",
+    "maxMarks": 80,
+    "passMarks": 21,
+    "moderationRequired": true,
+    "scriptsPerPacket": 1,
+    "pagesPerScript": 2,
+    "rules": {
+      "critical_change": true,
+      "revaluation": true,
+      "module_wise": false,
+      "scripts_per_packet": 1,
+      "pages_per_script": 2,
+      "answer_selection": { "best_of_per_group": 0 }
+    }
+  },
+  "sections": [
+    {
+      "section_id": "A",
+      "name": "Section A",
+      "instructions": "Answer any 10 questions (2 marks each)",
+      "question_count": 12,
+      "attempt_count": 10,
+      "marks_per_question": 2,
+      "question_marks": { "1": 2, "2": 2, "3": 2, "4": 2, "5": 2, "6": 2, "7": 2, "8": 2, "9": 2, "10": 2, "11": 2, "12": 2 }
+    },
+    {
+      "section_id": "B",
+      "name": "Section B",
+      "instructions": "Answer any 5 questions (6 marks each)",
+      "question_count": 7,
+      "attempt_count": 5,
+      "marks_per_question": 6,
+      "question_marks": { "13": 6, "14": 6, "15": 6, "16": 6, "17": 6, "18": 6, "19": 6 }
+    },
+    {
+      "section_id": "C",
+      "name": "Section C",
+      "instructions": "Answer any 3 questions (10 marks each)",
+      "question_count": 5,
+      "attempt_count": 3,
+      "marks_per_question": 10,
+      "question_marks": { "20": 10, "21": 10, "22": 10, "23": 10, "24": 10 }
+    }
+  ],
+  "documents": {
+    "questionPaperFile": "testdata/files/question-paper.pdf",
+    "evaluationSchemeFile": "testdata/files/evaluation-scheme.pdf"
+  }
+}

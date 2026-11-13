@@ -1,0 +1,78 @@
+{
+  "_notes": [
+    "Provisioning order used by the run: user_manager -> chairman -> chief -> evaluator -> scanner_operator.",
+    "Chief and evaluator are created through evaluator-management + nomination, not security/memberships.",
+    "emails use a reserved test pattern; the run appends a unique suffix.",
+    "operational_centre_id and programme_id are resolved at runtime from created records, never hard-coded."
+  ],
+  "membershipRoles": [
+    {
+      "role": "user_manager",
+      "firstName": "first",
+      "lastName": "usermanager",
+      "emailPrefix": "dvs.usermanager",
+      "permissions": [],
+      "enabledModules": ["enterprise", "security"],
+      "requiresProgramme": false,
+      "requiresCentre": false
+    },
+    {
+      "role": "chairman",
+      "firstName": "first",
+      "lastName": "chairman",
+      "emailPrefix": "dvs.chairman",
+      "permissions": [],
+      "enabledModules": ["configuration", "evaluators", "operations", "rubrics"],
+      "requiresProgramme": true,
+      "requiresCentre": false
+    },
+    {
+      "role": "scanner_operator",
+      "firstName": "first",
+      "lastName": "scanner",
+      "emailPrefix": "dvs.scanner",
+      "permissions": [],
+      "enabledModules": ["digitization"],
+      "requiresProgramme": false,
+      "requiresCentre": true
+    },
+    {
+      "role": "exam_invigilator",
+      "firstName": "first",
+      "lastName": "invigilator",
+      "emailPrefix": "dvs.invigilator",
+      "permissions": [],
+      "enabledModules": [],
+      "requiresProgramme": false,
+      "requiresCentre": true,
+      "optional": true,
+      "note": "Module list for this role was not captured. Verify in Access Governance before asserting."
+    }
+  ],
+  "evaluatorProfiles": [
+    {
+      "kind": "chief",
+      "displayName": "DVS Automation Chief",
+      "emailPrefix": "dvs.chief",
+      "institutionName": "DVS Automation Institute",
+      "department": "CSE",
+      "yearsExperience": 10,
+      "employeeId": "DVS-EMP-CHIEF-01",
+      "designation": "Assistant Professor",
+      "qualification": "MTech",
+      "employmentType": "Permanent"
+    },
+    {
+      "kind": "evaluator",
+      "displayName": "DVS Automation Evaluator",
+      "emailPrefix": "dvs.evaluator",
+      "institutionName": "DVS Automation Institute",
+      "department": "CSE",
+      "yearsExperience": 5,
+      "employeeId": "DVS-EMP-EVAL-01",
+      "designation": "Assistant Professor",
+      "qualification": "MTech",
+      "employmentType": "Contract"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "auth_sso_providers (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "array",
+  "items": {}
+}

@@ -1,0 +1,46 @@
+{
+  "_notes": [
+    "Marks are keyed by question number, not by runtime UUID.",
+    "Totals follow the captured paper: A 10x2 = 20, B 5x6 = 30, C 3x10 = 30, maximum 80, pass 21.",
+    "outcome values observed in the API: evaluated, unanswered.",
+    "adjustment values observed: none."
+  ],
+  "validMarks": [
+    { "questionNumber": 1, "maxMarks": 2, "awardedMarks": 2, "outcome": "evaluated", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true },
+    { "questionNumber": 2, "maxMarks": 2, "awardedMarks": 2, "outcome": "evaluated", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true },
+    { "questionNumber": 3, "maxMarks": 2, "awardedMarks": 2, "outcome": "evaluated", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true },
+    { "questionNumber": 4, "maxMarks": 2, "awardedMarks": 2, "outcome": "evaluated", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true },
+    { "questionNumber": 5, "maxMarks": 2, "awardedMarks": 2, "outcome": "evaluated", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true },
+    { "questionNumber": 6, "maxMarks": 2, "awardedMarks": 2, "outcome": "evaluated", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true },
+    { "questionNumber": 7, "maxMarks": 2, "awardedMarks": 2, "outcome": "evaluated", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true },
+    { "questionNumber": 8, "maxMarks": 2, "awardedMarks": 2, "outcome": "evaluated", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true },
+    { "questionNumber": 9, "maxMarks": 2, "awardedMarks": 2, "outcome": "evaluated", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true },
+    { "questionNumber": 10, "maxMarks": 2, "awardedMarks": 2, "outcome": "evaluated", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true },
+    { "questionNumber": 11, "maxMarks": 2, "awardedMarks": 0, "outcome": "unanswered", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true },
+    { "questionNumber": 12, "maxMarks": 2, "awardedMarks": 0, "outcome": "unanswered", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true },
+    { "questionNumber": 13, "maxMarks": 6, "awardedMarks": 6, "outcome": "evaluated", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true },
+    { "questionNumber": 14, "maxMarks": 6, "awardedMarks": 6, "outcome": "evaluated", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true },
+    { "questionNumber": 15, "maxMarks": 6, "awardedMarks": 6, "outcome": "evaluated", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true },
+    { "questionNumber": 16, "maxMarks": 6, "awardedMarks": 6, "outcome": "evaluated", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true },
+    { "questionNumber": 17, "maxMarks": 6, "awardedMarks": 6, "outcome": "evaluated", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true },
+    { "questionNumber": 18, "maxMarks": 6, "awardedMarks": 0, "outcome": "unanswered", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true },
+    { "questionNumber": 19, "maxMarks": 6, "awardedMarks": 0, "outcome": "unanswered", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true },
+    { "questionNumber": 20, "maxMarks": 10, "awardedMarks": 10, "outcome": "evaluated", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true },
+    { "questionNumber": 21, "maxMarks": 10, "awardedMarks": 10, "outcome": "evaluated", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true },
+    { "questionNumber": 22, "maxMarks": 10, "awardedMarks": 10, "outcome": "evaluated", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true },
+    { "questionNumber": 23, "maxMarks": 10, "awardedMarks": 0, "outcome": "unanswered", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true },
+    { "questionNumber": 24, "maxMarks": 10, "awardedMarks": 0, "outcome": "unanswered", "adjustment": "none", "requiresAttention": false, "examinerConfirmed": true }
+  ],
+  "expectedTotals": {
+    "sectionA": 20,
+    "sectionB": 30,
+    "sectionC": 30,
+    "grandTotal": 80,
+    "finalMarks": 80
+  },
+  "invalidMarks": [
+    { "questionNumber": 1, "maxMarks": 2, "awardedMarks": -8, "reason": "Negative mark rejected with OK dialog in capture" },
+    { "questionNumber": 21, "maxMarks": 10, "awardedMarks": 11, "reason": "Mark above question maximum must be rejected" },
+    { "questionNumber": 23, "maxMarks": 10, "awardedMarks": "8-", "reason": "Malformed numeric input rejected in capture" }
+  ]
+}

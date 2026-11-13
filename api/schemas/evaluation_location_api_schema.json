@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "evaluation_location (POST response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "status": {
+      "type": "string"
+    },
+    "distance_meters": {
+      "type": "null"
+    },
+    "accuracy_meters": {
+      "type": "integer"
+    },
+    "recorded_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "map_url": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "status",
+    "distance_meters",
+    "accuracy_meters",
+    "recorded_at",
+    "map_url"
+  ],
+  "additionalProperties": true
+}

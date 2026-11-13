@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "chief_team_nomination (POST response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "nominated": {
+      "type": "boolean"
+    },
+    "credentials": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "temporary_password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "username",
+        "temporary_password"
+      ],
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "nominated",
+    "credentials"
+  ],
+  "additionalProperties": true
+}

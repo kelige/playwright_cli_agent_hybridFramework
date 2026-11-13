@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "remote_security_policy (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "identity_verification_required": {
+      "type": "boolean"
+    },
+    "strict_mode": {
+      "type": "boolean"
+    },
+    "camera_required": {
+      "type": "boolean"
+    },
+    "fullscreen_required": {
+      "type": "boolean"
+    },
+    "single_screen_required": {
+      "type": "boolean"
+    },
+    "mobile_allowed": {
+      "type": "boolean"
+    },
+    "event_recording": {
+      "type": "boolean"
+    },
+    "pause_on_violation": {
+      "type": "boolean"
+    },
+    "require_resume_step_up": {
+      "type": "boolean"
+    },
+    "allow_clipboard": {
+      "type": "boolean"
+    },
+    "allow_download": {
+      "type": "boolean"
+    },
+    "allow_print": {
+      "type": "boolean"
+    },
+    "allow_screenshot": {
+      "type": "boolean"
+    },
+    "session_timeout_minutes": {
+      "type": "integer"
+    },
+    "minEvaluationMinutes": {
+      "type": "integer"
+    },
+    "heartbeat_seconds": {
+      "type": "integer"
+    },
+    "no_face_seconds": {
+      "type": "integer"
+    },
+    "retention_days": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "identity_verification_required",
+    "strict_mode",
+    "camera_required",
+    "fullscreen_required",
+    "single_screen_required",
+    "mobile_allowed",
+    "event_recording",
+    "pause_on_violation",
+    "require_resume_step_up",
+    "allow_clipboard",
+    "allow_download",
+    "allow_print",
+    "allow_screenshot",
+    "session_timeout_minutes",
+    "minEvaluationMinutes",
+    "heartbeat_seconds",
+    "no_face_seconds",
+    "retention_days"
+  ],
+  "additionalProperties": true
+}

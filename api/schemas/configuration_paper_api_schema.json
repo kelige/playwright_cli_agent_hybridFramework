@@ -1,0 +1,255 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "configuration_paper (POST response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "session_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "subject_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "paper_type": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "max_marks": {
+      "type": "string"
+    },
+    "pass_marks": {
+      "type": "string"
+    },
+    "valuation_rounds": {
+      "type": "integer"
+    },
+    "discrepancy_threshold": {
+      "type": "integer"
+    },
+    "moderation_required": {
+      "type": "boolean"
+    },
+    "rules": {
+      "type": "object",
+      "properties": {
+        "critical_change": {
+          "type": "boolean"
+        },
+        "revaluation": {
+          "type": "boolean"
+        },
+        "module_wise": {
+          "type": "boolean"
+        },
+        "scripts_per_packet": {
+          "type": "integer"
+        },
+        "pages_per_script": {
+          "type": "integer"
+        },
+        "answer_selection": {
+          "type": "object",
+          "properties": {
+            "best_of_per_group": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "best_of_per_group"
+          ],
+          "additionalProperties": true
+        },
+        "evaluation_mode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "critical_change",
+        "revaluation",
+        "module_wise",
+        "scripts_per_packet",
+        "pages_per_script",
+        "answer_selection",
+        "evaluation_mode"
+      ],
+      "additionalProperties": true
+    },
+    "status": {
+      "type": "string"
+    },
+    "version": {
+      "type": "integer"
+    },
+    "effective_from": {
+      "type": "null"
+    },
+    "submitted_by_id": {
+      "type": "null"
+    },
+    "approved_by_id": {
+      "type": "null"
+    },
+    "frozen_by_id": {
+      "type": "null"
+    },
+    "frozen_at": {
+      "type": "null"
+    },
+    "session": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "subject_name": {
+      "type": "string"
+    },
+    "regulation_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "regulation_code": {
+      "type": "string"
+    },
+    "regulation_title": {
+      "type": "string"
+    },
+    "regulation_label": {
+      "type": "string"
+    },
+    "programme_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "programme_code": {
+      "type": "string"
+    },
+    "programme_name": {
+      "type": "string"
+    },
+    "programme_label": {
+      "type": "string"
+    },
+    "course_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "course_code": {
+      "type": "string"
+    },
+    "course_name": {
+      "type": "string"
+    },
+    "course_label": {
+      "type": "string"
+    },
+    "semester": {
+      "type": "integer"
+    },
+    "source_academic_year_label": {
+      "type": "string"
+    },
+    "source_term_label": {
+      "type": "string"
+    },
+    "availability_label": {
+      "type": "string"
+    },
+    "equivalent_subject_label": {
+      "type": "string"
+    },
+    "academic_group_label": {
+      "type": "string"
+    },
+    "questions": {
+      "type": "array",
+      "items": {}
+    },
+    "documents": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": true
+    },
+    "approval_count": {
+      "type": "integer"
+    },
+    "readiness": {
+      "type": "object",
+      "properties": {
+        "ready": {
+          "type": "boolean"
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "ready",
+        "issues"
+      ],
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "id",
+    "session_id",
+    "subject_id",
+    "paper_type",
+    "code",
+    "title",
+    "max_marks",
+    "pass_marks",
+    "valuation_rounds",
+    "discrepancy_threshold",
+    "moderation_required",
+    "rules",
+    "status",
+    "version",
+    "effective_from",
+    "submitted_by_id",
+    "approved_by_id",
+    "frozen_by_id",
+    "frozen_at",
+    "session",
+    "subject",
+    "subject_name",
+    "regulation_id",
+    "regulation_code",
+    "regulation_title",
+    "regulation_label",
+    "programme_id",
+    "programme_code",
+    "programme_name",
+    "programme_label",
+    "course_id",
+    "course_code",
+    "course_name",
+    "course_label",
+    "semester",
+    "source_academic_year_label",
+    "source_term_label",
+    "availability_label",
+    "equivalent_subject_label",
+    "academic_group_label",
+    "questions",
+    "documents",
+    "approval_count",
+    "readiness"
+  ],
+  "additionalProperties": true
+}

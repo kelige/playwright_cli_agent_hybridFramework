@@ -1,0 +1,224 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "auth_security_context (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "current_session_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "server_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "totals": {
+      "type": "object",
+      "properties": {
+        "sessions": {
+          "type": "integer"
+        },
+        "devices": {
+          "type": "integer"
+        },
+        "history": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "sessions",
+        "devices",
+        "history"
+      ],
+      "additionalProperties": true
+    },
+    "policy": {
+      "type": "object",
+      "properties": {
+        "session_timeout_minutes": {
+          "type": "integer"
+        },
+        "maximum_concurrent_sessions": {
+          "type": "integer"
+        },
+        "step_up_minutes": {
+          "type": "integer"
+        },
+        "require_mfa": {
+          "type": "boolean"
+        },
+        "require_trusted_device": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "session_timeout_minutes",
+        "maximum_concurrent_sessions",
+        "step_up_minutes",
+        "require_mfa",
+        "require_trusted_device"
+      ],
+      "additionalProperties": true
+    },
+    "sessions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "device": {
+            "type": "string"
+          },
+          "ip_address": {
+            "type": "string"
+          },
+          "risk_score": {
+            "type": "integer"
+          },
+          "last_seen_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "revoked_at": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "status": {
+            "type": "string"
+          },
+          "step_up_valid": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "device",
+          "ip_address",
+          "risk_score",
+          "last_seen_at",
+          "expires_at",
+          "revoked_at",
+          "status",
+          "step_up_valid"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "devices": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "label": {
+            "type": "string"
+          },
+          "platform": {
+            "type": "string"
+          },
+          "browser": {
+            "type": "string"
+          },
+          "trusted_until": {
+            "type": "null"
+          },
+          "last_seen_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "revoked_at": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "platform",
+          "browser",
+          "trusted_until",
+          "last_seen_at",
+          "revoked_at"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "methods": {
+      "type": "array",
+      "items": {}
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "event": {
+            "type": "string"
+          },
+          "outcome": {
+            "type": "string"
+          },
+          "ip_address": {
+            "type": "string"
+          },
+          "risk_score": {
+            "type": "integer"
+          },
+          "risk_reasons": {
+            "type": "array",
+            "items": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "id",
+          "event",
+          "outcome",
+          "ip_address",
+          "risk_score",
+          "risk_reasons",
+          "created_at"
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": [
+    "current_session_id",
+    "server_time",
+    "timezone",
+    "totals",
+    "policy",
+    "sessions",
+    "devices",
+    "methods",
+    "history"
+  ],
+  "additionalProperties": true
+}

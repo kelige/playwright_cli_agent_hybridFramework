@@ -1,0 +1,223 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "chief_summary (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "profile": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "institution": {
+          "type": "string"
+        },
+        "department": {
+          "type": "string"
+        },
+        "experience": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "name",
+        "code",
+        "email",
+        "institution",
+        "department",
+        "experience"
+      ],
+      "additionalProperties": true
+    },
+    "evaluation": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "integer"
+        },
+        "submitted": {
+          "type": "integer"
+        },
+        "in_progress": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "total",
+        "submitted",
+        "in_progress"
+      ],
+      "additionalProperties": true
+    },
+    "ready": {
+      "type": "boolean"
+    },
+    "subjects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "code",
+          "name"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "attendance": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "department": {
+            "type": "string"
+          },
+          "experience": {
+            "type": "integer"
+          },
+          "login_enabled": {
+            "type": "boolean"
+          },
+          "subjects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "code",
+                "name"
+              ],
+              "additionalProperties": true
+            }
+          },
+          "present": {
+            "type": "boolean"
+          },
+          "checkins": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "session": {
+                  "type": "string"
+                },
+                "checked_in_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "present": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "session",
+                "checked_in_at",
+                "present"
+              ],
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "code",
+          "department",
+          "experience",
+          "login_enabled",
+          "subjects",
+          "present",
+          "checkins"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "present": {
+      "type": "integer"
+    },
+    "team_size": {
+      "type": "integer"
+    },
+    "moderation_pending": {
+      "type": "integer"
+    },
+    "ai_evaluation_mode": {
+      "type": "string"
+    },
+    "nominations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "evaluator_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "subject_id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "evaluator_id",
+          "subject_id"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "profile",
+    "evaluation",
+    "ready",
+    "subjects",
+    "attendance",
+    "present",
+    "team_size",
+    "moderation_pending",
+    "ai_evaluation_mode",
+    "nominations",
+    "generated_at"
+  ],
+  "additionalProperties": true
+}

@@ -1,0 +1,209 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "scanning_catalog (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "papers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "code",
+          "title"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "eligible_scripts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string"
+          },
+          "paper_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "paper": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "pages": {
+            "type": "integer"
+          },
+          "version": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "code",
+          "paper_id",
+          "paper",
+          "state",
+          "pages",
+          "version"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "scanners": {
+      "type": "array",
+      "items": {}
+    },
+    "batches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "reference": {
+            "type": "string"
+          },
+          "paper": {
+            "type": "string"
+          },
+          "scanner": {
+            "type": "null"
+          },
+          "status": {
+            "type": "string"
+          },
+          "expected_scripts": {
+            "type": "integer"
+          },
+          "completed_scripts": {
+            "type": "integer"
+          },
+          "failed_scripts": {
+            "type": "integer"
+          },
+          "priority": {
+            "type": "integer"
+          },
+          "duplex": {
+            "type": "boolean"
+          },
+          "adf": {
+            "type": "boolean"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "version": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "reference",
+          "paper",
+          "scanner",
+          "status",
+          "expected_scripts",
+          "completed_scripts",
+          "failed_scripts",
+          "priority",
+          "duplex",
+          "adf",
+          "created_at",
+          "version"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "jobs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "batch_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "script": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "expected_pages": {
+            "type": "integer"
+          },
+          "scanned_pages": {
+            "type": "integer"
+          },
+          "attempt": {
+            "type": "integer"
+          },
+          "error_code": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "batch_id",
+          "script",
+          "status",
+          "expected_pages",
+          "scanned_pages",
+          "attempt",
+          "error_code",
+          "version"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "rescan_batches": {
+      "type": "array",
+      "items": {}
+    },
+    "maintenance": {
+      "type": "array",
+      "items": {}
+    }
+  },
+  "required": [
+    "papers",
+    "eligible_scripts",
+    "scanners",
+    "batches",
+    "jobs",
+    "rescan_batches",
+    "maintenance"
+  ],
+  "additionalProperties": true
+}

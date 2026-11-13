@@ -1,0 +1,14 @@
+testName,role,emailEnvKey,passwordEnvKey,email,password,firstLogin,expected,expectedLanding,expectedMessage,description
+Valid Admin login,admin,DVS_ADMIN_EMAIL,DVS_ADMIN_PASSWORD,,,false,success,Exam configuration / Access governance,,Seeded Admin account from .env.
+Chairman first login with temporary password,chairman,DVS_CHAIRMAN_EMAIL,DVS_CHAIRMAN_PASSWORD,,,true,success,Chief nominations gate,,Provisioned during the run; temporary password must be replaced with DVS_ROLE_NEW_PASSWORD.
+Chief Examiner first login,chief,DVS_CHIEF_EMAIL,DVS_CHIEF_PASSWORD,,,true,success,Chief Examiner Desk,,Created by Chairman nomination handover.
+Evaluator first login,evaluator,DVS_EVALUATOR_EMAIL,DVS_EVALUATOR_PASSWORD,,,true,success,Evaluation desk,,Created by Chief team nomination; face enrollment follows first login.
+Scanner Operator first login,scanner_operator,DVS_SCANNER_EMAIL,DVS_SCANNER_PASSWORD,,,true,success,Digitization,,Created by User Manager; operational centre is mandatory.
+User Manager first login,user_manager,DVS_USER_MANAGER_EMAIL,DVS_USER_MANAGER_PASSWORD,,,true,success,User management,,Created by Admin; can provision downstream roles.
+Invalid email format,admin,,,invalid-email-format,DummyPassword123!,false,failure,,Invalid email or password,Form must reject an email without a valid domain.
+Unknown user,admin,,,dvs.unknown.user@example.invalid,DummyPassword123!,false,failure,,Invalid email or password,Unregistered email must not authenticate.
+Incorrect password,admin,DVS_ADMIN_EMAIL,,,DefinitelyNotTheRealPassword123!,false,failure,,Invalid email or password,Valid email with wrong password. Do not repeat past failed_login_limit (6).
+Password is case sensitive,admin,DVS_ADMIN_EMAIL,,,CHANGEME322!,false,failure,,Invalid email or password,Confirms exact-case password handling; ChangeME322! failed in capture while ChangeMe322! succeeded.
+Empty email,admin,,,,DummyPassword123!,false,failure,,Verify actual required-field validation,Leave email blank; do not substitute dummy data.
+Empty password,admin,DVS_ADMIN_EMAIL,,,,false,failure,,Verify actual required-field validation,Leave password blank; do not substitute dummy data.
+Empty email and password,admin,,,,,false,failure,,Verify actual required-field validation,Both fields blank.

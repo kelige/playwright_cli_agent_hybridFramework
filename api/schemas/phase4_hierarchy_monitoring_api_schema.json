@@ -1,0 +1,573 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "phase4_hierarchy_monitoring (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "chairman_monitoring": {
+      "type": "null"
+    },
+    "packets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "chief_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "chief": {
+            "type": "string"
+          },
+          "evaluator_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "evaluator": {
+            "type": "string"
+          },
+          "subject_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "session_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "session": {
+            "type": "string"
+          },
+          "counts": {
+            "type": "object",
+            "properties": {
+              "total": {
+                "type": "integer"
+              },
+              "assigned": {
+                "type": "integer"
+              },
+              "in_progress": {
+                "type": "integer"
+              },
+              "submitted": {
+                "type": "integer"
+              },
+              "moderation_pending": {
+                "type": "integer"
+              },
+              "approved": {
+                "type": "integer"
+              },
+              "rework": {
+                "type": "integer"
+              },
+              "overdue": {
+                "type": "integer"
+              },
+              "rejected": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "total",
+              "assigned",
+              "in_progress",
+              "submitted",
+              "moderation_pending",
+              "approved",
+              "rework",
+              "overdue",
+              "rejected"
+            ],
+            "additionalProperties": true
+          },
+          "next_due": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "last_saved": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "help_open": {
+            "type": "integer"
+          },
+          "blocking": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "attendance": {
+            "type": "string"
+          },
+          "activity": {
+            "type": "string"
+          },
+          "last_activity": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "checked_in": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "checked_out": {
+            "type": "null"
+          },
+          "packet_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string"
+          },
+          "round": {
+            "type": "integer"
+          },
+          "handoff_complete": {
+            "type": "boolean"
+          },
+          "ready_for_review": {
+            "type": "boolean"
+          },
+          "needs_sample_selection": {
+            "type": "boolean"
+          },
+          "scripts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "code": {
+                  "type": "string"
+                },
+                "state": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "code",
+                "state"
+              ],
+              "additionalProperties": true
+            }
+          },
+          "moderation_ids": {
+            "type": "array",
+            "items": {}
+          }
+        },
+        "required": [
+          "id",
+          "chief_id",
+          "chief",
+          "evaluator_id",
+          "evaluator",
+          "subject_id",
+          "subject",
+          "session_id",
+          "session",
+          "counts",
+          "next_due",
+          "last_saved",
+          "help_open",
+          "blocking",
+          "attendance",
+          "activity",
+          "last_activity",
+          "checked_in",
+          "checked_out",
+          "packet_id",
+          "code",
+          "round",
+          "handoff_complete",
+          "ready_for_review",
+          "needs_sample_selection",
+          "scripts",
+          "moderation_ids"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "role": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "totals": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "integer"
+        },
+        "assigned": {
+          "type": "integer"
+        },
+        "in_progress": {
+          "type": "integer"
+        },
+        "submitted": {
+          "type": "integer"
+        },
+        "moderation_pending": {
+          "type": "integer"
+        },
+        "approved": {
+          "type": "integer"
+        },
+        "rework": {
+          "type": "integer"
+        },
+        "overdue": {
+          "type": "integer"
+        },
+        "rejected": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "total",
+        "assigned",
+        "in_progress",
+        "submitted",
+        "moderation_pending",
+        "approved",
+        "rework",
+        "overdue",
+        "rejected"
+      ],
+      "additionalProperties": true
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "chief_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "chief": {
+            "type": "string"
+          },
+          "evaluator_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "evaluator": {
+            "type": "string"
+          },
+          "subject_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "session_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "session": {
+            "type": "string"
+          },
+          "counts": {
+            "type": "object",
+            "properties": {
+              "total": {
+                "type": "integer"
+              },
+              "assigned": {
+                "type": "integer"
+              },
+              "in_progress": {
+                "type": "integer"
+              },
+              "submitted": {
+                "type": "integer"
+              },
+              "moderation_pending": {
+                "type": "integer"
+              },
+              "approved": {
+                "type": "integer"
+              },
+              "rework": {
+                "type": "integer"
+              },
+              "overdue": {
+                "type": "integer"
+              },
+              "rejected": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "total",
+              "assigned",
+              "in_progress",
+              "submitted",
+              "moderation_pending",
+              "approved",
+              "rework",
+              "overdue",
+              "rejected"
+            ],
+            "additionalProperties": true
+          },
+          "next_due": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "last_saved": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "help_open": {
+            "type": "integer"
+          },
+          "blocking": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "attendance": {
+            "type": "string"
+          },
+          "activity": {
+            "type": "string"
+          },
+          "last_activity": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "checked_in": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "checked_out": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "id",
+          "chief_id",
+          "chief",
+          "evaluator_id",
+          "evaluator",
+          "subject_id",
+          "subject",
+          "session_id",
+          "session",
+          "counts",
+          "next_due",
+          "last_saved",
+          "help_open",
+          "blocking",
+          "attendance",
+          "activity",
+          "last_activity",
+          "checked_in",
+          "checked_out"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "chiefs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "attendance": {
+            "type": "string"
+          },
+          "activity": {
+            "type": "string"
+          },
+          "last_activity": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "checked_in": {
+            "type": "null"
+          },
+          "checked_out": {
+            "type": "null"
+          },
+          "acceptance_blocker": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "attendance",
+          "activity",
+          "last_activity",
+          "checked_in",
+          "checked_out",
+          "acceptance_blocker"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "chief_subjects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "chief_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "chief": {
+            "type": "string"
+          },
+          "subject_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "stage": {
+            "type": "string"
+          },
+          "counts": {
+            "type": "object",
+            "properties": {
+              "total": {
+                "type": "integer"
+              },
+              "assigned": {
+                "type": "integer"
+              },
+              "in_progress": {
+                "type": "integer"
+              },
+              "submitted": {
+                "type": "integer"
+              },
+              "moderation_pending": {
+                "type": "integer"
+              },
+              "approved": {
+                "type": "integer"
+              },
+              "rework": {
+                "type": "integer"
+              },
+              "overdue": {
+                "type": "integer"
+              },
+              "rejected": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "total",
+              "assigned",
+              "in_progress",
+              "submitted",
+              "moderation_pending",
+              "approved",
+              "rework",
+              "overdue",
+              "rejected"
+            ],
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "chief_id",
+          "chief",
+          "subject_id",
+          "subject",
+          "stage",
+          "counts"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "nominations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "chief_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "subject_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "accepted_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "chief_id",
+          "subject_id",
+          "subject",
+          "status",
+          "accepted_at"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "help_requests": {
+      "type": "array",
+      "items": {}
+    },
+    "activity_note": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "chairman_monitoring",
+    "packets",
+    "role",
+    "generated_at",
+    "totals",
+    "rows",
+    "chiefs",
+    "chief_subjects",
+    "nominations",
+    "help_requests",
+    "activity_note"
+  ],
+  "additionalProperties": true
+}

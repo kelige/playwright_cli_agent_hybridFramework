@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "auth_notifications (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "unread_count": {
+      "type": "integer"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "category": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "acknowledged_at": {
+            "type": "null"
+          },
+          "action_data": {
+            "type": "object",
+            "properties": {
+              "due_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "paper_code": {
+                "type": "string"
+              },
+              "script_count": {
+                "type": "integer"
+              },
+              "assignment_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "assignment_group": {
+                "type": "string"
+              },
+              "packet_reference": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "due_at",
+              "paper_code",
+              "script_count",
+              "assignment_ids",
+              "assignment_group",
+              "packet_reference"
+            ],
+            "additionalProperties": true
+          },
+          "version": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "category",
+          "title",
+          "body",
+          "severity",
+          "status",
+          "created_at",
+          "acknowledged_at",
+          "action_data",
+          "version"
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": [
+    "unread_count",
+    "items"
+  ],
+  "additionalProperties": true
+}

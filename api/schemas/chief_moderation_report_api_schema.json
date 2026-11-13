@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "chief_moderation_report (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "batches": {
+      "type": "integer"
+    },
+    "approved": {
+      "type": "integer"
+    },
+    "scripts": {
+      "type": "integer"
+    },
+    "evaluators": {
+      "type": "integer"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "batches",
+    "approved",
+    "scripts",
+    "evaluators",
+    "generated_at"
+  ],
+  "additionalProperties": true
+}

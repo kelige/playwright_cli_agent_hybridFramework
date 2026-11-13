@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "evaluator_profile (POST response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "evaluator_code": {
+      "type": "string"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "version": {
+      "type": "integer"
+    },
+    "status": {
+      "type": "string"
+    },
+    "daily_capacity": {
+      "type": "integer"
+    },
+    "face_enrolled": {
+      "type": "boolean"
+    },
+    "face_status": {
+      "type": "string"
+    },
+    "face_enrollment_required": {
+      "type": "boolean"
+    },
+    "login_enabled": {
+      "type": "boolean"
+    },
+    "username": {
+      "type": "string"
+    },
+    "temporary_password": {
+      "type": "string"
+    },
+    "existing_identity": {
+      "type": "boolean"
+    },
+    "role": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "evaluator_code",
+    "display_name",
+    "email",
+    "version",
+    "status",
+    "daily_capacity",
+    "face_enrolled",
+    "face_status",
+    "face_enrollment_required",
+    "login_enabled",
+    "username",
+    "temporary_password",
+    "existing_identity",
+    "role"
+  ],
+  "additionalProperties": true
+}

@@ -1,0 +1,45 @@
+{
+  "_notes": [
+    "Deterministic synthetic configuration for the academic chain.",
+    "Codes are unique per run when suffixed by Helper.getDvsTestRunId().",
+    "Field names match the verified UI/API payloads captured on the harish tenant."
+  ],
+  "programme": {
+    "code": "DVS-AUTO-BCA",
+    "name": "Automation Test - Bachelor of Computer Applications"
+  },
+  "regulation": {
+    "code": "DVS-AUTO-REG-01",
+    "title": "Automation Test Regulation",
+    "programmeCode": "DVS-AUTO-BCA"
+  },
+  "academicYear": {
+    "label": "2026-2027",
+    "regulationCode": "DVS-AUTO-REG-01"
+  },
+  "examSession": {
+    "name": "DVS Automation Session 01",
+    "programmeCode": "DVS-AUTO-BCA",
+    "academicYearLabel": "2026-2027"
+  },
+  "course": {
+    "code": "DVS-AUTO-COURSE-01",
+    "name": "Automation Test Course",
+    "programmeCode": "DVS-AUTO-BCA",
+    "regulationCode": "DVS-AUTO-REG-01"
+  },
+  "subject": {
+    "code": "DVS-AUTO-SUB001",
+    "name": "Automation Test Subject",
+    "courseCode": "DVS-AUTO-COURSE-01",
+    "semester": 1,
+    "sessionNames": ["DVS Automation Session 01"]
+  },
+  "centre": {
+    "name": "DVS Automation Centre",
+    "location": "DAVANAGERE",
+    "capacity": 0,
+    "workstationCount": 0,
+    "securityControls": ["restricted-entry", "secure-lan"]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "configuration_paper_sections (POST response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "paper_version": {
+      "type": "integer"
+    },
+    "readiness": {
+      "type": "object",
+      "properties": {
+        "ready": {
+          "type": "boolean"
+        },
+        "issues": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "ready",
+        "issues"
+      ],
+      "additionalProperties": true
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "number": {
+            "type": "string"
+          },
+          "sub_question": {
+            "type": "string"
+          },
+          "max_marks": {
+            "type": "string"
+          },
+          "question_type": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "position": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "number",
+          "sub_question",
+          "max_marks",
+          "question_type",
+          "required",
+          "position"
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": [
+    "paper_version",
+    "readiness",
+    "questions"
+  ],
+  "additionalProperties": true
+}

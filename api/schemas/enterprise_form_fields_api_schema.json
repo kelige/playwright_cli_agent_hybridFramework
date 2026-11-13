@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "enterprise_form_fields (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "form_key": {
+      "type": "string"
+    },
+    "form_name": {
+      "type": "string"
+    },
+    "fields": {
+      "type": "array",
+      "items": {}
+    }
+  },
+  "required": [
+    "form_key",
+    "form_name",
+    "fields"
+  ],
+  "additionalProperties": true
+}

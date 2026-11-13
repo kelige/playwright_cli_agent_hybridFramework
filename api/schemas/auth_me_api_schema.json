@@ -1,0 +1,260 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "auth_me (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "face_login": {
+      "type": "object",
+      "properties": {
+        "required": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "required"
+      ],
+      "additionalProperties": true
+    },
+    "user": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "email"
+      ],
+      "additionalProperties": true
+    },
+    "tenant": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "timezone": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "code",
+        "timezone"
+      ],
+      "additionalProperties": true
+    },
+    "branding": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "theme": {
+          "type": "string"
+        },
+        "logo_url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "description",
+        "theme",
+        "logo_url"
+      ],
+      "additionalProperties": true
+    },
+    "platform_url": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "evaluator_grade": {
+      "type": "string"
+    },
+    "is_moderator": {
+      "type": "boolean"
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "must_change_password": {
+      "type": "boolean"
+    },
+    "enabled_modules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ai_evaluation": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "type": "string"
+        },
+        "confidence_threshold": {
+          "type": "integer"
+        },
+        "model_name": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "object",
+          "properties": {
+            "provider": {
+              "type": "string"
+            },
+            "configured": {
+              "type": "boolean"
+            },
+            "valid": {
+              "type": "boolean"
+            },
+            "available": {
+              "type": "boolean"
+            },
+            "message": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "provider",
+            "configured",
+            "valid",
+            "available",
+            "message"
+          ],
+          "additionalProperties": true
+        },
+        "available": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "mode",
+        "confidence_threshold",
+        "model_name",
+        "provider",
+        "available"
+      ],
+      "additionalProperties": true
+    },
+    "tenants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "role"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "session": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "timeout_minutes": {
+          "type": "integer"
+        },
+        "inactivity_lock_enabled": {
+          "type": "boolean"
+        },
+        "inactivity_minutes": {
+          "type": "integer"
+        },
+        "inactivity_lock_hours": {
+          "type": "integer"
+        },
+        "risk_score": {
+          "type": "integer"
+        },
+        "mfa_verified": {
+          "type": "boolean"
+        },
+        "step_up_valid": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "expires_at",
+        "timeout_minutes",
+        "inactivity_lock_enabled",
+        "inactivity_minutes",
+        "inactivity_lock_hours",
+        "risk_score",
+        "mfa_verified",
+        "step_up_valid"
+      ],
+      "additionalProperties": true
+    },
+    "platform_host": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "face_login",
+    "user",
+    "tenant",
+    "branding",
+    "platform_url",
+    "role",
+    "evaluator_grade",
+    "is_moderator",
+    "permissions",
+    "must_change_password",
+    "enabled_modules",
+    "ai_evaluation",
+    "tenants",
+    "session",
+    "platform_host"
+  ],
+  "additionalProperties": true
+}

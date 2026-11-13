@@ -1,0 +1,205 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "allocation_examiner_batches (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "batch_code": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "session_id": {
+        "type": "null"
+      },
+      "session_name": {
+        "type": "string"
+      },
+      "chief": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "code",
+          "display_name",
+          "email"
+        ],
+        "additionalProperties": true
+      },
+      "subjects": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "code": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "code",
+            "name"
+          ],
+          "additionalProperties": true
+        }
+      },
+      "status": {
+        "type": "string"
+      },
+      "min_evaluators": {
+        "type": "integer"
+      },
+      "member_count": {
+        "type": "integer"
+      },
+      "members": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "packet_available": {
+              "type": "boolean"
+            },
+            "packet_blocker": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "evaluator_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "evaluator_code": {
+              "type": "string"
+            },
+            "display_name": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "current_subject": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "code": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "code",
+                "name"
+              ],
+              "additionalProperties": true
+            },
+            "eligible_subject_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            "subject_availability": {
+              "type": "object",
+              "properties": {
+                "052baa0d-4158-40ab-8192-329a1c7ee352": {
+                  "type": "object",
+                  "properties": {
+                    "packet_available": {
+                      "type": "boolean"
+                    },
+                    "packet_blocker": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "packet_available",
+                    "packet_blocker"
+                  ],
+                  "additionalProperties": true
+                }
+              },
+              "required": [
+                "052baa0d-4158-40ab-8192-329a1c7ee352"
+              ],
+              "additionalProperties": true
+            },
+            "total_scripts_evaluated": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "packet_available",
+            "packet_blocker",
+            "id",
+            "evaluator_id",
+            "evaluator_code",
+            "display_name",
+            "status",
+            "current_subject",
+            "eligible_subject_ids",
+            "subject_availability",
+            "total_scripts_evaluated"
+          ],
+          "additionalProperties": true
+        }
+      },
+      "created_at": {
+        "type": "string",
+        "format": "date-time"
+      }
+    },
+    "required": [
+      "id",
+      "batch_code",
+      "name",
+      "session_id",
+      "session_name",
+      "chief",
+      "subjects",
+      "status",
+      "min_evaluators",
+      "member_count",
+      "members",
+      "created_at"
+    ],
+    "additionalProperties": true
+  }
+}

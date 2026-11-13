@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "evaluation_workflow_catalog (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "rework_pending": {
+      "type": "integer"
+    },
+    "role": {
+      "type": "string"
+    },
+    "packets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "packet_id": {
+            "type": "null"
+          },
+          "group_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "barcode": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "evaluator_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "evaluator": {
+            "type": "string"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "submitted": {
+            "type": "integer"
+          },
+          "approved": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "packet_id",
+          "group_id",
+          "barcode",
+          "subject",
+          "evaluator_id",
+          "evaluator",
+          "total",
+          "submitted",
+          "approved"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "available_packets": {
+      "type": "array",
+      "items": {}
+    },
+    "evaluators": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "subject_id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "subject_id"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "reports": {
+      "type": "array",
+      "items": {}
+    },
+    "rejections": {
+      "type": "array",
+      "items": {}
+    }
+  },
+  "required": [
+    "rework_pending",
+    "role",
+    "packets",
+    "available_packets",
+    "evaluators",
+    "reports",
+    "rejections"
+  ],
+  "additionalProperties": true
+}

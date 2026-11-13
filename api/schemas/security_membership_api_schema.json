@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "security_membership (POST response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "user_id": {
+      "type": "integer"
+    },
+    "email": {
+      "type": "string"
+    },
+    "temporary_password": {
+      "type": "string"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "existing_identity": {
+      "type": "boolean"
+    },
+    "role": {
+      "type": "string"
+    },
+    "programme_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "enabled_modules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "operational_centre_id": {
+      "type": "string",
+      "format": "uuid"
+    }
+  },
+  "required": [
+    "id",
+    "user_id",
+    "email",
+    "temporary_password",
+    "expires_at",
+    "existing_identity",
+    "role",
+    "programme_id",
+    "enabled_modules",
+    "operational_centre_id"
+  ],
+  "additionalProperties": true
+}

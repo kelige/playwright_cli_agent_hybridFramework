@@ -1,0 +1,132 @@
+- generic [ref=e1]:
+  - alert [ref=e4]
+  - generic [ref=e37]:
+    - complementary [ref=e38]:
+      - generic [ref=e39]:
+        - button "Enlarge swamy logo" [ref=e40]
+        - generic [ref=e41]:
+          - generic [ref=e42]: swamy
+          - generic [ref=e43]: Evaluation cloud
+        - button "Collapse sidebar" [expanded] [ref=e44] [cursor=pointer]
+      - navigation "Primary navigation" [ref=e48]:
+        - generic [ref=e49]:
+          - generic [ref=e50]: Operations
+          - button "Command centre" [ref=e51] [cursor=pointer]
+          - button "Digitization" [ref=e58] [cursor=pointer]
+          - button "Live operations" [ref=e65] [cursor=pointer]
+        - generic [ref=e70]:
+          - generic [ref=e71]: Administration
+          - button "Exam configuration" [ref=e72] [cursor=pointer]
+          - button "Report Generator" [ref=e75] [cursor=pointer]
+          - button "Evaluator master" [ref=e80] [cursor=pointer]
+          - button "Allocation engine" [ref=e87] [cursor=pointer]
+          - button "Allocation history" [ref=e94] [cursor=pointer]
+          - button "Rejected Scripts" [ref=e100] [cursor=pointer]
+          - button "Revaluation & Recounting" [ref=e107] [cursor=pointer]
+          - button "Results & services" [ref=e114] [cursor=pointer]
+          - button "Student requests" [ref=e120] [cursor=pointer]
+        - generic [ref=e127]:
+          - generic [ref=e128]: Evaluation
+          - button "Anonymization" [ref=e129] [cursor=pointer]
+          - button "Script repository" [ref=e136] [cursor=pointer]
+          - button "Marking schemes" [ref=e141] [cursor=pointer]
+          - button "Evaluation desk" [ref=e146] [cursor=pointer]
+          - button "Assessment control" [ref=e151] [cursor=pointer]
+        - generic [ref=e157]:
+          - generic [ref=e158]: Governance
+          - button "Access governance" [ref=e159] [cursor=pointer]
+          - button "Enterprise settings" [ref=e164] [cursor=pointer]
+          - button "Audit trail" [ref=e169] [cursor=pointer]
+      - generic [ref=e175]: Evaluation core healthy
+    - generic [ref=e178]:
+      - banner [ref=e179]:
+        - generic [ref=e180]:
+          - generic [ref=e181]: SWAMY
+          - generic [ref=e182]: No active examination session
+        - generic [ref=e183]:
+          - button "Select language" [ref=e185] [cursor=pointer]:
+            - generic [ref=e191]: Language
+            - generic [ref=e192]: EN
+          - button "Notifications" [ref=e196] [cursor=pointer]
+          - button "Sign out" [ref=e200] [cursor=pointer]
+          - button "Account settings" [ref=e204] [cursor=pointer]: S
+      - main [ref=e205]:
+        - generic [ref=e206]:
+          - generic [ref=e207]:
+            - heading "Exam configuration" [level=1] [ref=e362]
+            - paragraph [ref=e210]: Versioned paper rules, marks and readiness state.
+          - button "Refresh" [ref=e211] [cursor=pointer]
+        - generic [ref=e363]:
+          - button "NOT READY No examination session Papers 0 Open issues 1" [ref=e364] [cursor=pointer]:
+            - generic [ref=e365]:
+              - strong [ref=e366]: NOT READY
+              - generic [ref=e367]: No examination session
+            - generic [ref=e368]:
+              - generic [ref=e369]: Papers
+              - strong [ref=e370]: "0"
+            - generic [ref=e371]:
+              - generic [ref=e372]: Open issues
+              - strong [ref=e373]: "1"
+          - generic [ref=e376]:
+            - generic [ref=e377]:
+              - tablist "Configuration groups" [ref=e378]:
+                - tab "Sessions" [selected] [ref=e379] [cursor=pointer]
+                - tab "Subjects" [ref=e380] [cursor=pointer]
+                - tab "Papers" [ref=e381] [cursor=pointer]
+              - tablist "Sessions configuration" [ref=e382]:
+                - tab "Degree / Programme" [selected] [ref=e383] [cursor=pointer]
+                - tab "Scheme / Regulation" [ref=e384] [cursor=pointer]
+                - tab "Academic years" [ref=e385] [cursor=pointer]
+                - tab "Exam sessions" [ref=e386] [cursor=pointer]
+            - generic [ref=e387]:
+              - button "Template" [ref=e388] [cursor=pointer]
+              - button "Import Excel" [ref=e392] [cursor=pointer]
+            - group [ref=e396]:
+              - button "Add Degree / Programme" [active] [ref=e397] [cursor=pointer]
+          - generic [ref=e399]:
+            - generic [ref=e401]:
+              - heading "Degree / Programme" [level=2] [ref=e402]
+              - paragraph [ref=e403]: 1 configured records
+            - generic [ref=e405]:
+              - generic [ref=e406]:
+                - searchbox "Search table records" [ref=e411]
+                - button "Sort" [ref=e413] [cursor=pointer]
+              - generic "Scrollable table" [ref=e417]:
+                - table [ref=e418]:
+                  - rowgroup [ref=e419]:
+                    - row [ref=e420]:
+                      - columnheader "Code" [ref=e421]
+                      - columnheader "Name" [ref=e422]
+                      - columnheader "Scheme / Regulation" [ref=e423]
+                      - columnheader "Is Active" [ref=e424]
+                      - columnheader "Version" [ref=e425]
+                      - columnheader "Actions" [ref=e426]
+                  - rowgroup [ref=e427]:
+                    - row [ref=e428]:
+                      - cell "DVS-TEST-001" [ref=e429]
+                      - cell "DVS Test Programme" [ref=e430]
+                      - cell "DVS-REG-001" [ref=e431]
+                      - cell "Active" [ref=e432]
+                      - cell "1" [ref=e433]
+                      - cell [ref=e434]:
+                        - group [ref=e435]:
+                          - button "Edit DVS Test Programme" [ref=e436] [cursor=pointer]
+                          - button "Revision history" [ref=e440] [cursor=pointer]
+                          - button "Deactivate record" [ref=e445] [cursor=pointer]: Deactivate
+          - dialog [ref=e450]:
+            - generic [ref=e451]:
+              - generic [ref=e452]:
+                - heading "Add Degree / Programme" [level=2] [ref=e453]
+                - paragraph [ref=e454]: This record becomes part of the active university configuration.
+              - button "Close" [ref=e455] [cursor=pointer]
+            - generic [ref=e459]:
+              - generic [ref=e460]:
+                - generic [ref=e461]:
+                  - generic [ref=e462]: Degree / Programme code
+                  - textbox "Degree / Programme code" [ref=e463]
+                - generic [ref=e464]:
+                  - generic [ref=e465]: Degree / Programme name
+                  - textbox "Degree / Programme name" [ref=e466]
+              - generic [ref=e467]:
+                - button "Cancel" [ref=e468] [cursor=pointer]
+                - button "Create record" [ref=e469] [cursor=pointer]

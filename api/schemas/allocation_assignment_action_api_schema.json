@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "allocation_assignment_action (POST response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "batch_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "script_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "script": {
+      "type": "string"
+    },
+    "paper_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "paper": {
+      "type": "string"
+    },
+    "paper_title": {
+      "type": "string"
+    },
+    "subject_name": {
+      "type": "string"
+    },
+    "subject_code": {
+      "type": "string"
+    },
+    "page_count": {
+      "type": "integer"
+    },
+    "evaluator_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "evaluator": {
+      "type": "string"
+    },
+    "valuation_round": {
+      "type": "integer"
+    },
+    "status": {
+      "type": "string"
+    },
+    "ai_status": {
+      "type": "null"
+    },
+    "quality_score": {
+      "type": "number"
+    },
+    "source": {
+      "type": "string"
+    },
+    "priority": {
+      "type": "integer"
+    },
+    "is_flagged": {
+      "type": "boolean"
+    },
+    "is_rejected": {
+      "type": "boolean"
+    },
+    "rejection_status": {
+      "type": "null"
+    },
+    "flag_reason": {
+      "type": "string"
+    },
+    "skipped_at": {
+      "type": "null"
+    },
+    "draft_saved_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_opened_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_page": {
+      "type": "integer"
+    },
+    "progress_percent": {
+      "type": "integer"
+    },
+    "due_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "id",
+    "batch_id",
+    "script_id",
+    "script",
+    "paper_id",
+    "paper",
+    "paper_title",
+    "subject_name",
+    "subject_code",
+    "page_count",
+    "evaluator_id",
+    "evaluator",
+    "valuation_round",
+    "status",
+    "ai_status",
+    "quality_score",
+    "source",
+    "priority",
+    "is_flagged",
+    "is_rejected",
+    "rejection_status",
+    "flag_reason",
+    "skipped_at",
+    "draft_saved_at",
+    "last_opened_at",
+    "last_page",
+    "progress_percent",
+    "due_at",
+    "version"
+  ],
+  "additionalProperties": true
+}

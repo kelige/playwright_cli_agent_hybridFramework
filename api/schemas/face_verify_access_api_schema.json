@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "face_verify_access (POST response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "evaluator_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "evaluator_code": {
+      "type": "string"
+    },
+    "evaluator_name": {
+      "type": "string"
+    },
+    "assignment_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "verified": {
+      "type": "boolean"
+    },
+    "liveness_verified": {
+      "type": "boolean"
+    },
+    "authorized": {
+      "type": "boolean"
+    },
+    "access_granted": {
+      "type": "boolean"
+    },
+    "similarity_score": {
+      "type": "string"
+    },
+    "threshold": {
+      "type": "string"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "id",
+    "evaluator_id",
+    "evaluator_code",
+    "evaluator_name",
+    "assignment_id",
+    "verified",
+    "liveness_verified",
+    "authorized",
+    "access_granted",
+    "similarity_score",
+    "threshold",
+    "expires_at"
+  ],
+  "additionalProperties": true
+}

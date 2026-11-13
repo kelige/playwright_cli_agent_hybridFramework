@@ -1,0 +1,312 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "phase4_catalog (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "references": {
+      "type": "object",
+      "properties": {
+        "evaluators": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "evaluator_code": {
+                "type": "string"
+              },
+              "display_name": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "daily_capacity": {
+                "type": "integer"
+              },
+              "version": {
+                "type": "integer"
+              },
+              "subject_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "evaluator_code",
+              "display_name",
+              "status",
+              "daily_capacity",
+              "version",
+              "subject_ids"
+            ],
+            "additionalProperties": true
+          }
+        },
+        "sessions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "name": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "evaluation_starts_at": {
+                "type": "null"
+              },
+              "evaluation_ends_at": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "status",
+              "evaluation_starts_at",
+              "evaluation_ends_at"
+            ],
+            "additionalProperties": true
+          }
+        }
+      },
+      "required": [
+        "evaluators",
+        "sessions"
+      ],
+      "additionalProperties": true
+    },
+    "monitoring": {
+      "type": "object",
+      "properties": {
+        "generated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "active_evaluations": {
+          "type": "integer"
+        },
+        "remaining_scripts": {
+          "type": "integer"
+        },
+        "online_evaluators": {
+          "type": "integer"
+        },
+        "deadline_risk": {
+          "type": "integer"
+        },
+        "evaluators": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "evaluator_id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "code": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "assigned": {
+                "type": "integer"
+              },
+              "completed": {
+                "type": "integer"
+              },
+              "active": {
+                "type": "integer"
+              },
+              "remaining": {
+                "type": "integer"
+              },
+              "capacity": {
+                "type": "integer"
+              },
+              "deadline_risk": {
+                "type": "boolean"
+              },
+              "projected_days": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "evaluator_id",
+              "code",
+              "name",
+              "assigned",
+              "completed",
+              "active",
+              "remaining",
+              "capacity",
+              "deadline_risk",
+              "projected_days"
+            ],
+            "additionalProperties": true
+          }
+        }
+      },
+      "required": [
+        "generated_at",
+        "active_evaluations",
+        "remaining_scripts",
+        "online_evaluators",
+        "deadline_risk",
+        "evaluators"
+      ],
+      "additionalProperties": true
+    },
+    "active_evaluations": {
+      "type": "array",
+      "items": {}
+    },
+    "remote_support_sessions": {
+      "type": "array",
+      "items": {}
+    },
+    "attendance": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "evaluator_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "evaluator_name": {
+            "type": "string"
+          },
+          "evaluator_code": {
+            "type": "string"
+          },
+          "session_id": {
+            "type": "null"
+          },
+          "present": {
+            "type": "boolean"
+          },
+          "role": {
+            "type": "string"
+          },
+          "checked_in_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "checked_out_at": {
+            "type": "null"
+          },
+          "active_seconds": {
+            "type": "integer"
+          },
+          "idle_seconds": {
+            "type": "integer"
+          },
+          "exception": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "evaluator_id",
+          "evaluator_name",
+          "evaluator_code",
+          "session_id",
+          "present",
+          "role",
+          "checked_in_at",
+          "checked_out_at",
+          "active_seconds",
+          "idle_seconds",
+          "exception"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "location_checkins": {
+      "type": "array",
+      "items": {}
+    },
+    "evaluator_script_counts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "evaluator_name": {
+            "type": "string"
+          },
+          "evaluator_code": {
+            "type": "string"
+          },
+          "assigned_count": {
+            "type": "integer"
+          },
+          "completed_count": {
+            "type": "integer"
+          },
+          "pending_count": {
+            "type": "integer"
+          },
+          "rejected_count": {
+            "type": "integer"
+          },
+          "bonus_scripts": {
+            "type": "integer"
+          },
+          "extra_scripts": {
+            "type": "integer"
+          },
+          "total_count": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "evaluator_name",
+          "evaluator_code",
+          "assigned_count",
+          "completed_count",
+          "pending_count",
+          "rejected_count",
+          "bonus_scripts",
+          "extra_scripts",
+          "total_count"
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": [
+    "references",
+    "monitoring",
+    "active_evaluations",
+    "remote_support_sessions",
+    "attendance",
+    "location_checkins",
+    "evaluator_script_counts"
+  ],
+  "additionalProperties": true
+}

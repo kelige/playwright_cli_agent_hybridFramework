@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "auth_csrf (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "csrf_token": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "csrf_token"
+  ],
+  "additionalProperties": true
+}

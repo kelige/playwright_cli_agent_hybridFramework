@@ -1,0 +1,958 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "marking_workspace (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "assignment": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "script": {
+          "type": "string"
+        },
+        "paper": {
+          "type": "string"
+        },
+        "paper_title": {
+          "type": "string"
+        },
+        "subject_name": {
+          "type": "string"
+        },
+        "subject_code": {
+          "type": "string"
+        },
+        "round": {
+          "type": "integer"
+        },
+        "page_count": {
+          "type": "integer"
+        },
+        "status": {
+          "type": "string"
+        },
+        "maximum_marks": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "script",
+        "paper",
+        "paper_title",
+        "subject_name",
+        "subject_code",
+        "round",
+        "page_count",
+        "status",
+        "maximum_marks"
+      ],
+      "additionalProperties": true
+    },
+    "evaluation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "status": {
+          "type": "string"
+        },
+        "timer": {
+          "type": "object",
+          "properties": {
+            "evaluation_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "minEvaluationMinutes": {
+              "type": "integer"
+            },
+            "endsAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "remainingMs": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "evaluation_id",
+            "minEvaluationMinutes",
+            "endsAt",
+            "remainingMs"
+          ],
+          "additionalProperties": true
+        },
+        "total_marks": {
+          "type": "integer"
+        },
+        "version": {
+          "type": "integer"
+        },
+        "last_question_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "last_page": {
+          "type": "integer"
+        },
+        "bosc_checks": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "id",
+        "status",
+        "timer",
+        "total_marks",
+        "version",
+        "last_question_id",
+        "last_page",
+        "bosc_checks"
+      ],
+      "additionalProperties": true
+    },
+    "workflow": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "state": {
+          "type": "string"
+        },
+        "version": {
+          "type": "integer"
+        },
+        "last_page": {
+          "type": "integer"
+        },
+        "latest_draft_sequence": {
+          "type": "integer"
+        },
+        "draft_expires_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "state",
+        "version",
+        "last_page",
+        "latest_draft_sequence",
+        "draft_expires_at"
+      ],
+      "additionalProperties": true
+    },
+    "scheme": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "title": {
+          "type": "string"
+        },
+        "version": {
+          "type": "integer"
+        },
+        "digest": {
+          "type": "string"
+        },
+        "guidelines": {
+          "type": "string"
+        },
+        "instructions": {
+          "type": "string"
+        },
+        "pdf_url": {
+          "type": "string"
+        },
+        "question_pdf_url": {
+          "type": "string"
+        },
+        "question_paper_url": {
+          "type": "string"
+        },
+        "question_paper_mime_type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "version",
+        "digest",
+        "guidelines",
+        "instructions",
+        "pdf_url",
+        "question_pdf_url",
+        "question_paper_url",
+        "question_paper_mime_type"
+      ],
+      "additionalProperties": true
+    },
+    "selection": {
+      "type": "object",
+      "properties": {
+        "best_of_per_group": {
+          "type": "integer"
+        },
+        "module_wise": {
+          "type": "boolean"
+        },
+        "module_best_of_questions": {
+          "type": "integer"
+        },
+        "module_pair_size": {
+          "type": "integer"
+        },
+        "raw_total": {
+          "type": "integer"
+        },
+        "selected_total": {
+          "type": "integer"
+        },
+        "selected_mark_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "excluded_mark_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "module_details": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "additionalProperties": true
+        },
+        "section_wise": {
+          "type": "boolean"
+        },
+        "section_details": {
+          "type": "object",
+          "properties": {
+            "A": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "selected_numbers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "scores": {
+                  "type": "object",
+                  "properties": {
+                    "1": {
+                      "type": "integer"
+                    },
+                    "2": {
+                      "type": "integer"
+                    },
+                    "3": {
+                      "type": "integer"
+                    },
+                    "4": {
+                      "type": "integer"
+                    },
+                    "5": {
+                      "type": "integer"
+                    },
+                    "6": {
+                      "type": "integer"
+                    },
+                    "7": {
+                      "type": "integer"
+                    },
+                    "8": {
+                      "type": "integer"
+                    },
+                    "9": {
+                      "type": "integer"
+                    },
+                    "10": {
+                      "type": "integer"
+                    },
+                    "11": {
+                      "type": "integer"
+                    },
+                    "12": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10",
+                    "11",
+                    "12"
+                  ],
+                  "additionalProperties": true
+                },
+                "attempt_count": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "name",
+                "selected_numbers",
+                "scores",
+                "attempt_count"
+              ],
+              "additionalProperties": true
+            },
+            "B": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "selected_numbers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "scores": {
+                  "type": "object",
+                  "properties": {
+                    "13": {
+                      "type": "integer"
+                    },
+                    "14": {
+                      "type": "integer"
+                    },
+                    "15": {
+                      "type": "integer"
+                    },
+                    "16": {
+                      "type": "integer"
+                    },
+                    "17": {
+                      "type": "integer"
+                    },
+                    "18": {
+                      "type": "integer"
+                    },
+                    "19": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "13",
+                    "14",
+                    "15",
+                    "16",
+                    "17",
+                    "18",
+                    "19"
+                  ],
+                  "additionalProperties": true
+                },
+                "attempt_count": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "name",
+                "selected_numbers",
+                "scores",
+                "attempt_count"
+              ],
+              "additionalProperties": true
+            },
+            "C": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "selected_numbers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "scores": {
+                  "type": "object",
+                  "properties": {
+                    "20": {
+                      "type": "integer"
+                    },
+                    "21": {
+                      "type": "integer"
+                    },
+                    "22": {
+                      "type": "integer"
+                    },
+                    "23": {
+                      "type": "integer"
+                    },
+                    "24": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "20",
+                    "21",
+                    "22",
+                    "23",
+                    "24"
+                  ],
+                  "additionalProperties": true
+                },
+                "attempt_count": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "name",
+                "selected_numbers",
+                "scores",
+                "attempt_count"
+              ],
+              "additionalProperties": true
+            }
+          },
+          "required": [
+            "A",
+            "B",
+            "C"
+          ],
+          "additionalProperties": true
+        },
+        "subquestion_attempts": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "best_of_per_group",
+        "module_wise",
+        "module_best_of_questions",
+        "module_pair_size",
+        "raw_total",
+        "selected_total",
+        "selected_mark_ids",
+        "excluded_mark_ids",
+        "module_details",
+        "section_wise",
+        "section_details",
+        "subquestion_attempts"
+      ],
+      "additionalProperties": true
+    },
+    "paper_rules": {
+      "type": "object",
+      "properties": {
+        "module_wise": {
+          "type": "boolean"
+        },
+        "revaluation": {
+          "type": "boolean"
+        },
+        "section_wise": {
+          "type": "boolean"
+        },
+        "section_config": {
+          "type": "object",
+          "properties": {
+            "sections": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "max_marks": {
+                    "type": "integer"
+                  },
+                  "questions": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "section_id": {
+                    "type": "string"
+                  },
+                  "instructions": {
+                    "type": "string"
+                  },
+                  "attempt_count": {
+                    "type": "integer"
+                  },
+                  "question_count": {
+                    "type": "integer"
+                  },
+                  "question_marks": {
+                    "type": "object",
+                    "properties": {
+                      "1": {
+                        "type": "integer"
+                      },
+                      "2": {
+                        "type": "integer"
+                      },
+                      "3": {
+                        "type": "integer"
+                      },
+                      "4": {
+                        "type": "integer"
+                      },
+                      "5": {
+                        "type": "integer"
+                      },
+                      "6": {
+                        "type": "integer"
+                      },
+                      "7": {
+                        "type": "integer"
+                      },
+                      "8": {
+                        "type": "integer"
+                      },
+                      "9": {
+                        "type": "integer"
+                      },
+                      "10": {
+                        "type": "integer"
+                      },
+                      "11": {
+                        "type": "integer"
+                      },
+                      "12": {
+                        "type": "integer"
+                      },
+                      "13": {
+                        "type": "integer"
+                      },
+                      "14": {
+                        "type": "integer"
+                      },
+                      "15": {
+                        "type": "integer"
+                      },
+                      "16": {
+                        "type": "integer"
+                      },
+                      "17": {
+                        "type": "integer"
+                      },
+                      "18": {
+                        "type": "integer"
+                      },
+                      "19": {
+                        "type": "integer"
+                      },
+                      "20": {
+                        "type": "integer"
+                      },
+                      "21": {
+                        "type": "integer"
+                      },
+                      "22": {
+                        "type": "integer"
+                      },
+                      "23": {
+                        "type": "integer"
+                      },
+                      "24": {
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "1",
+                      "2",
+                      "3",
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8",
+                      "9",
+                      "10",
+                      "11",
+                      "12",
+                      "13",
+                      "14",
+                      "15",
+                      "16",
+                      "17",
+                      "18",
+                      "19",
+                      "20",
+                      "21",
+                      "22",
+                      "23",
+                      "24"
+                    ],
+                    "additionalProperties": true
+                  },
+                  "selection_rule": {
+                    "type": "string"
+                  },
+                  "marks_per_question": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "name",
+                  "max_marks",
+                  "questions",
+                  "section_id",
+                  "instructions",
+                  "attempt_count",
+                  "question_count",
+                  "question_marks",
+                  "selection_rule",
+                  "marks_per_question"
+                ],
+                "additionalProperties": true
+              }
+            },
+            "question_marks": {
+              "type": "object",
+              "properties": {
+                "1": {
+                  "type": "integer"
+                },
+                "2": {
+                  "type": "integer"
+                },
+                "3": {
+                  "type": "integer"
+                },
+                "4": {
+                  "type": "integer"
+                },
+                "5": {
+                  "type": "integer"
+                },
+                "6": {
+                  "type": "integer"
+                },
+                "7": {
+                  "type": "integer"
+                },
+                "8": {
+                  "type": "integer"
+                },
+                "9": {
+                  "type": "integer"
+                },
+                "10": {
+                  "type": "integer"
+                },
+                "11": {
+                  "type": "integer"
+                },
+                "12": {
+                  "type": "integer"
+                },
+                "13": {
+                  "type": "integer"
+                },
+                "14": {
+                  "type": "integer"
+                },
+                "15": {
+                  "type": "integer"
+                },
+                "16": {
+                  "type": "integer"
+                },
+                "17": {
+                  "type": "integer"
+                },
+                "18": {
+                  "type": "integer"
+                },
+                "19": {
+                  "type": "integer"
+                },
+                "20": {
+                  "type": "integer"
+                },
+                "21": {
+                  "type": "integer"
+                },
+                "22": {
+                  "type": "integer"
+                },
+                "23": {
+                  "type": "integer"
+                },
+                "24": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16",
+                "17",
+                "18",
+                "19",
+                "20",
+                "21",
+                "22",
+                "23",
+                "24"
+              ],
+              "additionalProperties": true
+            },
+            "question_parts": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": true
+            },
+            "total_maximum_marks": {
+              "type": "integer"
+            },
+            "subquestion_attempts": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": true
+            }
+          },
+          "required": [
+            "sections",
+            "question_marks",
+            "question_parts",
+            "total_maximum_marks",
+            "subquestion_attempts"
+          ],
+          "additionalProperties": true
+        },
+        "structure_type": {
+          "type": "string"
+        },
+        "critical_change": {
+          "type": "boolean"
+        },
+        "evaluation_mode": {
+          "type": "string"
+        },
+        "answer_selection": {
+          "type": "object",
+          "properties": {
+            "best_of_per_group": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "best_of_per_group"
+          ],
+          "additionalProperties": true
+        },
+        "pages_per_script": {
+          "type": "integer"
+        },
+        "scripts_per_packet": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "module_wise",
+        "revaluation",
+        "section_wise",
+        "section_config",
+        "structure_type",
+        "critical_change",
+        "evaluation_mode",
+        "answer_selection",
+        "pages_per_script",
+        "scripts_per_packet"
+      ],
+      "additionalProperties": true
+    },
+    "bosc_checks": {
+      "type": "array",
+      "items": {}
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "number": {
+            "type": "string"
+          },
+          "sub_question": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "max_marks": {
+            "type": "integer"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "criteria": {
+            "type": "array",
+            "items": {}
+          }
+        },
+        "required": [
+          "id",
+          "number",
+          "sub_question",
+          "label",
+          "max_marks",
+          "required",
+          "criteria"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "marks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "question_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "sub_question": {
+            "type": "string"
+          },
+          "marks": {
+            "type": "integer"
+          },
+          "outcome": {
+            "type": "string"
+          },
+          "adjustment": {
+            "type": "string"
+          },
+          "step_marks": {
+            "type": "array",
+            "items": {}
+          },
+          "criterion_id": {
+            "type": "null"
+          },
+          "marked_for_review": {
+            "type": "boolean"
+          },
+          "requires_attention": {
+            "type": "boolean"
+          },
+          "examiner_confirmed": {
+            "type": "boolean"
+          },
+          "answer_selection": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": true
+          },
+          "sequence": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "question_id",
+          "sub_question",
+          "marks",
+          "outcome",
+          "adjustment",
+          "step_marks",
+          "criterion_id",
+          "marked_for_review",
+          "requires_attention",
+          "examiner_confirmed",
+          "answer_selection",
+          "sequence"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "annotations": {
+      "type": "array",
+      "items": {}
+    },
+    "comments": {
+      "type": "array",
+      "items": {}
+    },
+    "page_anchors": {
+      "type": "array",
+      "items": {}
+    }
+  },
+  "required": [
+    "assignment",
+    "evaluation",
+    "workflow",
+    "scheme",
+    "selection",
+    "paper_rules",
+    "bosc_checks",
+    "questions",
+    "marks",
+    "annotations",
+    "comments",
+    "page_anchors"
+  ],
+  "additionalProperties": true
+}

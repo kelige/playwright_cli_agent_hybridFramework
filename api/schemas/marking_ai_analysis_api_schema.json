@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "marking_ai_analysis (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "mode": {
+      "type": "string"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "confidence_threshold": {
+      "type": "integer"
+    },
+    "provider": {
+      "type": "object",
+      "properties": {
+        "provider": {
+          "type": "string"
+        },
+        "configured": {
+          "type": "boolean"
+        },
+        "valid": {
+          "type": "boolean"
+        },
+        "available": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "provider",
+        "configured",
+        "valid",
+        "available",
+        "message"
+      ],
+      "additionalProperties": true
+    },
+    "analysis": {
+      "type": "null"
+    }
+  },
+  "required": [
+    "mode",
+    "enabled",
+    "confidence_threshold",
+    "provider",
+    "analysis"
+  ],
+  "additionalProperties": true
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "allocation_allocate_subject_group (POST response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "group_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "allocated_count": {
+      "type": "integer"
+    },
+    "ai_queued_count": {
+      "type": "integer"
+    },
+    "assignments": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      }
+    }
+  },
+  "required": [
+    "group_id",
+    "allocated_count",
+    "ai_queued_count",
+    "assignments"
+  ],
+  "additionalProperties": true
+}

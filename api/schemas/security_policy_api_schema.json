@@ -1,0 +1,174 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "security_policy (PUT response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "version": {
+      "type": "integer"
+    },
+    "session_timeout_minutes": {
+      "type": "integer"
+    },
+    "maximum_concurrent_sessions": {
+      "type": "integer"
+    },
+    "step_up_minutes": {
+      "type": "integer"
+    },
+    "failed_login_limit": {
+      "type": "integer"
+    },
+    "lockout_minutes": {
+      "type": "integer"
+    },
+    "require_mfa": {
+      "type": "boolean"
+    },
+    "require_trusted_device": {
+      "type": "boolean"
+    },
+    "approved_networks": {
+      "type": "array",
+      "items": {}
+    },
+    "allowed_countries": {
+      "type": "array",
+      "items": {}
+    },
+    "vpn_risk_threshold": {
+      "type": "integer"
+    },
+    "alert_risk_threshold": {
+      "type": "integer"
+    },
+    "dlp_enabled": {
+      "type": "boolean"
+    },
+    "evaluation_strict_mode": {
+      "type": "boolean"
+    },
+    "evaluation_identity_verification_required": {
+      "type": "boolean"
+    },
+    "evaluation_camera_required": {
+      "type": "boolean"
+    },
+    "evaluation_fullscreen_required": {
+      "type": "boolean"
+    },
+    "evaluation_single_screen_required": {
+      "type": "boolean"
+    },
+    "evaluation_mobile_allowed": {
+      "type": "boolean"
+    },
+    "evaluation_event_recording": {
+      "type": "boolean"
+    },
+    "evaluation_pause_on_violation": {
+      "type": "boolean"
+    },
+    "evaluation_require_resume_step_up": {
+      "type": "boolean"
+    },
+    "evaluation_allow_clipboard": {
+      "type": "boolean"
+    },
+    "evaluation_allow_download": {
+      "type": "boolean"
+    },
+    "evaluation_allow_print": {
+      "type": "boolean"
+    },
+    "evaluation_allow_screenshot": {
+      "type": "boolean"
+    },
+    "evaluation_session_timeout_minutes": {
+      "type": "integer"
+    },
+    "evaluation_inactivity_lock_enabled": {
+      "type": "boolean"
+    },
+    "evaluation_inactivity_minutes": {
+      "type": "integer"
+    },
+    "evaluation_inactivity_lock_hours": {
+      "type": "integer"
+    },
+    "minEvaluationMinutes": {
+      "type": "integer"
+    },
+    "min_evaluation_minutes": {
+      "type": "integer"
+    },
+    "evaluation_heartbeat_seconds": {
+      "type": "integer"
+    },
+    "evaluation_no_face_seconds": {
+      "type": "integer"
+    },
+    "evaluation_retention_days": {
+      "type": "integer"
+    },
+    "ai_evaluation_mode": {
+      "type": "string"
+    },
+    "ai_confidence_threshold": {
+      "type": "integer"
+    },
+    "ai_evaluation_strictness": {
+      "type": "integer"
+    },
+    "ai_model_name": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "session_timeout_minutes",
+    "maximum_concurrent_sessions",
+    "step_up_minutes",
+    "failed_login_limit",
+    "lockout_minutes",
+    "require_mfa",
+    "require_trusted_device",
+    "approved_networks",
+    "allowed_countries",
+    "vpn_risk_threshold",
+    "alert_risk_threshold",
+    "dlp_enabled",
+    "evaluation_strict_mode",
+    "evaluation_identity_verification_required",
+    "evaluation_camera_required",
+    "evaluation_fullscreen_required",
+    "evaluation_single_screen_required",
+    "evaluation_mobile_allowed",
+    "evaluation_event_recording",
+    "evaluation_pause_on_violation",
+    "evaluation_require_resume_step_up",
+    "evaluation_allow_clipboard",
+    "evaluation_allow_download",
+    "evaluation_allow_print",
+    "evaluation_allow_screenshot",
+    "evaluation_session_timeout_minutes",
+    "evaluation_inactivity_lock_enabled",
+    "evaluation_inactivity_minutes",
+    "evaluation_inactivity_lock_hours",
+    "minEvaluationMinutes",
+    "min_evaluation_minutes",
+    "evaluation_heartbeat_seconds",
+    "evaluation_no_face_seconds",
+    "evaluation_retention_days",
+    "ai_evaluation_mode",
+    "ai_confidence_threshold",
+    "ai_evaluation_strictness",
+    "ai_model_name"
+  ],
+  "additionalProperties": true
+}

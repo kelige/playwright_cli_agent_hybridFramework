@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "repository_script_complete (POST response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "script_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "script_code": {
+      "type": "string"
+    },
+    "version": {
+      "type": "integer"
+    },
+    "state": {
+      "type": "string"
+    },
+    "processing_run_id": {
+      "type": "string",
+      "format": "uuid"
+    }
+  },
+  "required": [
+    "script_id",
+    "script_code",
+    "version",
+    "state",
+    "processing_run_id"
+  ],
+  "additionalProperties": true
+}

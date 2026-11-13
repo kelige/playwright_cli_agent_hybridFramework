@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "chairman_history (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "action": {
+            "type": "string"
+          },
+          "aggregate_type": {
+            "type": "string"
+          },
+          "aggregate_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "actor_id": {
+            "type": "string"
+          },
+          "payload": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "subject_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "required": [
+              "code",
+              "subject_ids"
+            ],
+            "additionalProperties": true
+          },
+          "occurred_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "id",
+          "action",
+          "aggregate_type",
+          "aggregate_id",
+          "actor_id",
+          "payload",
+          "occurred_at"
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": [
+    "history"
+  ],
+  "additionalProperties": true
+}

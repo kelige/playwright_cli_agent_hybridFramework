@@ -1,0 +1,197 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "evaluator_team (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "chief": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "display_name": {
+          "type": "string"
+        },
+        "evaluator_code": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "is_universal": {
+          "type": "boolean"
+        },
+        "subject_names": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "team_count": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "display_name",
+        "evaluator_code",
+        "email",
+        "is_universal",
+        "subject_names",
+        "team_count"
+      ],
+      "additionalProperties": true
+    },
+    "assigned_evaluators": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "evaluator_code": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "institution_name": {
+            "type": "string"
+          },
+          "grade": {
+            "type": "string"
+          },
+          "daily_capacity": {
+            "type": "integer"
+          },
+          "subjects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "code": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "code",
+                "name"
+              ],
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "id",
+          "evaluator_code",
+          "display_name",
+          "email",
+          "institution_name",
+          "grade",
+          "daily_capacity",
+          "subjects"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "available_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "evaluator_code": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "institution_name": {
+            "type": "string"
+          },
+          "grade": {
+            "type": "string"
+          },
+          "daily_capacity": {
+            "type": "integer"
+          },
+          "is_assigned": {
+            "type": "boolean"
+          },
+          "current_chief_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "current_chief_name": {
+            "type": "string"
+          },
+          "subjects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "code": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "code",
+                "name"
+              ],
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "id",
+          "evaluator_code",
+          "display_name",
+          "email",
+          "institution_name",
+          "grade",
+          "daily_capacity",
+          "is_assigned",
+          "current_chief_id",
+          "current_chief_name",
+          "subjects"
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": [
+    "chief",
+    "assigned_evaluators",
+    "available_candidates"
+  ],
+  "additionalProperties": true
+}

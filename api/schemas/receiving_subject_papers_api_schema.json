@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "receiving_subject_papers (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "papers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "scripts_per_packet": {
+            "type": "integer"
+          },
+          "pages_per_script": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "code",
+          "title",
+          "scripts_per_packet",
+          "pages_per_script"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "source_institutions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "code",
+          "name"
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": [
+    "papers",
+    "source_institutions"
+  ],
+  "additionalProperties": true
+}

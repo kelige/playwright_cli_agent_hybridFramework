@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "face_status (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "evaluator_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "evaluator_code": {
+      "type": "string"
+    },
+    "evaluator_name": {
+      "type": "string"
+    },
+    "enrolled": {
+      "type": "boolean"
+    },
+    "status": {
+      "type": "string"
+    },
+    "model_version": {
+      "type": "string"
+    },
+    "enrolled_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_verified_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "threshold": {
+      "type": "string"
+    },
+    "quality_score": {
+      "type": "string"
+    },
+    "version": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "evaluator_id",
+    "evaluator_code",
+    "evaluator_name",
+    "enrolled",
+    "status",
+    "model_version",
+    "enrolled_at",
+    "last_verified_at",
+    "threshold",
+    "quality_score",
+    "version"
+  ],
+  "additionalProperties": true
+}

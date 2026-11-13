@@ -1,0 +1,655 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "security_catalog (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "current_role": {
+      "type": "string"
+    },
+    "current_user_id": {
+      "type": "integer"
+    },
+    "capabilities": {
+      "type": "object",
+      "properties": {
+        "manage_users": {
+          "type": "boolean"
+        },
+        "manage_colleges": {
+          "type": "boolean"
+        },
+        "manage_security_policy": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "manage_users",
+        "manage_colleges",
+        "manage_security_policy"
+      ],
+      "additionalProperties": true
+    },
+    "policy": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "version": {
+          "type": "integer"
+        },
+        "session_timeout_minutes": {
+          "type": "integer"
+        },
+        "maximum_concurrent_sessions": {
+          "type": "integer"
+        },
+        "step_up_minutes": {
+          "type": "integer"
+        },
+        "failed_login_limit": {
+          "type": "integer"
+        },
+        "lockout_minutes": {
+          "type": "integer"
+        },
+        "require_mfa": {
+          "type": "boolean"
+        },
+        "require_trusted_device": {
+          "type": "boolean"
+        },
+        "approved_networks": {
+          "type": "array",
+          "items": {}
+        },
+        "allowed_countries": {
+          "type": "array",
+          "items": {}
+        },
+        "vpn_risk_threshold": {
+          "type": "integer"
+        },
+        "alert_risk_threshold": {
+          "type": "integer"
+        },
+        "dlp_enabled": {
+          "type": "boolean"
+        },
+        "evaluation_strict_mode": {
+          "type": "boolean"
+        },
+        "evaluation_identity_verification_required": {
+          "type": "boolean"
+        },
+        "evaluation_camera_required": {
+          "type": "boolean"
+        },
+        "evaluation_fullscreen_required": {
+          "type": "boolean"
+        },
+        "evaluation_single_screen_required": {
+          "type": "boolean"
+        },
+        "evaluation_mobile_allowed": {
+          "type": "boolean"
+        },
+        "evaluation_event_recording": {
+          "type": "boolean"
+        },
+        "evaluation_pause_on_violation": {
+          "type": "boolean"
+        },
+        "evaluation_require_resume_step_up": {
+          "type": "boolean"
+        },
+        "evaluation_allow_clipboard": {
+          "type": "boolean"
+        },
+        "evaluation_allow_download": {
+          "type": "boolean"
+        },
+        "evaluation_allow_print": {
+          "type": "boolean"
+        },
+        "evaluation_allow_screenshot": {
+          "type": "boolean"
+        },
+        "evaluation_session_timeout_minutes": {
+          "type": "integer"
+        },
+        "evaluation_inactivity_lock_enabled": {
+          "type": "boolean"
+        },
+        "evaluation_inactivity_minutes": {
+          "type": "integer"
+        },
+        "evaluation_inactivity_lock_hours": {
+          "type": "integer"
+        },
+        "minEvaluationMinutes": {
+          "type": "integer"
+        },
+        "min_evaluation_minutes": {
+          "type": "integer"
+        },
+        "evaluation_heartbeat_seconds": {
+          "type": "integer"
+        },
+        "evaluation_no_face_seconds": {
+          "type": "integer"
+        },
+        "evaluation_retention_days": {
+          "type": "integer"
+        },
+        "ai_evaluation_mode": {
+          "type": "string"
+        },
+        "ai_confidence_threshold": {
+          "type": "integer"
+        },
+        "ai_evaluation_strictness": {
+          "type": "integer"
+        },
+        "ai_model_name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "session_timeout_minutes",
+        "maximum_concurrent_sessions",
+        "step_up_minutes",
+        "failed_login_limit",
+        "lockout_minutes",
+        "require_mfa",
+        "require_trusted_device",
+        "approved_networks",
+        "allowed_countries",
+        "vpn_risk_threshold",
+        "alert_risk_threshold",
+        "dlp_enabled",
+        "evaluation_strict_mode",
+        "evaluation_identity_verification_required",
+        "evaluation_camera_required",
+        "evaluation_fullscreen_required",
+        "evaluation_single_screen_required",
+        "evaluation_mobile_allowed",
+        "evaluation_event_recording",
+        "evaluation_pause_on_violation",
+        "evaluation_require_resume_step_up",
+        "evaluation_allow_clipboard",
+        "evaluation_allow_download",
+        "evaluation_allow_print",
+        "evaluation_allow_screenshot",
+        "evaluation_session_timeout_minutes",
+        "evaluation_inactivity_lock_enabled",
+        "evaluation_inactivity_minutes",
+        "evaluation_inactivity_lock_hours",
+        "minEvaluationMinutes",
+        "min_evaluation_minutes",
+        "evaluation_heartbeat_seconds",
+        "evaluation_no_face_seconds",
+        "evaluation_retention_days",
+        "ai_evaluation_mode",
+        "ai_confidence_threshold",
+        "ai_evaluation_strictness",
+        "ai_model_name"
+      ],
+      "additionalProperties": true
+    },
+    "ai_provider": {
+      "type": "object",
+      "properties": {
+        "provider": {
+          "type": "string"
+        },
+        "configured": {
+          "type": "boolean"
+        },
+        "valid": {
+          "type": "boolean"
+        },
+        "available": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "provider",
+        "configured",
+        "valid",
+        "available",
+        "message"
+      ],
+      "additionalProperties": true
+    },
+    "devices": {
+      "type": "array",
+      "items": {}
+    },
+    "alerts": {
+      "type": "array",
+      "items": {}
+    },
+    "access_requests": {
+      "type": "array",
+      "items": {}
+    },
+    "emergency_grants": {
+      "type": "array",
+      "items": {}
+    },
+    "dlp_incidents": {
+      "type": "array",
+      "items": {}
+    },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "user_id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "authenticator_enabled": {
+            "type": "boolean"
+          },
+          "can_reset_authenticator": {
+            "type": "boolean"
+          },
+          "institution": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "programme_id": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "permissions": {
+            "type": "array",
+            "items": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "enabled_modules": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "custom_fields": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": true
+          },
+          "operational_centre_id": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "operational_centre": {
+            "type": [
+              "null",
+              "object"
+            ]
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "onboarding_status": {
+            "type": "string"
+          },
+          "can_issue_credentials": {
+            "type": "boolean"
+          },
+          "can_reset_chairman_password": {
+            "type": "boolean"
+          },
+          "has_temporary_password": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "user_id",
+          "name",
+          "email",
+          "authenticator_enabled",
+          "can_reset_authenticator",
+          "institution",
+          "role",
+          "programme_id",
+          "permissions",
+          "enabled_modules",
+          "custom_fields",
+          "operational_centre_id",
+          "operational_centre",
+          "is_active",
+          "onboarding_status",
+          "can_issue_credentials",
+          "can_reset_chairman_password",
+          "has_temporary_password"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "oidc_providers": {
+      "type": "array",
+      "items": {}
+    },
+    "centres": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "code",
+          "name",
+          "location",
+          "status"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "key_inventory": {
+      "type": "array",
+      "items": {}
+    },
+    "controls": {
+      "type": "object",
+      "properties": {
+        "encryption_at_rest": {
+          "type": "boolean"
+        },
+        "tls_enforced": {
+          "type": "boolean"
+        },
+        "database_protection": {
+          "type": "boolean"
+        },
+        "file_protection": {
+          "type": "boolean"
+        },
+        "key_management": {
+          "type": "boolean"
+        },
+        "secrets_management": {
+          "type": "boolean"
+        },
+        "secure_cookies": {
+          "type": "boolean"
+        },
+        "rbac": {
+          "type": "boolean"
+        },
+        "least_privilege": {
+          "type": "boolean"
+        },
+        "zero_trust_access": {
+          "type": "boolean"
+        },
+        "identity_store_isolated": {
+          "type": "boolean"
+        },
+        "script_store_isolated": {
+          "type": "boolean"
+        },
+        "identity_service_authorization": {
+          "type": "boolean"
+        },
+        "controlled_identity_resolution": {
+          "type": "boolean"
+        },
+        "waf_configured": {
+          "type": "boolean"
+        },
+        "ddos_protection": {
+          "type": "boolean"
+        },
+        "intrusion_detection": {
+          "type": "boolean"
+        },
+        "security_monitoring": {
+          "type": "boolean"
+        },
+        "siem_configured": {
+          "type": "boolean"
+        },
+        "vulnerability_monitoring": {
+          "type": "boolean"
+        },
+        "security_alerts": {
+          "type": "boolean"
+        },
+        "dlp_enabled": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "encryption_at_rest",
+        "tls_enforced",
+        "database_protection",
+        "file_protection",
+        "key_management",
+        "secrets_management",
+        "secure_cookies",
+        "rbac",
+        "least_privilege",
+        "zero_trust_access",
+        "identity_store_isolated",
+        "script_store_isolated",
+        "identity_service_authorization",
+        "controlled_identity_resolution",
+        "waf_configured",
+        "ddos_protection",
+        "intrusion_detection",
+        "security_monitoring",
+        "siem_configured",
+        "vulnerability_monitoring",
+        "security_alerts",
+        "dlp_enabled"
+      ],
+      "additionalProperties": true
+    },
+    "module_catalog": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "programmes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "code",
+          "name"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "role_module_rules": {
+      "type": "object",
+      "properties": {
+        "chairman": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "user_manager": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evaluator": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "moderator": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "exam_invigilator": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "receiving_officer": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "script_receiver": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "scanner_operator": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "custody_officer": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "bundle_preparer": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "intake_receiver": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "scan_operator": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "operations_supervisor": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "auditor": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "chairman",
+        "user_manager",
+        "evaluator",
+        "moderator",
+        "exam_invigilator",
+        "receiving_officer",
+        "script_receiver",
+        "scanner_operator",
+        "custody_officer",
+        "bundle_preparer",
+        "intake_receiver",
+        "scan_operator",
+        "operations_supervisor",
+        "auditor"
+      ],
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "current_role",
+    "current_user_id",
+    "capabilities",
+    "policy",
+    "ai_provider",
+    "devices",
+    "alerts",
+    "access_requests",
+    "emergency_grants",
+    "dlp_incidents",
+    "members",
+    "oidc_providers",
+    "centres",
+    "key_inventory",
+    "controls",
+    "module_catalog",
+    "programmes",
+    "role_module_rules"
+  ],
+  "additionalProperties": true
+}

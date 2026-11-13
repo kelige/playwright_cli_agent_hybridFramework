@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "chairman_my_nominations (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "subject_code": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "can_accept": {
+            "type": "boolean"
+          },
+          "blocked_reason": {
+            "type": "string"
+          },
+          "nominated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "accepted_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "id",
+          "subject",
+          "subject_code",
+          "status",
+          "can_accept",
+          "blocked_reason",
+          "nominated_at",
+          "accepted_at"
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": [
+    "items"
+  ],
+  "additionalProperties": true
+}

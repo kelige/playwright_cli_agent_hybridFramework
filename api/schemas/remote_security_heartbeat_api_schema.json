@@ -1,0 +1,163 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "remote_security_heartbeat (POST response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "session": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "assignment_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "status": {
+          "type": "string"
+        },
+        "pause_reason": {
+          "type": "string"
+        },
+        "violation_count": {
+          "type": "integer"
+        },
+        "policy": {
+          "type": "object",
+          "properties": {
+            "allow_print": {
+              "type": "boolean"
+            },
+            "strict_mode": {
+              "type": "boolean"
+            },
+            "allow_download": {
+              "type": "boolean"
+            },
+            "mobile_allowed": {
+              "type": "boolean"
+            },
+            "retention_days": {
+              "type": "integer"
+            },
+            "allow_clipboard": {
+              "type": "boolean"
+            },
+            "camera_required": {
+              "type": "boolean"
+            },
+            "event_recording": {
+              "type": "boolean"
+            },
+            "no_face_seconds": {
+              "type": "integer"
+            },
+            "allow_screenshot": {
+              "type": "boolean"
+            },
+            "heartbeat_seconds": {
+              "type": "integer"
+            },
+            "pause_on_violation": {
+              "type": "boolean"
+            },
+            "fullscreen_required": {
+              "type": "boolean"
+            },
+            "minEvaluationMinutes": {
+              "type": "integer"
+            },
+            "require_resume_step_up": {
+              "type": "boolean"
+            },
+            "single_screen_required": {
+              "type": "boolean"
+            },
+            "session_timeout_minutes": {
+              "type": "integer"
+            },
+            "identity_verification_required": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "allow_print",
+            "strict_mode",
+            "allow_download",
+            "mobile_allowed",
+            "retention_days",
+            "allow_clipboard",
+            "camera_required",
+            "event_recording",
+            "no_face_seconds",
+            "allow_screenshot",
+            "heartbeat_seconds",
+            "pause_on_violation",
+            "fullscreen_required",
+            "minEvaluationMinutes",
+            "require_resume_step_up",
+            "single_screen_required",
+            "session_timeout_minutes",
+            "identity_verification_required"
+          ],
+          "additionalProperties": true
+        },
+        "last_heartbeat_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "timer": {
+          "type": "object",
+          "properties": {
+            "evaluation_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "minEvaluationMinutes": {
+              "type": "integer"
+            },
+            "endsAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "remainingMs": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "evaluation_id",
+            "minEvaluationMinutes",
+            "endsAt",
+            "remainingMs"
+          ],
+          "additionalProperties": true
+        },
+        "version": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "assignment_id",
+        "status",
+        "pause_reason",
+        "violation_count",
+        "policy",
+        "last_heartbeat_at",
+        "timer",
+        "version"
+      ],
+      "additionalProperties": true
+    },
+    "action": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "session",
+    "action"
+  ],
+  "additionalProperties": true
+}

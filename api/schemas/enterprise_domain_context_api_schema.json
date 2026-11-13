@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "enterprise_domain_context (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "scope": {
+      "type": "string"
+    },
+    "hostname": {
+      "type": "string"
+    },
+    "university": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "branding": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "theme": {
+              "type": "string"
+            },
+            "logo_url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "description",
+            "theme",
+            "logo_url"
+          ],
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "code",
+        "status",
+        "timezone",
+        "branding"
+      ],
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "scope",
+    "hostname",
+    "university"
+  ],
+  "additionalProperties": true
+}

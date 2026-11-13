@@ -1,0 +1,148 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "operations_overview (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "session": {
+      "type": "null"
+    },
+    "metrics": {
+      "type": "object",
+      "properties": {
+        "expected_scripts": {
+          "type": "integer"
+        },
+        "received_scripts": {
+          "type": "integer"
+        },
+        "registered_scripts": {
+          "type": "integer"
+        },
+        "stored_scripts": {
+          "type": "integer"
+        },
+        "assigned_scripts": {
+          "type": "integer"
+        },
+        "evaluation_progress": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "expected_scripts",
+        "received_scripts",
+        "registered_scripts",
+        "stored_scripts",
+        "assigned_scripts",
+        "evaluation_progress"
+      ],
+      "additionalProperties": true
+    },
+    "pipeline": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          },
+          "state": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "label",
+          "count",
+          "state"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "attention": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          },
+          "severity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "count",
+          "severity"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "module_counts": {
+      "type": "object",
+      "properties": {
+        "configuration": {
+          "type": "integer"
+        },
+        "evaluators": {
+          "type": "integer"
+        },
+        "receiving": {
+          "type": "integer"
+        },
+        "custody": {
+          "type": "integer"
+        },
+        "repository": {
+          "type": "integer"
+        },
+        "allocation": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "configuration",
+        "evaluators",
+        "receiving",
+        "custody",
+        "repository",
+        "allocation"
+      ],
+      "additionalProperties": true
+    },
+    "papers": {
+      "type": "array",
+      "items": {}
+    },
+    "recent_events": {
+      "type": "array",
+      "items": {}
+    }
+  },
+  "required": [
+    "generated_at",
+    "session",
+    "metrics",
+    "pipeline",
+    "attention",
+    "module_counts",
+    "papers",
+    "recent_events"
+  ],
+  "additionalProperties": true
+}

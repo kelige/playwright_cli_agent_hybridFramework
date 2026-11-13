@@ -1,0 +1,105 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "configuration_question_content (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "paper_version": {
+      "type": "integer"
+    },
+    "readiness": {
+      "type": "object",
+      "properties": {
+        "ready": {
+          "type": "boolean"
+        },
+        "guide_only_ready": {
+          "type": "boolean"
+        },
+        "pdf_ready": {
+          "type": "boolean"
+        },
+        "evaluation_scheme": {
+          "type": "boolean"
+        },
+        "missing_evaluation_guidance": {
+          "type": "integer"
+        },
+        "question_paper": {
+          "type": "boolean"
+        },
+        "reference_answers": {
+          "type": "integer"
+        },
+        "configured_questions": {
+          "type": "integer"
+        },
+        "total_questions": {
+          "type": "integer"
+        },
+        "missing_question_guides": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "ready",
+        "guide_only_ready",
+        "pdf_ready",
+        "evaluation_scheme",
+        "missing_evaluation_guidance",
+        "question_paper",
+        "reference_answers",
+        "configured_questions",
+        "total_questions",
+        "missing_question_guides"
+      ],
+      "additionalProperties": true
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "number": {
+            "type": "string"
+          },
+          "sub_question": {
+            "type": "string"
+          },
+          "max_marks": {
+            "type": "integer"
+          },
+          "question_text": {
+            "type": "string"
+          },
+          "evaluation_guidance": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "number",
+          "sub_question",
+          "max_marks",
+          "question_text",
+          "evaluation_guidance",
+          "version"
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": [
+    "paper_version",
+    "readiness",
+    "questions"
+  ],
+  "additionalProperties": true
+}

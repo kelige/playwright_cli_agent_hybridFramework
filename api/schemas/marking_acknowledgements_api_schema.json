@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "marking_acknowledgements (POST response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "scheme": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "title": {
+          "type": "string"
+        },
+        "version": {
+          "type": "integer"
+        },
+        "guidelines": {
+          "type": "string"
+        },
+        "instructions": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "version",
+        "guidelines",
+        "instructions"
+      ],
+      "additionalProperties": true
+    },
+    "base_acknowledged": {
+      "type": "boolean"
+    },
+    "clarifications": {
+      "type": "array",
+      "items": {}
+    },
+    "complete": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "scheme",
+    "base_acknowledged",
+    "clarifications",
+    "complete"
+  ],
+  "additionalProperties": true
+}

@@ -1,0 +1,156 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "receiving_reports_config (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "packet_preparation_report": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "station": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "title",
+        "station",
+        "enabled",
+        "description"
+      ],
+      "additionalProperties": true
+    },
+    "bundle_preparation_report": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "station": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "title",
+        "station",
+        "enabled",
+        "description"
+      ],
+      "additionalProperties": true
+    },
+    "custody_inward_report": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "station": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "title",
+        "station",
+        "enabled",
+        "description"
+      ],
+      "additionalProperties": true
+    },
+    "packet_scan_qc_report": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "station": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "title",
+        "station",
+        "enabled",
+        "description"
+      ],
+      "additionalProperties": true
+    },
+    "subject_digitization_report": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "station": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "title",
+        "station",
+        "enabled",
+        "description"
+      ],
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "packet_preparation_report",
+    "bundle_preparation_report",
+    "custody_inward_report",
+    "packet_scan_qc_report",
+    "subject_digitization_report"
+  ],
+  "additionalProperties": true
+}

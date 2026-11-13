@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "evaluator_enrollment_policy (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "face_enrollment_required": {
+      "type": "boolean"
+    },
+    "can_reset_face": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "face_enrollment_required",
+    "can_reset_face"
+  ],
+  "additionalProperties": true
+}

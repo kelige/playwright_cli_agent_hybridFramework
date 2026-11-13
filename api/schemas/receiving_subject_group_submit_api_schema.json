@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "receiving_subject_group_submit (POST response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "group_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "group_number": {
+      "type": "integer"
+    },
+    "group_count": {
+      "type": "integer"
+    },
+    "closed": {
+      "type": "boolean"
+    },
+    "submitted": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "group_id",
+    "group_number",
+    "group_count",
+    "closed",
+    "submitted"
+  ],
+  "additionalProperties": true
+}

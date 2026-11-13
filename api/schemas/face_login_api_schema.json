@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "face_login (POST response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "access_granted": {
+      "type": "boolean"
+    },
+    "attendance_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "checked_in_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "access_granted",
+    "attendance_id",
+    "checked_in_at"
+  ],
+  "additionalProperties": true
+}

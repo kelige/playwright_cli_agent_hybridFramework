@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "chairman_catalog (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "subject_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "subject_code": {
+            "type": "string"
+          },
+          "evaluator_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "chief": {
+            "type": "string"
+          },
+          "experience": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string"
+          },
+          "nomination_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "can_nominate": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "subject_id",
+          "subject",
+          "subject_code",
+          "evaluator_id",
+          "chief",
+          "experience",
+          "status",
+          "nomination_id",
+          "can_nominate"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "subjects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "code"
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": [
+    "rows",
+    "subjects"
+  ],
+  "additionalProperties": true
+}

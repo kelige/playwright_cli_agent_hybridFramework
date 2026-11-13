@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "allocation_subject_groups (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "group_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "packet_code": {
+            "type": "string"
+          },
+          "group_number": {
+            "type": "integer"
+          },
+          "paper_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "paper_code": {
+            "type": "string"
+          },
+          "subject_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "subject_code": {
+            "type": "string"
+          },
+          "centre_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "stored_count": {
+            "type": "integer"
+          },
+          "total_count": {
+            "type": "integer"
+          },
+          "packet_size": {
+            "type": "integer"
+          },
+          "closed": {
+            "type": "boolean"
+          },
+          "submitted": {
+            "type": "boolean"
+          },
+          "ready": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "group_id",
+          "packet_code",
+          "group_number",
+          "paper_id",
+          "paper_code",
+          "subject_id",
+          "subject_code",
+          "centre_id",
+          "stored_count",
+          "total_count",
+          "packet_size",
+          "closed",
+          "submitted",
+          "ready"
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": [
+    "groups"
+  ],
+  "additionalProperties": true
+}

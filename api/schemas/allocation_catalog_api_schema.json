@@ -1,0 +1,472 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "allocation_catalog (GET response)",
+  "description": "Generated from a live authenticated response captured on the harish tenant. Required fields are those present on every sampled object; additional properties are allowed.",
+  "type": "object",
+  "properties": {
+    "assignments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "batch_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "script_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "script": {
+            "type": "string"
+          },
+          "paper_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "paper": {
+            "type": "string"
+          },
+          "paper_title": {
+            "type": "string"
+          },
+          "subject_name": {
+            "type": "string"
+          },
+          "subject_code": {
+            "type": "string"
+          },
+          "page_count": {
+            "type": "integer"
+          },
+          "evaluator_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "evaluator": {
+            "type": "string"
+          },
+          "valuation_round": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string"
+          },
+          "ai_status": {
+            "type": "null"
+          },
+          "quality_score": {
+            "type": "number"
+          },
+          "source": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "integer"
+          },
+          "is_flagged": {
+            "type": "boolean"
+          },
+          "is_rejected": {
+            "type": "boolean"
+          },
+          "rejection_status": {
+            "type": "null"
+          },
+          "flag_reason": {
+            "type": "string"
+          },
+          "skipped_at": {
+            "type": "null"
+          },
+          "draft_saved_at": {
+            "type": "null"
+          },
+          "last_opened_at": {
+            "type": "null"
+          },
+          "last_page": {
+            "type": "integer"
+          },
+          "progress_percent": {
+            "type": "integer"
+          },
+          "due_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "version": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "batch_id",
+          "script_id",
+          "script",
+          "paper_id",
+          "paper",
+          "paper_title",
+          "subject_name",
+          "subject_code",
+          "page_count",
+          "evaluator_id",
+          "evaluator",
+          "valuation_round",
+          "status",
+          "ai_status",
+          "quality_score",
+          "source",
+          "priority",
+          "is_flagged",
+          "is_rejected",
+          "rejection_status",
+          "flag_reason",
+          "skipped_at",
+          "draft_saved_at",
+          "last_opened_at",
+          "last_page",
+          "progress_percent",
+          "due_at",
+          "version"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "batches": {
+      "type": "array",
+      "items": {}
+    },
+    "allocation_more": {
+      "type": "object",
+      "properties": {
+        "eligible": {
+          "type": "boolean"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "total": {
+          "type": "integer"
+        },
+        "submitted": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "eligible",
+        "reason",
+        "total",
+        "submitted"
+      ],
+      "additionalProperties": true
+    },
+    "scripts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "script_code": {
+            "type": "string"
+          },
+          "paper_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "paper": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer"
+          },
+          "assigned_rounds": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "next_round": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "id",
+          "script_code",
+          "paper_id",
+          "paper",
+          "state",
+          "version",
+          "assigned_rounds",
+          "next_round"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "papers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "paper_type": {
+            "type": "string"
+          },
+          "subject_code": {
+            "type": "string"
+          },
+          "subject_name": {
+            "type": "string"
+          },
+          "valuation_rounds": {
+            "type": "integer"
+          },
+          "second_valuation_mark_threshold": {
+            "type": "null"
+          },
+          "stored_scripts": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "code",
+          "title",
+          "paper_type",
+          "subject_code",
+          "subject_name",
+          "valuation_rounds",
+          "second_valuation_mark_threshold",
+          "stored_scripts",
+          "status"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "allocation_papers": {
+      "type": "array",
+      "items": {}
+    },
+    "evaluators": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "daily_capacity": {
+            "type": "integer"
+          },
+          "active_load": {
+            "type": "integer"
+          },
+          "work_summary": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "string"
+              },
+              "total": {
+                "type": "integer"
+              },
+              "assigned": {
+                "type": "integer"
+              },
+              "in_progress": {
+                "type": "integer"
+              },
+              "submitted": {
+                "type": "integer"
+              },
+              "completed": {
+                "type": "integer"
+              },
+              "overdue": {
+                "type": "integer"
+              },
+              "active": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "status",
+              "total",
+              "assigned",
+              "in_progress",
+              "submitted",
+              "completed",
+              "overdue",
+              "active"
+            ],
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "id",
+          "code",
+          "name",
+          "status",
+          "daily_capacity",
+          "active_load",
+          "work_summary"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "policies": {
+      "type": "array",
+      "items": {}
+    },
+    "runs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "paper_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "paper": {
+            "type": "string"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "algorithm": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "requested_scripts": {
+            "type": "integer"
+          },
+          "planned_scripts": {
+            "type": "integer"
+          },
+          "allocated_scripts": {
+            "type": "integer"
+          },
+          "unallocated_scripts": {
+            "type": "integer"
+          },
+          "average_quality_score": {
+            "type": "number"
+          },
+          "forecast": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": true
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "id",
+          "paper_id",
+          "paper",
+          "mode",
+          "algorithm",
+          "status",
+          "requested_scripts",
+          "planned_scripts",
+          "allocated_scripts",
+          "unallocated_scripts",
+          "average_quality_score",
+          "forecast",
+          "created_at"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "allocation_requests": {
+      "type": "array",
+      "items": {}
+    },
+    "scope": {
+      "type": "object",
+      "properties": {
+        "is_chief": {
+          "type": "boolean"
+        },
+        "scope_type": {
+          "type": "string"
+        },
+        "subject_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "subject_codes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "is_chief",
+        "scope_type",
+        "subject_ids",
+        "subject_codes"
+      ],
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "assignments",
+    "batches",
+    "allocation_more",
+    "scripts",
+    "papers",
+    "allocation_papers",
+    "evaluators",
+    "policies",
+    "runs",
+    "allocation_requests",
+    "scope"
+  ],
+  "additionalProperties": true
+}

@@ -1,0 +1,158 @@
+- generic [active] [ref=e1]:
+  - alert [ref=e4]
+  - generic [ref=e37]:
+    - complementary [ref=e38]:
+      - generic [ref=e39]:
+        - button "Enlarge swamy logo" [ref=e40]
+        - generic [ref=e41]:
+          - generic [ref=e42]: swamy
+          - generic [ref=e43]: Evaluation cloud
+        - button "Collapse sidebar" [expanded] [ref=e44] [cursor=pointer]
+      - navigation "Primary navigation" [ref=e48]:
+        - generic [ref=e49]:
+          - generic [ref=e50]: Operations
+          - button "Command centre" [ref=e51] [cursor=pointer]
+          - button "Digitization" [ref=e58] [cursor=pointer]
+          - button "Live operations" [ref=e65] [cursor=pointer]
+        - generic [ref=e70]:
+          - generic [ref=e71]: Administration
+          - button "Exam configuration" [ref=e72] [cursor=pointer]
+          - button "Report Generator" [ref=e75] [cursor=pointer]
+          - button "Evaluator master" [ref=e80] [cursor=pointer]
+          - button "Allocation engine" [ref=e87] [cursor=pointer]
+          - button "Allocation history" [ref=e94] [cursor=pointer]
+          - button "Rejected Scripts" [ref=e100] [cursor=pointer]
+          - button "Revaluation & Recounting" [ref=e107] [cursor=pointer]
+          - button "Results & services" [ref=e114] [cursor=pointer]
+          - button "Student requests" [ref=e120] [cursor=pointer]
+        - generic [ref=e127]:
+          - generic [ref=e128]: Evaluation
+          - button "Anonymization" [ref=e129] [cursor=pointer]
+          - button "Script repository" [ref=e136] [cursor=pointer]
+          - button "Marking schemes" [ref=e141] [cursor=pointer]
+          - button "Evaluation desk" [ref=e146] [cursor=pointer]
+          - button "Assessment control" [ref=e151] [cursor=pointer]
+        - generic [ref=e157]:
+          - generic [ref=e158]: Governance
+          - button "Access governance" [ref=e159] [cursor=pointer]
+          - button "Enterprise settings" [ref=e164] [cursor=pointer]
+          - button "Audit trail" [ref=e169] [cursor=pointer]
+      - generic [ref=e175]: Evaluation core healthy
+    - generic [ref=e178]:
+      - banner [ref=e179]:
+        - generic [ref=e180]:
+          - generic [ref=e181]: SWAMY
+          - generic [ref=e182]: No active examination session
+        - generic [ref=e183]:
+          - button "Select language" [ref=e185] [cursor=pointer]:
+            - generic [ref=e191]: Language
+            - generic [ref=e192]: EN
+          - button "Notifications" [ref=e196] [cursor=pointer]
+          - button "Sign out" [ref=e200] [cursor=pointer]
+          - button "Account settings" [ref=e204] [cursor=pointer]: S
+      - main [ref=e205]:
+        - generic [ref=e206]:
+          - generic [ref=e207]:
+            - paragraph [ref=e208]: Live operations
+            - heading "Evaluation operations" [level=1] [ref=e209]
+            - paragraph [ref=e210]: Script movement, allocation and evaluation readiness.
+          - button "Refresh" [ref=e211] [cursor=pointer]
+        - generic [ref=e217]:
+          - generic [ref=e218]:
+            - generic [ref=e219]: Scripts expected
+            - generic [ref=e225]: "0"
+            - generic [ref=e226]: Across active dispatches
+          - generic [ref=e227]:
+            - generic [ref=e228]: Scripts received
+            - generic [ref=e234]: "0"
+            - generic [ref=e235]: 0% of dispatch manifest
+          - generic [ref=e236]:
+            - generic [ref=e237]: Assigned
+            - generic [ref=e243]: "0"
+            - generic [ref=e244]: 0 digitally registered
+          - generic [ref=e245]:
+            - generic [ref=e246]: Evaluation progress
+            - generic [ref=e252]: 0%
+            - generic [ref=e253]: Submitted assignments
+        - generic [ref=e254]:
+          - generic [ref=e255]:
+            - generic [ref=e257]:
+              - heading "Evaluation pipeline" [level=2] [ref=e258]
+              - paragraph [ref=e259]: Current volume at each controlled stage
+            - generic [ref=e260]:
+              - generic [ref=e261]:
+                - generic [ref=e263]: Receiving
+                - generic [ref=e264]: "0"
+              - generic [ref=e265]:
+                - generic [ref=e267]: Identification
+                - generic [ref=e268]: "0"
+              - generic [ref=e269]:
+                - generic [ref=e271]: Repository
+                - generic [ref=e272]: "0"
+              - generic [ref=e273]:
+                - generic [ref=e275]: Allocation
+                - generic [ref=e276]: "0"
+              - generic [ref=e277]:
+                - generic [ref=e279]: Evaluation
+                - generic [ref=e280]: "0"
+              - generic [ref=e281]:
+                - generic [ref=e283]: Finalisation
+                - generic [ref=e284]: "0"
+          - generic [ref=e285]:
+            - generic [ref=e287]:
+              - heading "Attention queue" [level=2] [ref=e288]
+              - paragraph [ref=e289]: Items requiring operational review
+            - generic [ref=e290]:
+              - generic [ref=e291]:
+                - generic [ref=e293]: Receiving exceptions
+                - generic [ref=e295]: Clear
+              - generic [ref=e296]:
+                - generic [ref=e298]: Dispatches to reconcile
+                - generic [ref=e300]: Clear
+              - generic [ref=e301]:
+                - generic [ref=e303]: Evaluators awaiting verification
+                - generic [ref=e305]: Clear
+              - generic [ref=e306]:
+                - generic [ref=e308]: Unpublished audit events
+                - generic [ref=e310]: Clear
+        - generic [ref=e312]:
+          - generic [ref=e313]:
+            - generic [ref=e314]:
+              - heading "Active papers" [level=2] [ref=e315]
+              - paragraph [ref=e316]: Configuration readiness and assignment coverage
+            - button "View all" [ref=e317] [cursor=pointer]
+          - generic [ref=e319]:
+            - generic [ref=e320]:
+              - searchbox "Search table records" [ref=e325]
+              - button "Sort" [ref=e327] [cursor=pointer]
+            - generic "Scrollable table" [ref=e331]:
+              - table [ref=e332]:
+                - rowgroup [ref=e333]:
+                  - row [ref=e334]:
+                    - columnheader "Paper" [ref=e335]
+                    - columnheader "Programme" [ref=e336]
+                    - columnheader "Scripts" [ref=e337]
+                    - columnheader "Allocation" [ref=e338]
+                    - columnheader "Config" [ref=e339]
+                - rowgroup
+        - generic [ref=e340]:
+          - generic [ref=e342]:
+            - heading "Module status" [level=2] [ref=e343]
+            - paragraph [ref=e344]: Consolidated record volume across core operations
+          - generic [ref=e345]:
+            - button "Configuration 0 Ready for setup" [ref=e346] [cursor=pointer]:
+              - generic [ref=e347]: Configuration
+              - strong [ref=e348]: "0"
+              - generic [ref=e349]: Ready for setup
+            - button "Evaluators 0 Ready for setup" [ref=e350] [cursor=pointer]:
+              - generic [ref=e351]: Evaluators
+              - strong [ref=e352]: "0"
+              - generic [ref=e353]: Ready for setup
+            - button "Repository 0 Ready for setup" [ref=e354] [cursor=pointer]:
+              - generic [ref=e355]: Repository
+              - strong [ref=e356]: "0"
+              - generic [ref=e357]: Ready for setup
+            - button "Allocation 0 Ready for setup" [ref=e358] [cursor=pointer]:
+              - generic [ref=e359]: Allocation
+              - strong [ref=e360]: "0"
+              - generic [ref=e361]: Ready for setup
