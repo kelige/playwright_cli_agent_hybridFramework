@@ -1,0 +1,317 @@
+{
+  "date": "2026-11-19T10:50:16.346Z",
+  "command": "npm run testcases -- --role=platform-admin",
+  "totalDurationMs": 21902,
+  "passed": 0,
+  "failed": 1,
+  "defects": 2,
+  "newDefectRecords": 0,
+  "tests": {
+    "passed": 24,
+    "failed": 2,
+    "skipped": 0
+  },
+  "caseResults": [
+    {
+      "role": "platform-admin",
+      "title": "Tenant list is readable",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "Type-confused login payload is refused",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "Tenant administrator cannot provision a university",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "Tenant administrator cannot call the switch route",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "Overview is not readable from a tenant session",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "Audit trail is not readable from a tenant session",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "Tenant administrator cannot read the estate list",
+      "file": "",
+      "status": "failed",
+      "duration": 0,
+      "reason": "expect(received).toContain(expected) // indexOf\n\nExpected value: 200\nReceived array: [401, 403, 404]",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "Tenant session cannot mutate another tenant",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "The permanent password grants the administrator role",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "Unknown tenant id is refused on update",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "University update requires a CSRF token",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "Control-plane overview is readable",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "Audit trail is readable with an explicit limit",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "Institution list is readable",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "Domain context resolves a tenant hostname",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "Tenant list ignores unknown query parameters",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "Platform session cannot read tenant workspace APIs",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "A revoked session cannot be replayed",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "PAC-01",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "PAC-05",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "PAC-02",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "PAC-03",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "PAC-04",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "PAC-16",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "PAC-17",
+      "file": "",
+      "status": "failed",
+      "duration": 0,
+      "reason": "expect(received).toContain(expected) // indexOf\n\nExpected value: 200\nReceived array: [401, 403, 404]",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "role": "platform-admin",
+      "title": "PAC-29",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    }
+  ],
+  "coverage": {
+    "total": 940,
+    "covered": 228,
+    "automated": 207,
+    "live": 21,
+    "blocked": 0,
+    "pending": 712,
+    "performance": 133,
+    "performanceAutomated": 0,
+    "allDocumented": 1073,
+    "allCovered": 228,
+    "coveragePercent": 24.3,
+    "allCoveragePercent": 21.2
+  },
+  "pendingCases": "docs/reports/testcase-pending.csv",
+  "results": [
+    {
+      "role": "platform-admin",
+      "status": "FAIL",
+      "exitCode": 0,
+      "defects": 2,
+      "defectDetails": [
+        {
+          "id": "DVS-MWNFHYJH-8EZ1",
+          "title": "Institution estate list is readable from a tenant session",
+          "severity": "S1"
+        },
+        {
+          "id": "DVS-MWNFIAYD-HP25",
+          "title": "A tenant session can read the control plane",
+          "severity": "S1"
+        }
+      ],
+      "duration": 21895,
+      "log": "docs\\reports\\logs\\platform-admin.log",
+      "defectFile": "docs\\reports\\defects\\platform-admin.md",
+      "report": "reports\\testcases\\platform-admin\\index.html",
+      "customReport": "custom-report\\testcases\\platform-admin\\index.html",
+      "junit": "reports\\testcases\\platform-admin\\results.xml"
+    }
+  ]
+}

@@ -45,9 +45,15 @@ export class AccessGovernancePage {
   /**
    * Saves the evaluation policy and completes the sensitive-action re-authentication
    * when the app asks for it (it does not while a recent step-up is still valid).
+   *
+   * The button is only enabled while the form is dirty. A re-run on an already
+   * relaxed policy has nothing to save, so this returns `false` instead of
+   * waiting on a disabled control.
    * @param adminPassword - The acting Admin's own password
+   * @returns Whether a save was submitted
    */
-  async saveWithReauthentication(adminPassword: string): Promise<void> {
+  async saveWithReauthentication(adminPassword: string): Promise<boolean> {
+    if (!(await this.savePolicyButton.isEnabled().catch(() => false))) return false;
     await this.savePolicyButton.click();
     const prompted = await this.reauthenticateDialog
       .waitFor({ state: "visible", timeout: 5_000 })
@@ -58,5 +64,6 @@ export class AccessGovernancePage {
       await this.reauthVerifyButton.click();
       await expect(this.reauthenticateDialog).toBeHidden();
     }
+    return true;
   }
 }

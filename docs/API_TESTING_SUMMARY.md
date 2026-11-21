@@ -9,6 +9,7 @@
 
 | Area | Spec | Purpose |
 | --- | --- | --- |
+| Platform bootstrap | [tests/web/platform/university-bootstrap.spec.ts](../tests/web/platform/university-bootstrap.spec.ts) | Platform Admin provisions a new university live; captures the one-time Administrator handover and completes the Admin first login |
 | Authentication | [tests/api/auth/authentication.spec.ts](../tests/api/auth/authentication.spec.ts) | Login, invalid login, CSRF, SSO, notifications, security context, logout |
 | Admin read-only | [tests/api/admin/admin-read-only.spec.ts](../tests/api/admin/admin-read-only.spec.ts) | 11 Admin GET endpoints plus 401 checks for unauthenticated access |
 | Role workflow | [tests/api/workflow/dvs-role-workflow.spec.ts](../tests/api/workflow/dvs-role-workflow.spec.ts) | End-to-end role chain, 11 serial tests |
@@ -20,7 +21,12 @@ Supporting code:
 - [api/endpoints/routes.ts](../api/endpoints/routes.ts): route constants. [api/schemas/](../api/schemas): response schemas.
 - `playwright.config.ts`: separate `api` project, run serially (Admin logout ends all of that account's sessions).
 
-Run: `npm run test:api` (equals `playwright test --project=api --grep @api --workers=1`).
+Run order:
+
+1. `npm run test:platform` — headed; the tester provisions the university in the platform console. The bootstrap writes `WEB_APP_URL`, `DVS_API_BASE_URL` and the permanent Admin credentials to `.env`.
+2. `npm run test:api` (equals `playwright test --project=api --grep @api --workers=1`).
+3. `npm run workflow` — the live web continuation.
+4. `npm run test:db` — read-only validation.
 
 ## 2. Results
 
@@ -46,7 +52,8 @@ Evidence files:
 
 | Role | How it was created | What the API tests proved |
 | --- | --- | --- |
-| **Admin** | Seeded in `.env` | Login returns 200 and a session cookie. Wrong password returns 401. Created programme, regulation, academic year, session, course, subject, paper (sections, question-paper and scheme PDFs, submit), marking scheme (created then frozen), evaluation centre (no-go, ready, active) and updated the security policy (version +1, stale version returns 409). Every created record appears in the catalogs. |
+| **Platform Admin** | Seeded in `.env` (`PLATFORM_ADMIN_EMAIL` / `PLATFORM_ADMIN_PASSWORD`) | Signs in to the platform console, opens **Platform → Universities**, provisions a new university, and exposes the one-time **Administrator handover** (email, temporary password, tenant URL). The bootstrap completes the university Admin first login and persists only the permanent credentials. |
+| **Admin** | University Admin handover (`npm run test:platform`) | Login returns 200 and a session cookie. Wrong password returns 401. Created programme, regulation, academic year, session, course, subject, paper (sections, question-paper and scheme PDFs, submit), marking scheme (created then frozen), evaluation centre (no-go, ready, active) and updated the security policy (version +1, stale version returns 409). Every created record appears in the catalogs. |
 | **User Manager** | Admin, `POST security/memberships` after step-up | Temporary password handover works. First login sets the permanent password. `auth/me` returns role `user_manager`. Creates the Scanner Operator. |
 | **Chairman** | Admin, requires `programme_id` | Creating without a programme is rejected. Single-use temporary password is not accepted again after setup. Role appears correctly in the security catalog. Catalog lists the subject. Can register only a Chief (non-chief returns 403). Nominates the Chief and receives credentials. |
 | **Chief Examiner** | Chairman registers profile (`grade: chief`), nominates | First login done. Nomination is pending, then accepted. Accepted subject scope unlocks (`ready: true`). Registers and nominates the Evaluator. Team lists the Evaluator. Sees the submitted packet as ready. |

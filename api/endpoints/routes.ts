@@ -147,6 +147,20 @@ export const Routes = {
   PHASE4_REMOTE_SUPPORT_INBOX: '/api/v1/phase4/remote-support/inbox', // GET
 
   // ---------------------------------------------------------------------------
+  // Evaluation workflow catalog, submission and reporting
+  // ---------------------------------------------------------------------------
+  EVALUATION_WORKFLOW_REPORTS: '/api/v1/evaluation-workflow/reports',
+  EVALUATION_WORKFLOW_REPORT_SEND: '/api/v1/evaluation-workflow/reports/{reportId}/send',
+  EVALUATION_WORKFLOW_REPORT_FORWARD_ADMIN:
+    '/api/v1/evaluation-workflow/reports/{reportId}/forward-admin',
+  WORKFLOW_EVALUATION_SUBMIT: '/api/v1/workflow/evaluations/{evaluationId}/submit',
+  PHASE4_ASSESSMENT_CATALOG: '/api/v1/phase4/catalog?section=assessment',
+  PHASE4_MODERATION_SELECTION:
+    '/api/v1/phase4/assessment-control/batches/{batchId}/moderation-selection',
+  PHASE4_MODERATION_DECISION:
+    '/api/v1/phase4/moderation/operations/{operationId}/decision',
+
+  // ---------------------------------------------------------------------------
   // Evaluation workflow catalog
   // ---------------------------------------------------------------------------
   EVALUATION_WORKFLOW_CATALOG: '/api/v1/evaluation-workflow/catalog', // GET
@@ -256,6 +270,36 @@ export const RouteBuilders = {
 
   receivingSubjectGroupSubmit: (groupId: string) =>
     `/api/v1/receiving/guided/subject-groups/${encodeURIComponent(groupId)}/submit`,
+
+  evaluationWorkflowReportSend: (reportId: string) =>
+    `/api/v1/evaluation-workflow/reports/${encodeURIComponent(reportId)}/send`,
+
+  evaluationWorkflowReport: (reportId: string) =>
+    `/api/v1/evaluation-workflow/reports/${encodeURIComponent(reportId)}`,
+
+  evaluationWorkflowReportForwardAdmin: (reportId: string) =>
+    `/api/v1/evaluation-workflow/reports/${encodeURIComponent(reportId)}/forward-admin`,
+
+  workflowEvaluationSubmit: (evaluationId: string) =>
+    `/api/v1/workflow/evaluations/${encodeURIComponent(evaluationId)}/submit`,
+
+  phase4ModerationSelection: (batchId: string) =>
+    `/api/v1/phase4/assessment-control/batches/${encodeURIComponent(batchId)}/moderation-selection`,
+
+  phase4AssessmentBatch: (batchId: string) =>
+    `/api/v1/phase4/assessment-control/batches/${encodeURIComponent(batchId)}`,
+
+  phase4ModerationSamples: (operationId: string) =>
+    `/api/v1/phase4/moderation/operations/${encodeURIComponent(operationId)}/samples`,
+
+  phase4ModerationSampleViewer: (operationId: string, sampleId: string) =>
+    `/api/v1/phase4/moderation/operations/${encodeURIComponent(operationId)}/samples/${encodeURIComponent(sampleId)}/viewer`,
+
+  phase4ModerationSampleReview: (operationId: string, sampleId: string) =>
+    `/api/v1/phase4/moderation/operations/${encodeURIComponent(operationId)}/samples/${encodeURIComponent(sampleId)}/review`,
+
+  phase4ModerationDecision: (operationId: string) =>
+    `/api/v1/phase4/moderation/operations/${encodeURIComponent(operationId)}/decision`,
 } as const;
 
 /** HTTP methods observed for each route constant. */
@@ -343,5 +387,12 @@ export const RouteMethods = {
   PHASE4_REMOTE_SECURITY_EVENTS: 'POST',
   PHASE4_REMOTE_SUPPORT_INBOX: 'GET',
   EVALUATION_WORKFLOW_CATALOG: 'GET',
+  EVALUATION_WORKFLOW_REPORTS: 'POST',
+  EVALUATION_WORKFLOW_REPORT_SEND: 'POST',
+  EVALUATION_WORKFLOW_REPORT_FORWARD_ADMIN: 'POST',
+  WORKFLOW_EVALUATION_SUBMIT: 'POST',
+  PHASE4_ASSESSMENT_CATALOG: 'GET',
+  PHASE4_MODERATION_SELECTION: 'POST',
+  PHASE4_MODERATION_DECISION: 'POST',
   AI_EVALUATION_CATALOG: 'GET',
 } as const;

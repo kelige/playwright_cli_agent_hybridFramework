@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-11-20T12:50:49.864Z",
+  "status": "passed",
+  "durationMs": 288571,
+  "totals": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "skipped": 0
+  },
+  "results": [
+    {
+      "title": "runs Admin -> report receipt as one flow",
+      "file": "tests\\web\\workflow\\complete-workflow.spec.ts",
+      "status": "passed",
+      "duration": 285660,
+      "reason": "",
+      "retry": 0,
+      "tags": [
+        "@master",
+        "@end-to-end"
+      ]
+    }
+  ]
+}

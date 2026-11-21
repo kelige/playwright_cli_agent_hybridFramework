@@ -41,12 +41,12 @@ export class LoginPage {
     return baseUrl;
   }
 
-  async goto(): Promise<void> {
-    await this.page.goto(this.baseUrl);
+  async goto(url?: string): Promise<void> {
+    await this.page.goto(url ?? this.baseUrl);
   }
 
-  async open(): Promise<void> {
-    await this.goto();
+  async open(url?: string): Promise<void> {
+    await this.goto(url);
     await expect(this.emailInput).toBeVisible();
   }
 

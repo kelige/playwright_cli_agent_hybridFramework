@@ -34,6 +34,14 @@ export class AuthenticatedShellPage {
     return this.page.getByRole("button", { name, exact: true });
   }
 
+  /**
+   * Opens a sidebar module for the signed-in role.
+   * @param name - Verified module label
+   */
+  async openModule(name: string): Promise<void> {
+    await this.moduleButton(name).first().click();
+  }
+
   /** True when the role's sidebar exposes the module. */
   async isModuleVisible(name: string): Promise<boolean> {
     return this.moduleButton(name).first().isVisible();

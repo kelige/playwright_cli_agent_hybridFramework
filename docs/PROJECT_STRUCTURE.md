@@ -85,6 +85,8 @@ tests/
 │   │   └── data-driven-login.spec.ts
 │   ├── admin/
 │   │   └── programme.spec.ts
+│   ├── platform/
+│   │   └── university-bootstrap.spec.ts
 │   └── exam-configuration/
 │       ├── exam-configuration-required-fields.spec.ts
 │       └── exam-configuration-required-fields.cases.md
@@ -133,8 +135,13 @@ pages/
 ├── LoginPage.ts
 ├── SetPasswordPage.ts
 ├── AuthenticatedShellPage.ts
+├── PlatformAdminPage.ts
 └── ExamConfigurationPage.ts
 ```
+
+`PlatformAdminPage` drives the platform control plane (`PLATFORM_URL`): sign-in,
+**Platform → Universities**, waiting for the create-tenant response, and the
+one-time **Administrator handover**. It never logs or persists the temporary password.
 
 Example (`pages/LoginPage.ts`):
 
@@ -210,7 +217,8 @@ What it stores:
 | `dataGenerator.ts` | Faker-based random data | `RandomDataUtil.getProgrammeCode()` → `DVS-AUTO-XYZ1234` |
 | `DataReader.ts` | JSON / CSV / Excel readers | `DataProvider.readJson('testdata/dvs_logindata.json')` |
 | `dvsAuth.ts` | Shared sign-in state resolver | returns `"shell"`, `"password-set"`, or `"rejected"` |
-| `dvsRoles.ts` | Role → sidebar module inventory | `admin` → `["Exam configuration", "Marking schemes", "Access governance"]` |
+| `dvsRoles.ts` | Role → sidebar module inventory | `admin` → `["Exam configuration", "Marking schemes", "Access governance"]`; `PLATFORM_ROLES` holds the control-plane role |
+| `platformBootstrap.ts` | Normalizes the create-tenant response and completes the university Admin first login | derives the tenant URL, persists only permanent credentials |
 | `CustomReporter.ts` | Custom HTML report generator | writes `custom-report/report_<timestamp>.html` |
 
 Example (`utils/dvsRoles.ts`):
@@ -271,7 +279,8 @@ What it stores:
 ```text
 api/
 ├── endpoints/
-│   └── routes.ts                 # all verified API routes
+│   ├── routes.ts                 # all verified tenant API routes
+│   └── platformRoutes.ts         # platform control-plane routes (enterprise tenants)
 ├── schemas/
 │   ├── auth_login_api_schema.json
 │   ├── configuration_paper_api_schema.json
@@ -319,8 +328,44 @@ What it stores:
 
 ```text
 docs/
-└── PROJECT_STRUCTURE.md    # this guide
+├── PROJECT_STRUCTURE.md              # this guide
+├── BUG_DVS.md                        # observed defects, appended per run
+├── API_TESTING_SUMMARY.md            # API coverage summary
+├── testcases/
+│   ├── 01-platform-admin.csv         # Platform Admin cases
+│   ├── 02-admin.csv                  # University Admin cases
+│   ├── 03-chairman.csv               # Chairman cases
+│   ├── 04-chief-examiner.csv         # Chief Examiner cases
+│   ├── 05-evaluator.csv              # Evaluator cases
+│   ├── 06-scanner-operator.csv       # Scanner Operator cases
+│   ├── 07-user-manager.csv           # User Manager cases
+│   ├── 08-performance-stress-load.csv # perf/load/stress/spike/soak/recovery
+│   └── DVS-TESTCASES.xlsx            # combined workbook, one sheet per CSV
+└── reports/
+    ├── workflow-summary.html         # end-of-flow checklist
+    ├── testcases-summary.html        # parallel test-case dashboard
+    ├── testcases-summary.md / .json  # machine- and human-readable run summary
+    ├── testcase-coverage.md / .json  # documented vs executable coverage
+    ├── testcase-pending.csv          # backlog of cases not yet automated
+    ├── defects/<role>.md             # this run's defects, merged into BUG_DVS.md
+    ├── logs/<role>.log               # per-role parallel execution log
+    ├── artifacts/<reportId>/         # Admin result HTML/JSON + summary
+    └── DVS-EVALUATION-REPORT-*.xlsx / .csv
 ```
+
+Parallel test-case results are also written per role:
+
+```text
+reports/testcases/<role>/index.html       # Playwright HTML report
+reports/testcases/<role>/results.xml      # JUnit XML
+custom-report/testcases/<role>/index.html # custom dashboard
+test-results/testcases/<role>/            # screenshots, videos, traces
+```
+
+Test-case CSVs are the source of truth. Rebuild the workbook with
+`npm run testcases:workbook` after editing any CSV. Durable result exports live
+under `docs/reports/`; `reports/` belongs to the Playwright HTML reporter and is
+cleared between runs.
 
 Add new documentation here instead of cluttering the project root.
 
@@ -362,8 +407,12 @@ What it stores:
 
 ```text
 reports/
-├── index.html        # Playwright HTML report
-└── results.xml       # JUnit XML for CI
+├── index.html                # aggregate Playwright HTML report
+├── results.xml               # aggregate JUnit XML
+└── testcases/
+    └── <role>/
+        ├── index.html        # per-role Playwright HTML report
+        └── results.xml       # per-role JUnit XML
 ```
 
 Produced by `playwright.config.ts`:
@@ -436,7 +485,8 @@ custom-report/
 ├── index.html                    # redirects to latest run
 ├── history.html                  # list of all runs
 ├── .gitkeep
-└── screenshots/ videos/ traces/  # created only when failures produce artifacts
+├── screenshots/ videos/ traces/  # created only when failures produce artifacts
+└── testcases/<role>/             # isolated per-role dashboard
 ```
 
 Example `index.html`:
@@ -603,7 +653,7 @@ These files influence coding-assistant behavior only. They are safe to keep for 
 
 | File | Why | Stores |
 |---|---|---|
-| `.env` | Local runtime config | Tenant URL, Admin credentials, role credentials, API/DB settings |
+| `.env` | Local runtime config | Platform URL/credentials, tenant URL, Admin credentials, role credentials, API/DB settings |
 | `.env.example` | Documentation | Same keys with blank values |
 | `package.json` | Project manifest | Scripts and dependencies |
 | `package-lock.json` | Reproducible installs | Exact dependency tree |
@@ -620,6 +670,8 @@ Example `playwright.config.ts` projects:
 projects: [
   { name: "setup", testMatch: /auth\.setup\.ts/ },
   { name: "first-login", testMatch: /first-login.*\.spec\.ts/ },
+  { name: "platform", testMatch: /web[\\/]platform[\\/].*\.spec\.ts/,
+    use: { ...devices["Desktop Chrome"], headless: false } },
   { name: "chromium", testIgnore: /first-login.*\.spec\.ts/,
     use: { ...devices["Desktop Chrome"], storageState } },
 ]
@@ -641,6 +693,9 @@ reports/*
 ## 6. How a test run flows through the folders
 
 ```text
+0. npm run test:platform -> Platform Admin provisions a university live;
+   the bootstrap completes the Admin first login and writes .env
+        ↓
 1. playwright.config.ts loads .env
         ↓
 2. tests/auth.setup.ts signs in as Admin
@@ -700,6 +755,8 @@ config → env → setup auth → fixtures → page objects → tests → report
 | `npm test` | Run all projects/tests |
 | `npm run test:web` | Run tests tagged `@web` |
 | `npm run test:first-login` | Run the one-time password-set project |
+| `npm run test:platform` | Provision a university from the Platform Admin console (headed) |
+| `npm run workflow:all` | Platform bootstrap → API role workflow → live web workflow |
 | `npm run test:api` | Run tests tagged `@api` |
 | `npm run test:db` | Run tests tagged `@db` |
 | `npm run report` | Open `reports/index.html` |

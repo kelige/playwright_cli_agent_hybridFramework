@@ -22,6 +22,31 @@
 
 ---
 
+# 0.1 Platform Admin — University Provisioning (workflow entry point)
+
+The workflow starts on the platform control plane, **before** any university Admin sign-in.
+
+1. Open `PLATFORM_URL` (for example `https://platform.35-200-205-253.sslip.io/`) and sign in with `PLATFORM_ADMIN_EMAIL` / `PLATFORM_ADMIN_PASSWORD`.
+2. Open **Platform → Universities** (view **University management**, eyebrow **Super Admin**).
+3. Click **New university** and provision the university:
+   - university **name** and **code**,
+   - **Administrator first name**, **Administrator last name**, **Administrator email**,
+   - optional subdomain, plan, data region and branding.
+4. **Administrator handover** is shown once. Capture:
+   - administrator email,
+   - temporary password (**Copy temporary password**),
+   - tenant URL / **Open university workspace** (or `subdomain` + `PLATFORM_BASE_DOMAIN`).
+5. Continue at §3 with the new university Admin: temporary password → **Set your password** → authenticated shell.
+6. Persist only the tenant URL and the permanent Admin password (`DVS_ADMIN_EMAIL`, `DVS_ADMIN_PASSWORD`, `WEB_APP_URL`, `DVS_API_BASE_URL`). Never store the temporary password.
+7. Endpoint observed: `POST /api/v1/enterprise/tenants` (`TenantProvisionIn`: `name`, `code`, `admin_email`, `admin_first_name`, `admin_last_name`, optional `subdomain`, `plan`, `enabled_modules`, `data_region`, branding/AI fields).
+8. Automated driver: `npm run test:platform` (headed; provision live, then the bootstrap completes the Admin first login).
+
+## Expected Result
+
+A new isolated university tenant exists, its Admin has replaced the handover password, and the remaining role workflow (§7 onward) runs against that tenant exactly as before.
+
+---
+
 # 1. Capture Status
 
 | # | Role / Area | Status | Evidence |
@@ -378,7 +403,8 @@ Temporary passwords stay in the capture log only. Do not copy them into tests.
 
 ### Credential bootstrap rule
 
-- `.env` starts with **only** `DVS_WEB_BASE_URL` and the Admin credentials. Do not expect every role credential up front.
+- The run starts at the **Platform Admin** console (§0.1). Provision the university, capture the one-time Administrator handover, complete the Admin first login, and write the tenant URL plus permanent Admin credentials to `.env`.
+- After that, `.env` holds the university Admin credentials. Do not expect every role credential up front.
 - The test must provision each role in order, capture the temporary password from the handover sheet, then set the permanent password to `ChangeMe322!` for every provisioned user.
 - Store runtime credentials outside source control (run-scoped secret store).
 - Observed anomaly: one Scanner Operator was first created with role `evaluator` / module `evaluation`, then recreated as `scanner_operator` / `digitization`. Assert the intended role and treat the mismatch as a failure.

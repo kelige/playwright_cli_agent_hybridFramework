@@ -9,7 +9,7 @@
       "format": "date-time"
     },
     "session": {
-      "type": "null"
+      "type": ["null", "object"]
     },
     "metrics": {
       "type": "object",

@@ -1,0 +1,71 @@
+{
+  "tenantUrl": "https://automation-testing-201.35-200-205-253.sslip.io",
+  "report": {
+    "id": "3db19d43-a299-40bf-b314-015bef1ce3bc",
+    "packet": "Subject group 1",
+    "evaluator": "DVS Automation Evaluator",
+    "packet_id": null,
+    "group_id": "5716c9ee-809f-40e8-ba00-a7a6a0b91ebc",
+    "evaluator_id": "6b82957f-a4b3-463e-8ddb-a6884e4acb06",
+    "kind": "moderation",
+    "destination": "chairman",
+    "date": "2026-11-20",
+    "paper": "DVS-AUTO-KAN001-MWOVRDVL",
+    "status": "reviewed",
+    "note": "",
+    "version": 3,
+    "evaluation_mode": "disabled",
+    "mark_sources": [],
+    "returned_at": null,
+    "total": 1,
+    "can_review": false,
+    "forwarded_at": "2026-11-20T11:19:06.661398+00:00",
+    "acknowledged_at": null,
+    "can_acknowledge": true
+  },
+  "detail": {
+    "snapshot": {
+      "rows": [
+        {
+          "email": "dvs.evaluator.mwovrdvl@example.com",
+          "paper": "DVS-AUTO-KAN001-MWOVRDVL",
+          "phone": "",
+          "round": 1,
+          "packet": "Subject group 1",
+          "script": "AS-28E8AD2FFC574E2892FCF3433E4415C2",
+          "status": "submitted",
+          "subject": "Automation Test Subject MWOVRDVL",
+          "ai_marks": null,
+          "progress": 100,
+          "evaluator": "DVS Automation Evaluator",
+          "confidence": null,
+          "experience": 5,
+          "model_name": null,
+          "moderation": "approved",
+          "mark_source": null,
+          "total_marks": "80.00",
+          "manual_marks": null,
+          "subject_code": "DVS-AUTO-SUB001-MWOVRDVL",
+          "submitted_at": "2026-11-20T11:18:56.381191+00:00",
+          "assignment_id": "c69b1480-1676-4539-b349-c225db1d8888",
+          "evaluator_code": "EV-66C2867F",
+          "mark_source_label": null,
+          "moderation_version": 2,
+          "valuation_checksum": "4b08f382043db152d4941cf2b0f9148f16b149e4840fdecd6fc33b2c6f01b849",
+          "valuation_result_id": "57d917e6-b5ca-4c01-8b66-45b3925b4d0f",
+          "moderation_operation_id": "518aa0c8-813c-4ca1-984d-90b96d4e3bd8"
+        }
+      ],
+      "total": 1,
+      "approved": 1,
+      "submitted": 1,
+      "evaluation_mode": "disabled",
+      "chairman_forwarding": {
+        "sent_at": "2026-11-20T11:19:06.661398+00:00",
+        "actor_id": 2531
+      }
+    },
+    "status": "reviewed",
+    "note": ""
+  }
+}

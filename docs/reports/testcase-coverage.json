@@ -1,0 +1,104 @@
+{
+  "generatedAt": "2026-11-19T10:49:54.420Z",
+  "grand": {
+    "total": 940,
+    "covered": 228,
+    "automated": 207,
+    "live": 21,
+    "blocked": 0,
+    "pending": 712,
+    "performance": 133,
+    "performanceAutomated": 0,
+    "allDocumented": 1073,
+    "allCovered": 228,
+    "coveragePercent": 24.3,
+    "allCoveragePercent": 21.2
+  },
+  "roles": [
+    {
+      "role": "platform-admin",
+      "file": "01-platform-admin.csv",
+      "prefix": "PAC",
+      "total": 150,
+      "covered": 35,
+      "automated": 35,
+      "live": 0,
+      "blocked": 0,
+      "pending": 115,
+      "coveragePercent": 23.3
+    },
+    {
+      "role": "admin",
+      "file": "02-admin.csv",
+      "prefix": "ADM",
+      "total": 123,
+      "covered": 59,
+      "automated": 50,
+      "live": 9,
+      "blocked": 0,
+      "pending": 64,
+      "coveragePercent": 48
+    },
+    {
+      "role": "chairman",
+      "file": "03-chairman.csv",
+      "prefix": "CHM",
+      "total": 150,
+      "covered": 22,
+      "automated": 22,
+      "live": 0,
+      "blocked": 0,
+      "pending": 128,
+      "coveragePercent": 14.7
+    },
+    {
+      "role": "chief-examiner",
+      "file": "04-chief-examiner.csv",
+      "prefix": "CHF",
+      "total": 117,
+      "covered": 32,
+      "automated": 30,
+      "live": 2,
+      "blocked": 0,
+      "pending": 85,
+      "coveragePercent": 27.4
+    },
+    {
+      "role": "evaluator",
+      "file": "05-evaluator.csv",
+      "prefix": "EVL",
+      "total": 147,
+      "covered": 35,
+      "automated": 30,
+      "live": 5,
+      "blocked": 0,
+      "pending": 112,
+      "coveragePercent": 23.8
+    },
+    {
+      "role": "scanner-operator",
+      "file": "06-scanner-operator.csv",
+      "prefix": "SCN",
+      "total": 127,
+      "covered": 25,
+      "automated": 25,
+      "live": 0,
+      "blocked": 0,
+      "pending": 102,
+      "coveragePercent": 19.7
+    },
+    {
+      "role": "user-manager",
+      "file": "07-user-manager.csv",
+      "prefix": "USM",
+      "total": 126,
+      "covered": 20,
+      "automated": 15,
+      "live": 5,
+      "blocked": 0,
+      "pending": 106,
+      "coveragePercent": 15.9
+    }
+  ],
+  "pendingFile": "docs/reports/testcase-pending.csv"
+}

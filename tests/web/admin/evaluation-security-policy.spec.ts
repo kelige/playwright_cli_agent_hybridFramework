@@ -25,6 +25,7 @@ test("@master @web @admin relaxes the evaluation security policy", async ({
   loginPage,
   accessGovernancePage,
 }) => {
+  test.setTimeout(120_000);
   test.skip(process.env.DVS_ALLOW_WRITES !== "true", "Set DVS_ALLOW_WRITES=true to change the policy.");
   const adminPassword = process.env.DVS_ADMIN_PASSWORD;
   test.skip(!adminPassword, "Set DVS_ADMIN_PASSWORD to complete re-authentication.");
@@ -46,7 +47,14 @@ test("@master @web @admin relaxes the evaluation security policy", async ({
   });
 
   await test.step("3) save with re-authentication", async () => {
-    await accessGovernancePage.saveWithReauthentication(adminPassword!);
+    if (await accessGovernancePage.savePolicyButton.isEnabled()) {
+      await accessGovernancePage.saveWithReauthentication(adminPassword!);
+    } else {
+      await expect(
+        accessGovernancePage.savePolicyButton,
+        "The policy is already relaxed, so there is no change to save.",
+      ).toBeDisabled();
+    }
   });
 
   await test.step("4) the relaxed state persists after reload", async () => {

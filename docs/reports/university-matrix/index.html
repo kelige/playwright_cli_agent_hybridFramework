@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>University matrix · 9/10 passed</title>
+<style>
+  :root { --green:#16a34a; --red:#dc2626; --line:#dde3ea; --muted:#5d6b7a; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:"Segoe UI",system-ui,sans-serif; background:#f4f6f8; color:#1c2430; }
+  main { max-width:1500px; margin:0 auto; padding:36px 24px 56px; }
+  h1 { margin:0 0 6px; font-size:27px; }
+  .muted { color:var(--muted); font-size:12px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin:24px 0; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:16px 18px; }
+  .card span { display:block; color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.06em; }
+  .card strong { display:block; margin-top:6px; font-size:26px; }
+  .green { color:var(--green); } .red { color:var(--red); }
+  .panel { background:#fff; border:1px solid var(--line); border-radius:14px; overflow:auto; }
+  table { width:100%; border-collapse:collapse; min-width:1200px; }
+  th,td { text-align:left; padding:12px 14px; border-bottom:1px solid #eef1f5; font-size:13px; vertical-align:top; }
+  th { background:#f8fafc; color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.06em; }
+  tr:last-child td { border-bottom:none; }
+  .num { font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .pill { display:inline-block; padding:4px 10px; border-radius:999px; font-size:11px; font-weight:700; text-transform:uppercase; }
+  .pill.passed { background:#e5f6ec; color:#14683a; }
+  .pill.failed { background:#fef2f2; color:#991b1b; }
+  .pill.skipped { background:#eef1f5; color:#475569; }
+  .links { white-space:nowrap; }
+  a { color:#1d4ed8; }
+  .reason pre { margin:0; white-space:pre-wrap; word-break:break-word; color:#991b1b; background:#fef2f2; border:1px solid #fecaca; border-radius:8px; padding:8px; font-size:11px; max-height:120px; overflow:auto; }
+  .banner { margin-top:18px; padding:14px 18px; border-radius:10px; font-size:14px; background:#fffbeb; border:1px solid #fde68a; color:#92400e; }
+  footer { margin-top:18px; font-size:12px; color:var(--muted); }
+</style></head><body><main>
+<h1>University matrix — 10 universities</h1>
+<div class="muted">11/20/2026, 3:50:27 PM · 4 concurrent · 2034s total</div>
+
+<section class="cards">
+  <div class="card"><span>Universities passed</span><strong class="green">9/10</strong></div>
+  <div class="card"><span>Universities failed</span><strong class="red">1</strong></div>
+  <div class="card"><span>Tests passed</span><strong class="green">110</strong></div>
+  <div class="card"><span>Tests failed</span><strong class="green">0</strong></div>
+  <div class="card"><span>Tests total</span><strong>110</strong></div>
+  <div class="card"><span>Duration</span><strong>2034s</strong></div>
+  <div class="card"><span>Evaluated</span><strong class="green">9/10</strong></div>
+</section>
+
+<div class="banner">
+  Each university first runs the automated API workflow, then a headed evaluation one university at a time:
+       face check, marking, moderation, Chairman forwarding and the Admin report (HTML, Excel and CSV).
+</div>
+
+<section class="panel" style="margin-top:18px">
+  <table>
+    <thead><tr><th>#</th><th>University</th><th>Tenant</th><th>Status</th><th>API tests</th><th>Evaluation</th><th>Admin CSV</th><th>Duration</th><th>Artifacts</th><th>Failure reason</th></tr></thead>
+    <tbody><tr class="passed">
+        <td class="num">1</td>
+        <td><strong>Automation testing -191</strong><div class="muted">automation-testing-191 · automation.testing.191@example.com</div></td>
+        <td><a href="https://automation-testing-191.35-200-205-253.sslip.io">automation-testing-191.35-200-205-253.sslip.io</a></td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="num">11/11</td>
+        <td><span class="pill passed">passed</span></td>
+        <td><a href="automation-testing-191/reports/DVS-EVALUATION-REPORT-Automation-testing--191-m191.csv">Admin CSV</a></td>
+        <td class="num">154s</td>
+        <td class="links"><a href="automation-testing-191/report.html">report</a> · <a href="automation-testing-191/credentials.csv">credentials</a></td>
+        <td class="reason">—</td>
+      </tr>
+<tr class="passed">
+        <td class="num">2</td>
+        <td><strong>Automation testing -192</strong><div class="muted">automation-testing-192 · automation.testing.192@example.com</div></td>
+        <td><a href="https://automation-testing-192.35-200-205-253.sslip.io">automation-testing-192.35-200-205-253.sslip.io</a></td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="num">11/11</td>
+        <td><span class="pill passed">passed</span></td>
+        <td><a href="automation-testing-192/reports/DVS-EVALUATION-REPORT-Automation-testing--192-m192.csv">Admin CSV</a></td>
+        <td class="num">162s</td>
+        <td class="links"><a href="automation-testing-192/report.html">report</a> · <a href="automation-testing-192/credentials.csv">credentials</a></td>
+        <td class="reason">—</td>
+      </tr>
+<tr class="passed">
+        <td class="num">3</td>
+        <td><strong>Automation testing -193</strong><div class="muted">automation-testing-193 · automation.testing.193@example.com</div></td>
+        <td><a href="https://automation-testing-193.35-200-205-253.sslip.io">automation-testing-193.35-200-205-253.sslip.io</a></td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="num">11/11</td>
+        <td><span class="pill passed">passed</span></td>
+        <td><a href="automation-testing-193/reports/DVS-EVALUATION-REPORT-Automation-testing--193-m193.csv">Admin CSV</a></td>
+        <td class="num">142s</td>
+        <td class="links"><a href="automation-testing-193/report.html">report</a> · <a href="automation-testing-193/credentials.csv">credentials</a></td>
+        <td class="reason">—</td>
+      </tr>
+<tr class="passed">
+        <td class="num">4</td>
+        <td><strong>Automation testing -194</strong><div class="muted">automation-testing-194 · automation.testing.194@example.com</div></td>
+        <td><a href="https://automation-testing-194.35-200-205-253.sslip.io">automation-testing-194.35-200-205-253.sslip.io</a></td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="num">11/11</td>
+        <td><span class="pill passed">passed</span></td>
+        <td><a href="automation-testing-194/reports/DVS-EVALUATION-REPORT-Automation-testing--194-m194.csv">Admin CSV</a></td>
+        <td class="num">170s</td>
+        <td class="links"><a href="automation-testing-194/report.html">report</a> · <a href="automation-testing-194/credentials.csv">credentials</a></td>
+        <td class="reason">—</td>
+      </tr>
+<tr class="passed">
+        <td class="num">5</td>
+        <td><strong>Automation testing -195</strong><div class="muted">automation-testing-195 · automation.testing.195@example.com</div></td>
+        <td><a href="https://automation-testing-195.35-200-205-253.sslip.io">automation-testing-195.35-200-205-253.sslip.io</a></td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="num">11/11</td>
+        <td><span class="pill passed">passed</span></td>
+        <td><a href="automation-testing-195/reports/DVS-EVALUATION-REPORT-Automation-testing--195-m195.csv">Admin CSV</a></td>
+        <td class="num">119s</td>
+        <td class="links"><a href="automation-testing-195/report.html">report</a> · <a href="automation-testing-195/credentials.csv">credentials</a></td>
+        <td class="reason">—</td>
+      </tr>
+<tr class="passed">
+        <td class="num">6</td>
+        <td><strong>Automation testing -196</strong><div class="muted">automation-testing-196 · automation.testing.196@example.com</div></td>
+        <td><a href="https://automation-testing-196.35-200-205-253.sslip.io">automation-testing-196.35-200-205-253.sslip.io</a></td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="num">11/11</td>
+        <td><span class="pill passed">passed</span></td>
+        <td><a href="automation-testing-196/reports/DVS-EVALUATION-REPORT-Automation-testing--196-m196.csv">Admin CSV</a></td>
+        <td class="num">159s</td>
+        <td class="links"><a href="automation-testing-196/report.html">report</a> · <a href="automation-testing-196/credentials.csv">credentials</a></td>
+        <td class="reason">—</td>
+      </tr>
+<tr class="failed">
+        <td class="num">7</td>
+        <td><strong>Automation testing -197</strong><div class="muted">automation-testing-197 · automation.testing.197@example.com</div></td>
+        <td><a href="https://automation-testing-197.35-200-205-253.sslip.io">automation-testing-197.35-200-205-253.sslip.io</a></td>
+        <td><span class="pill failed">failed</span></td>
+        <td class="num">11/11</td>
+        <td><span class="pill failed">failed</span></td>
+        <td>—</td>
+        <td class="num">159s</td>
+        <td class="links"><a href="automation-testing-197/report.html">report</a> · <a href="automation-testing-197/credentials.csv">credentials</a></td>
+        <td class="reason"><pre>Submission blocked at valuation review: Evaluation alert</pre></td>
+      </tr>
+<tr class="passed">
+        <td class="num">8</td>
+        <td><strong>Automation testing -198</strong><div class="muted">automation-testing-198 · automation.testing.198@example.com</div></td>
+        <td><a href="https://automation-testing-198.35-200-205-253.sslip.io">automation-testing-198.35-200-205-253.sslip.io</a></td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="num">11/11</td>
+        <td><span class="pill passed">passed</span></td>
+        <td><a href="automation-testing-198/reports/DVS-EVALUATION-REPORT-Automation-testing--198-m198.csv">Admin CSV</a></td>
+        <td class="num">165s</td>
+        <td class="links"><a href="automation-testing-198/report.html">report</a> · <a href="automation-testing-198/credentials.csv">credentials</a></td>
+        <td class="reason">—</td>
+      </tr>
+<tr class="passed">
+        <td class="num">9</td>
+        <td><strong>Automation testing -199</strong><div class="muted">automation-testing-199 · automation.testing.199@example.com</div></td>
+        <td><a href="https://automation-testing-199.35-200-205-253.sslip.io">automation-testing-199.35-200-205-253.sslip.io</a></td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="num">11/11</td>
+        <td><span class="pill passed">passed</span></td>
+        <td><a href="automation-testing-199/reports/DVS-EVALUATION-REPORT-Automation-testing--199-m199.csv">Admin CSV</a></td>
+        <td class="num">122s</td>
+        <td class="links"><a href="automation-testing-199/report.html">report</a> · <a href="automation-testing-199/credentials.csv">credentials</a></td>
+        <td class="reason">—</td>
+      </tr>
+<tr class="passed">
+        <td class="num">10</td>
+        <td><strong>Automation testing -200</strong><div class="muted">automation-testing-200 · automation.testing.200@example.com</div></td>
+        <td><a href="https://automation-testing-200.35-200-205-253.sslip.io">automation-testing-200.35-200-205-253.sslip.io</a></td>
+        <td><span class="pill passed">passed</span></td>
+        <td class="num">11/11</td>
+        <td><span class="pill passed">passed</span></td>
+        <td><a href="automation-testing-200/reports/DVS-EVALUATION-REPORT-Automation-testing--200-m200.csv">Admin CSV</a></td>
+        <td class="num">79s</td>
+        <td class="links"><a href="automation-testing-200/report.html">report</a> · <a href="automation-testing-200/credentials.csv">credentials</a></td>
+        <td class="reason">—</td>
+      </tr></tbody>
+  </table>
+</section>
+
+<footer>Summary: <a href="./summary.xlsx">Excel</a> · <a href="./summary.csv">CSV</a> · <a href="./credentials.csv">All role credentials (CSV)</a> · <a href="./summary.json">JSON</a> · <a href="./summary.md">Markdown</a></footer>
+</main></body></html>

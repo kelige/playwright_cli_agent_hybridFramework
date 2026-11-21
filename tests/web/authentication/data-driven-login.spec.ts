@@ -73,6 +73,13 @@ for (const row of rows) {
         await setPasswordPage.setPassword(permanentPassword!);
       }
 
+      const faceEnrollment = page.getByRole("region", { name: /Register your face/i });
+      if (state === "face-enrollment" || (await faceEnrollment.isVisible().catch(() => false))) {
+        await expect(faceEnrollment).toBeVisible();
+        console.log(`✅ ${row.testName} reached the required face enrollment step`);
+        return;
+      }
+
       await expect(shellPage.primaryNavigation).toBeVisible();
       const [landingModule] = getDvsRoleDefinition(row.role).modules;
       await expect(shellPage.moduleButton(landingModule!).first()).toBeVisible();

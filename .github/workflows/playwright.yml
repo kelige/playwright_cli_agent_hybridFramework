@@ -13,14 +13,16 @@ on:
         description: "Select test suite"
         type: choice
         options:
+          - test:smoke
           - test:master
           - test:sanity
           - test:regression
           - test:e2e
           - test:api
+          - test:db
           - test:web
           - test:datadriven
-        default: "test:e2e"
+        default: "test:master"
       browser:
         description: "Select browser"
         type: choice
@@ -62,11 +64,11 @@ jobs:
 
       - name: 🧪 Run Playwright Tests
         run: |
-          $suite = "${{ github.event.inputs.test_suite || 'test:e2e' }}"
+          $suite = "${{ github.event.inputs.test_suite || 'test:master' }}"
           $browser = "${{ github.event.inputs.browser || 'chromium' }}"
           $mode = "${{ github.event.inputs.mode || 'headless' }}"
-          $tag = $suite -replace 'test:', ''
-          $browserFlag = "--project=$browser"
+          $tag = if ($suite -eq 'test:e2e') { 'end-to-end' } else { $suite -replace 'test:', '' }
+          $browserFlag = if ($suite -in @('test:api','test:db')) { '' } else { "--project=$browser" }
           $modeFlag = if ($mode -eq 'headed') { '--headed' } else { '' }
           npx playwright test --grep "@$tag" $browserFlag $modeFlag --output=test-results
         env:
@@ -95,3 +97,21 @@ jobs:
           name: allure-results
           path: allure-results/
           retention-days: 30
+
+      - name: 🗂️ Upload Durable Result Exports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dvs-result-exports
+          path: docs/reports/
+          retention-days: 30
+          if-no-files-found: ignore
+
+      - name: 📚 Upload Test Case Workbook
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dvs-testcases
+          path: docs/testcases/DVS-TESTCASES.xlsx
+          retention-days: 30
+          if-no-files-found: ignore

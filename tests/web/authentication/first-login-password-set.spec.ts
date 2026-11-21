@@ -19,7 +19,7 @@ const verifyTempReuse = process.env.DVS_VERIFY_TEMP_REUSE === "true";
 test.describe("@master @web @authentication login and first-time password set", () => {
   test.describe.configure({ mode: "serial" });
 
-  test("1) login page exposes the documented controls", async ({ loginPage }) => {
+  test("1) login page exposes the documented controls @smoke @sanity", async ({ loginPage }) => {
     test.skip(!process.env.WEB_APP_URL, "Set WEB_APP_URL to the approved DVS environment.");
 
     await loginPage.open();

@@ -1,0 +1,26 @@
+{"case":"PAC-024","title":"Tenant list is readable","status":"passed","reason":""}
+{"case":"PAC-055","title":"Type-confused login payload is refused","status":"passed","reason":""}
+{"case":"PAC-059","title":"Tenant administrator cannot provision a university","status":"passed","reason":""}
+{"case":"PAC-100","title":"Tenant administrator cannot call the switch route","status":"passed","reason":""}
+{"case":"PAC-104","title":"Overview is not readable from a tenant session","status":"passed","reason":""}
+{"case":"PAC-111","title":"Audit trail is not readable from a tenant session","status":"passed","reason":""}
+{"case":"PAC-118","title":"Tenant administrator cannot read the estate list","status":"failed","reason":"expect(received).toContain(expected) // indexOf\n\nExpected value: 200\nReceived array: [401, 403, 404]"}
+{"case":"PAC-119","title":"Tenant session cannot mutate another tenant","status":"passed","reason":""}
+{"case":"PAC-086","title":"The permanent password grants the administrator role","status":"passed","reason":""}
+{"case":"PAC-090","title":"Unknown tenant id is refused on update","status":"passed","reason":""}
+{"case":"PAC-093","title":"University update requires a CSRF token","status":"passed","reason":""}
+{"case":"PAC-102","title":"Control-plane overview is readable","status":"passed","reason":""}
+{"case":"PAC-105","title":"Audit trail is readable with an explicit limit","status":"passed","reason":""}
+{"case":"PAC-112","title":"Institution list is readable","status":"passed","reason":""}
+{"case":"PAC-115","title":"Domain context resolves a tenant hostname","status":"passed","reason":""}
+{"case":"PAC-125","title":"Tenant list ignores unknown query parameters","status":"passed","reason":""}
+{"case":"PAC-120","title":"Platform session cannot read tenant workspace APIs","status":"passed","reason":""}
+{"case":"PAC-124","title":"A revoked session cannot be replayed","status":"passed","reason":""}
+{"case":"PAC-01","title":"PAC-01","status":"passed","reason":""}
+{"case":"PAC-05","title":"PAC-05","status":"passed","reason":""}
+{"case":"PAC-02","title":"PAC-02","status":"passed","reason":""}
+{"case":"PAC-03","title":"PAC-03","status":"passed","reason":""}
+{"case":"PAC-04","title":"PAC-04","status":"passed","reason":""}
+{"case":"PAC-16","title":"PAC-16","status":"passed","reason":""}
+{"case":"PAC-17","title":"PAC-17","status":"failed","reason":"expect(received).toContain(expected) // indexOf\n\nExpected value: 200\nReceived array: [401, 403, 404]"}
+{"case":"PAC-29","title":"PAC-29","status":"passed","reason":""}

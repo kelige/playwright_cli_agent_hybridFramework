@@ -1,0 +1,247 @@
+{
+  "generatedAt": "2026-11-19T10:50:16.311Z",
+  "status": "passed",
+  "durationMs": 21454,
+  "totals": {
+    "total": 26,
+    "passed": 24,
+    "failed": 2,
+    "skipped": 0
+  },
+  "results": [
+    {
+      "title": "Tenant list is readable",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "Type-confused login payload is refused",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "Tenant administrator cannot provision a university",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "Tenant administrator cannot call the switch route",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "Overview is not readable from a tenant session",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "Audit trail is not readable from a tenant session",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "Tenant administrator cannot read the estate list",
+      "file": "",
+      "status": "failed",
+      "duration": 0,
+      "reason": "expect(received).toContain(expected) // indexOf\n\nExpected value: 200\nReceived array: [401, 403, 404]",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "Tenant session cannot mutate another tenant",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "The permanent password grants the administrator role",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "Unknown tenant id is refused on update",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "University update requires a CSRF token",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "Control-plane overview is readable",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "Audit trail is readable with an explicit limit",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "Institution list is readable",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "Domain context resolves a tenant hostname",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "Tenant list ignores unknown query parameters",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "Platform session cannot read tenant workspace APIs",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "A revoked session cannot be replayed",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "PAC-01",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "PAC-05",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "PAC-02",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "PAC-03",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "PAC-04",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "PAC-16",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "PAC-17",
+      "file": "",
+      "status": "failed",
+      "duration": 0,
+      "reason": "expect(received).toContain(expected) // indexOf\n\nExpected value: 200\nReceived array: [401, 403, 404]",
+      "retry": 0,
+      "tags": []
+    },
+    {
+      "title": "PAC-29",
+      "file": "",
+      "status": "passed",
+      "duration": 0,
+      "reason": "",
+      "retry": 0,
+      "tags": []
+    }
+  ]
+}

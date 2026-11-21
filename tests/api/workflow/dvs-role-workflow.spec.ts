@@ -16,7 +16,12 @@ import { saveRunState, upsertEnv } from "../../../utils/runState";
 
 /**
  * DVS role-based end-to-end workflow (API).
- * Admin -> User Manager -> Chairman -> Chief -> Evaluator -> Scanner Operator -> allocation.
+ * Platform Admin -> new university -> Admin -> User Manager -> Chairman -> Chief
+ * -> Evaluator -> Scanner Operator -> allocation.
+ *
+ * The platform bootstrap (`npm run test:platform`) provisions the university and
+ * writes its URL and permanent Admin credentials to `.env`; this spec then starts
+ * at the tenant Admin exactly as before.
  *
  * Source: prompts/KTR_API_TEST_PROMPTS.md sections 4, 5, 6, 7, 9 and 13.
  * Creates synthetic records on the configured tenant, so it is gated behind
@@ -37,10 +42,21 @@ const PAGE_PNG = Buffer.from(
   "base64",
 );
 
+// Fast mode skips the four deliberately-failing checks. Each failed login or
+// rejected write costs seconds under load, and the matrix runner makes them
+// optional so many universities finish sooner.
+const fastMode = process.env.DVS_MATRIX_FAST === "true";
+const skipFast = () => {
+  if (fastMode) console.log("  fast: negative check skipped");
+  return fastMode;
+};
+
 const adminEmail = process.env.DVS_ADMIN_EMAIL ?? "";
 const adminPassword = process.env.DVS_ADMIN_PASSWORD ?? "";
 const rolePassword = process.env.DVS_ROLE_NEW_PASSWORD ?? "";
-const runId = Date.now().toString(36).toLowerCase();
+// The matrix runner supplies a per-university id because user emails are unique
+// across tenants and two children can otherwise generate the same timestamp.
+const runId = (process.env.DVS_RUN_ID?.trim() || Date.now().toString(36)).toLowerCase();
 const upper = runId.toUpperCase();
 const mail = (prefix: string) => `${prefix}.${runId}@example.com`;
 const roleProfile = (role: string) => provisioning.membershipRoles.find((r: Json) => r.role === role);
@@ -65,9 +81,12 @@ async function createMembership(actor: ApiSession, actorPassword: string, body: 
   return okJson(await actor.post(Routes.SECURITY_MEMBERSHIPS, body), `create ${body.role}`);
 }
 
-test.describe.serial("DVS role-based workflow @master @api @end-to-end", () => {
+test.describe.serial("DVS role-based workflow @smoke @master @api @end-to-end", () => {
   test.skip(!process.env.DVS_API_BASE_URL, "Set DVS_API_BASE_URL in .env.");
-  test.skip(!adminEmail || !adminPassword, "Set DVS_ADMIN_EMAIL and DVS_ADMIN_PASSWORD in .env.");
+  test.skip(
+    !adminEmail || !adminPassword,
+    "Run `npm run test:platform` first to provision a university and write its Admin credentials.",
+  );
   test.skip(!rolePassword, "Set DVS_ROLE_NEW_PASSWORD in .env.");
   test.skip(process.env.DVS_ALLOW_WRITES !== "true", "Set DVS_ALLOW_WRITES=true to create synthetic records.");
 
@@ -413,6 +432,7 @@ test.describe.serial("DVS role-based workflow @master @api @end-to-end", () => {
     });
 
     await test.step("5.2) a Chairman without a programme is rejected", async () => {
+      if (skipFast()) return;
       expect((await admin.stepUp(adminPassword)).status()).toBe(200);
       const profile = roleProfile("chairman");
       const response = await admin.post(Routes.SECURITY_MEMBERSHIPS, {
@@ -451,6 +471,7 @@ test.describe.serial("DVS role-based workflow @master @api @end-to-end", () => {
     });
 
     await test.step("5.4) the single-use temporary password is no longer accepted", async () => {
+      if (skipFast()) return;
       const reuse = await ApiSession.login(ctx.emails.chairman, chairmanTemporaryPassword);
       expect(reuse.loginResponse.status()).toBe(401);
       await reuse.dispose();
@@ -478,6 +499,7 @@ test.describe.serial("DVS role-based workflow @master @api @end-to-end", () => {
     });
 
     await test.step("6.2) a Chairman cannot register a non-chief", async () => {
+      if (skipFast()) return;
       const response = await chairman.post(Routes.EVALUATOR_MANAGEMENT, {
         display_name: "Not a chief",
         email: mail("dvs.notchief"),
@@ -620,6 +642,7 @@ test.describe.serial("DVS role-based workflow @master @api @end-to-end", () => {
     const email = mail(profile.emailPrefix);
 
     await test.step("8.1) a Scanner Operator without a centre is rejected", async () => {
+      if (skipFast()) return;
       expect((await um.stepUp(rolePassword)).status()).toBe(200);
       const response = await um.post(Routes.SECURITY_MEMBERSHIPS, {
         first_name: profile.firstName,

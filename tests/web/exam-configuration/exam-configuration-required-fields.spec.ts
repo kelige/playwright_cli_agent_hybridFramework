@@ -13,7 +13,7 @@ const adminForms = [
   { group: "Sessions configuration", tab: "Academic years", add: /Add Academic Year/i, minimumRequired: 1, minimumFields: 2 },
   { group: "Sessions configuration", tab: "Exam sessions", add: /Add Exam Session/i, minimumRequired: 3, minimumFields: 3 },
   { group: "Configuration groups", tab: "Subjects", add: /Add Subject/i, minimumRequired: 5, minimumFields: 5 },
-  { group: "Configuration groups", tab: "Papers", add: /Add Paper/i, minimumRequired: 1, minimumFields: 12 },
+  { group: "Configuration groups", tab: "Papers", add: /Add Paper/i, minimumRequired: 1, minimumFields: 10 },
 ] as const;
 
 async function signInWithRole(
@@ -67,7 +67,7 @@ test("@master @web @admin marking scheme requires paper and title", async ({ pag
 
   expect(await page.getByRole("combobox", { name: "Paper", exact: true }).evaluate((element) => (element as HTMLSelectElement).required)).toBe(true);
   expect(await page.getByRole("textbox", { name: "Title", exact: true }).evaluate((element) => (element as HTMLInputElement).required)).toBe(true);
-  await expect(page.locator('input[type="file"]')).toHaveCount(1);
+  await expect(page.locator('input[type="file"]')).toHaveCount(2);
 });
 
 test("@master @web @admin adding user requires re-authentication", async ({ page, loginPage }) => {

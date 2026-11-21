@@ -1,0 +1,1407 @@
+{
+  "startedAt": "2026-11-20T10:20:27.549Z",
+  "durationMs": 2034203,
+  "count": 10,
+  "concurrency": 4,
+  "passed": 9,
+  "failed": 1,
+  "skipped": 0,
+  "evaluate": true,
+  "evaluated": 10,
+  "evaluationPassed": 9,
+  "totals": {
+    "total": 110,
+    "passed": 110,
+    "failed": 0,
+    "skipped": 0
+  },
+  "results": [
+    {
+      "job": {
+        "index": 0,
+        "number": 191,
+        "name": "Automation testing -191",
+        "code": "automation-testing-191",
+        "adminEmail": "automation.testing.191@example.com",
+        "tenantId": "f940d5e3-c4e3-4a01-a16d-a2c703f99adb",
+        "tenantUrl": "https://automation-testing-191.35-200-205-253.sslip.io",
+        "dir": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-191",
+        "policyNote": "minimum submission time 0, 10 evaluation flag(s) off"
+      },
+      "status": "passed",
+      "apiStatus": "passed",
+      "exitCode": 0,
+      "startedAt": "2026-11-20T10:21:42.737Z",
+      "durationMs": 153740,
+      "totals": {
+        "total": 11,
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0
+      },
+      "cases": [
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 1) Admin signs in and builds the academic chain",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 7009,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 2) Admin configures the paper, documents and marking scheme",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 3033,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 3) Admin creates, readiness-checks and activates the evaluation centre",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 4419,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 4) Admin updates the security policy with optimistic locking",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 4163,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 5) Admin provisions the User Manager and the Chairman",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 49049,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 6) Chairman registers a Chief Examiner and nominates the Chief",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 19337,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 7) Chief accepts the nomination and registers the Evaluator",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 17926,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 8) User Manager provisions the Scanner Operator",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 19629,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 9) Scanner Operator digitizes a script and submits the packet",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 26159,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 10) Chief sees the ready packet; allocation is gated on evaluator attendance",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 1242,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 11) Persist the provisioned accounts for the Web role checks",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 3,
+          "reason": ""
+        }
+      ],
+      "error": "",
+      "paths": {
+        "report": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-191\\report.html",
+        "playwrightHtml": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-191\\html\\index.html",
+        "junit": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-191\\results.xml",
+        "log": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-191\\run.log"
+      },
+      "evaluation": {
+        "status": "passed",
+        "exitCode": 0,
+        "durationMs": 377903,
+        "totals": {
+          "total": 1,
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0
+        },
+        "cases": [
+          {
+            "name": "University matrix — headed evaluation @master @end-to-end › evaluates the submitted packet and delivers the Admin report",
+            "className": "web\\workflow\\evaluate-tenant.spec.ts",
+            "status": "passed",
+            "durationMs": 374269,
+            "reason": ""
+          }
+        ],
+        "error": "",
+        "paths": {
+          "report": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-191\\report.html",
+          "playwrightHtml": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-191\\evaluate-html\\index.html",
+          "junit": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-191\\evaluate-results.xml",
+          "log": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-191\\evaluate.log",
+          "adminReport": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-191\\reports\\artifacts\\ddc836dd-566b-4465-bf6e-c83641f9c3c4\\report.html"
+        }
+      }
+    },
+    {
+      "job": {
+        "index": 1,
+        "number": 192,
+        "name": "Automation testing -192",
+        "code": "automation-testing-192",
+        "adminEmail": "automation.testing.192@example.com",
+        "tenantId": "2e2af305-5a99-472c-9490-6564c860d521",
+        "tenantUrl": "https://automation-testing-192.35-200-205-253.sslip.io",
+        "dir": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-192",
+        "policyNote": "minimum submission time 0, 10 evaluation flag(s) off"
+      },
+      "status": "passed",
+      "apiStatus": "passed",
+      "exitCode": 0,
+      "startedAt": "2026-11-20T10:21:42.750Z",
+      "durationMs": 161892,
+      "totals": {
+        "total": 11,
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0
+      },
+      "cases": [
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 1) Admin signs in and builds the academic chain",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 7427,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 2) Admin configures the paper, documents and marking scheme",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 3272,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 3) Admin creates, readiness-checks and activates the evaluation centre",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 5127,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 4) Admin updates the security policy with optimistic locking",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 13020,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 5) Admin provisions the User Manager and the Chairman",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 41972,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 6) Chairman registers a Chief Examiner and nominates the Chief",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 17248,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 7) Chief accepts the nomination and registers the Evaluator",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 22792,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 8) User Manager provisions the Scanner Operator",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 15494,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 9) Scanner Operator digitizes a script and submits the packet",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 32720,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 10) Chief sees the ready packet; allocation is gated on evaluator attendance",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 1061,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 11) Persist the provisioned accounts for the Web role checks",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 2,
+          "reason": ""
+        }
+      ],
+      "error": "",
+      "paths": {
+        "report": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-192\\report.html",
+        "playwrightHtml": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-192\\html\\index.html",
+        "junit": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-192\\results.xml",
+        "log": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-192\\run.log"
+      },
+      "evaluation": {
+        "status": "passed",
+        "exitCode": 0,
+        "durationMs": 430649,
+        "totals": {
+          "total": 1,
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0
+        },
+        "cases": [
+          {
+            "name": "University matrix — headed evaluation @master @end-to-end › evaluates the submitted packet and delivers the Admin report",
+            "className": "web\\workflow\\evaluate-tenant.spec.ts",
+            "status": "passed",
+            "durationMs": 428704,
+            "reason": ""
+          }
+        ],
+        "error": "",
+        "paths": {
+          "report": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-192\\report.html",
+          "playwrightHtml": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-192\\evaluate-html\\index.html",
+          "junit": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-192\\evaluate-results.xml",
+          "log": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-192\\evaluate.log",
+          "adminReport": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-192\\reports\\artifacts\\5be25c47-566c-488d-9bf3-2c2b14e61990\\report.html"
+        }
+      }
+    },
+    {
+      "job": {
+        "index": 2,
+        "number": 193,
+        "name": "Automation testing -193",
+        "code": "automation-testing-193",
+        "adminEmail": "automation.testing.193@example.com",
+        "tenantId": "f4f026ab-a4b2-4669-a419-b8637eee17c6",
+        "tenantUrl": "https://automation-testing-193.35-200-205-253.sslip.io",
+        "dir": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-193",
+        "policyNote": "minimum submission time 0, 10 evaluation flag(s) off"
+      },
+      "status": "passed",
+      "apiStatus": "passed",
+      "exitCode": 0,
+      "startedAt": "2026-11-20T10:21:42.757Z",
+      "durationMs": 142065,
+      "totals": {
+        "total": 11,
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0
+      },
+      "cases": [
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 1) Admin signs in and builds the academic chain",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 6530,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 2) Admin configures the paper, documents and marking scheme",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 3425,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 3) Admin creates, readiness-checks and activates the evaluation centre",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 4029,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 4) Admin updates the security policy with optimistic locking",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 6501,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 5) Admin provisions the User Manager and the Chairman",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 47221,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 6) Chairman registers a Chief Examiner and nominates the Chief",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 19541,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 7) Chief accepts the nomination and registers the Evaluator",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 17954,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 8) User Manager provisions the Scanner Operator",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 18662,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 9) Scanner Operator digitizes a script and submits the packet",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 15574,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 10) Chief sees the ready packet; allocation is gated on evaluator attendance",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 874,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 11) Persist the provisioned accounts for the Web role checks",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 2,
+          "reason": ""
+        }
+      ],
+      "error": "",
+      "paths": {
+        "report": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-193\\report.html",
+        "playwrightHtml": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-193\\html\\index.html",
+        "junit": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-193\\results.xml",
+        "log": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-193\\run.log"
+      },
+      "evaluation": {
+        "status": "passed",
+        "exitCode": 0,
+        "durationMs": 413384,
+        "totals": {
+          "total": 1,
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0
+        },
+        "cases": [
+          {
+            "name": "University matrix — headed evaluation @master @end-to-end › evaluates the submitted packet and delivers the Admin report",
+            "className": "web\\workflow\\evaluate-tenant.spec.ts",
+            "status": "passed",
+            "durationMs": 411300,
+            "reason": ""
+          }
+        ],
+        "error": "",
+        "paths": {
+          "report": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-193\\report.html",
+          "playwrightHtml": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-193\\evaluate-html\\index.html",
+          "junit": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-193\\evaluate-results.xml",
+          "log": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-193\\evaluate.log",
+          "adminReport": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-193\\reports\\artifacts\\8334950a-bdfb-4d6c-a98b-31706c010f0f\\report.html"
+        }
+      }
+    },
+    {
+      "job": {
+        "index": 3,
+        "number": 194,
+        "name": "Automation testing -194",
+        "code": "automation-testing-194",
+        "adminEmail": "automation.testing.194@example.com",
+        "tenantId": "995132fe-b17a-47a1-9ea5-2cb7cab00bae",
+        "tenantUrl": "https://automation-testing-194.35-200-205-253.sslip.io",
+        "dir": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-194",
+        "policyNote": "minimum submission time 0, 10 evaluation flag(s) off"
+      },
+      "status": "passed",
+      "apiStatus": "passed",
+      "exitCode": 0,
+      "startedAt": "2026-11-20T10:21:42.770Z",
+      "durationMs": 170450,
+      "totals": {
+        "total": 11,
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0
+      },
+      "cases": [
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 1) Admin signs in and builds the academic chain",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 6620,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 2) Admin configures the paper, documents and marking scheme",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 3260,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 3) Admin creates, readiness-checks and activates the evaluation centre",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 4819,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 4) Admin updates the security policy with optimistic locking",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 11698,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 5) Admin provisions the User Manager and the Chairman",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 44078,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 6) Chairman registers a Chief Examiner and nominates the Chief",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 17000,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 7) Chief accepts the nomination and registers the Evaluator",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 20240,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 8) User Manager provisions the Scanner Operator",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 20295,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 9) Scanner Operator digitizes a script and submits the packet",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 38854,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 10) Chief sees the ready packet; allocation is gated on evaluator attendance",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 1843,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 11) Persist the provisioned accounts for the Web role checks",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 5,
+          "reason": ""
+        }
+      ],
+      "error": "",
+      "paths": {
+        "report": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-194\\report.html",
+        "playwrightHtml": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-194\\html\\index.html",
+        "junit": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-194\\results.xml",
+        "log": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-194\\run.log"
+      },
+      "evaluation": {
+        "status": "passed",
+        "exitCode": 0,
+        "durationMs": 392927,
+        "totals": {
+          "total": 1,
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0
+        },
+        "cases": [
+          {
+            "name": "University matrix — headed evaluation @master @end-to-end › evaluates the submitted packet and delivers the Admin report",
+            "className": "web\\workflow\\evaluate-tenant.spec.ts",
+            "status": "passed",
+            "durationMs": 390994,
+            "reason": ""
+          }
+        ],
+        "error": "",
+        "paths": {
+          "report": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-194\\report.html",
+          "playwrightHtml": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-194\\evaluate-html\\index.html",
+          "junit": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-194\\evaluate-results.xml",
+          "log": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-194\\evaluate.log",
+          "adminReport": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-194\\reports\\artifacts\\34937904-5d96-4fac-b0e2-2fa8bffd3d82\\report.html"
+        }
+      }
+    },
+    {
+      "job": {
+        "index": 4,
+        "number": 195,
+        "name": "Automation testing -195",
+        "code": "automation-testing-195",
+        "adminEmail": "automation.testing.195@example.com",
+        "tenantId": "dbc8e550-b9cf-4b91-895b-a59de05f5dbd",
+        "tenantUrl": "https://automation-testing-195.35-200-205-253.sslip.io",
+        "dir": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-195",
+        "policyNote": "minimum submission time 0, 10 evaluation flag(s) off"
+      },
+      "status": "passed",
+      "apiStatus": "passed",
+      "exitCode": 0,
+      "startedAt": "2026-11-20T10:24:04.828Z",
+      "durationMs": 118719,
+      "totals": {
+        "total": 11,
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0
+      },
+      "cases": [
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 1) Admin signs in and builds the academic chain",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 2965,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 2) Admin configures the paper, documents and marking scheme",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 1932,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 3) Admin creates, readiness-checks and activates the evaluation centre",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 2347,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 4) Admin updates the security policy with optimistic locking",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 1381,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 5) Admin provisions the User Manager and the Chairman",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 21923,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 6) Chairman registers a Chief Examiner and nominates the Chief",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 13273,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 7) Chief accepts the nomination and registers the Evaluator",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 16723,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 8) User Manager provisions the Scanner Operator",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 32977,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 9) Scanner Operator digitizes a script and submits the packet",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 20701,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 10) Chief sees the ready packet; allocation is gated on evaluator attendance",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 3273,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 11) Persist the provisioned accounts for the Web role checks",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 2,
+          "reason": ""
+        }
+      ],
+      "error": "",
+      "paths": {
+        "report": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-195\\report.html",
+        "playwrightHtml": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-195\\html\\index.html",
+        "junit": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-195\\results.xml",
+        "log": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-195\\run.log"
+      },
+      "evaluation": {
+        "status": "passed",
+        "exitCode": 0,
+        "durationMs": 396756,
+        "totals": {
+          "total": 1,
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0
+        },
+        "cases": [
+          {
+            "name": "University matrix — headed evaluation @master @end-to-end › evaluates the submitted packet and delivers the Admin report",
+            "className": "web\\workflow\\evaluate-tenant.spec.ts",
+            "status": "passed",
+            "durationMs": 394684,
+            "reason": ""
+          }
+        ],
+        "error": "",
+        "paths": {
+          "report": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-195\\report.html",
+          "playwrightHtml": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-195\\evaluate-html\\index.html",
+          "junit": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-195\\evaluate-results.xml",
+          "log": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-195\\evaluate.log",
+          "adminReport": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-195\\reports\\artifacts\\99516f0d-66d7-4117-9bc5-c2abe91aa206\\report.html"
+        }
+      }
+    },
+    {
+      "job": {
+        "index": 5,
+        "number": 196,
+        "name": "Automation testing -196",
+        "code": "automation-testing-196",
+        "adminEmail": "automation.testing.196@example.com",
+        "tenantId": "b1a3618b-a6fc-4775-aa4e-96f664d4a327",
+        "tenantUrl": "https://automation-testing-196.35-200-205-253.sslip.io",
+        "dir": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-196",
+        "policyNote": "minimum submission time 0, 10 evaluation flag(s) off"
+      },
+      "status": "passed",
+      "apiStatus": "passed",
+      "exitCode": 0,
+      "startedAt": "2026-11-20T10:24:16.481Z",
+      "durationMs": 158823,
+      "totals": {
+        "total": 11,
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0
+      },
+      "cases": [
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 1) Admin signs in and builds the academic chain",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 3704,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 2) Admin configures the paper, documents and marking scheme",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 2986,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 3) Admin creates, readiness-checks and activates the evaluation centre",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 2356,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 4) Admin updates the security policy with optimistic locking",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 2817,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 5) Admin provisions the User Manager and the Chairman",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 31284,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 6) Chairman registers a Chief Examiner and nominates the Chief",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 25530,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 7) Chief accepts the nomination and registers the Evaluator",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 20939,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 8) User Manager provisions the Scanner Operator",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 16161,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 9) Scanner Operator digitizes a script and submits the packet",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 49329,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 10) Chief sees the ready packet; allocation is gated on evaluator attendance",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 2562,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 11) Persist the provisioned accounts for the Web role checks",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 2,
+          "reason": ""
+        }
+      ],
+      "error": "",
+      "paths": {
+        "report": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-196\\report.html",
+        "playwrightHtml": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-196\\html\\index.html",
+        "junit": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-196\\results.xml",
+        "log": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-196\\run.log"
+      },
+      "evaluation": {
+        "status": "passed",
+        "exitCode": 0,
+        "durationMs": 413277,
+        "totals": {
+          "total": 1,
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0
+        },
+        "cases": [
+          {
+            "name": "University matrix — headed evaluation @master @end-to-end › evaluates the submitted packet and delivers the Admin report",
+            "className": "web\\workflow\\evaluate-tenant.spec.ts",
+            "status": "passed",
+            "durationMs": 411102,
+            "reason": ""
+          }
+        ],
+        "error": "",
+        "paths": {
+          "report": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-196\\report.html",
+          "playwrightHtml": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-196\\evaluate-html\\index.html",
+          "junit": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-196\\evaluate-results.xml",
+          "log": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-196\\evaluate.log",
+          "adminReport": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-196\\reports\\artifacts\\70929aa5-38f7-491f-8cf0-521c94c184cf\\report.html"
+        }
+      }
+    },
+    {
+      "job": {
+        "index": 6,
+        "number": 197,
+        "name": "Automation testing -197",
+        "code": "automation-testing-197",
+        "adminEmail": "automation.testing.197@example.com",
+        "tenantId": "c88a5315-12b5-4041-acc3-d3f360b041c6",
+        "tenantUrl": "https://automation-testing-197.35-200-205-253.sslip.io",
+        "dir": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-197",
+        "policyNote": "minimum submission time 0, 10 evaluation flag(s) off"
+      },
+      "status": "failed",
+      "apiStatus": "passed",
+      "exitCode": 0,
+      "startedAt": "2026-11-20T10:24:24.646Z",
+      "durationMs": 158625,
+      "totals": {
+        "total": 11,
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0
+      },
+      "cases": [
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 1) Admin signs in and builds the academic chain",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 4203,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 2) Admin configures the paper, documents and marking scheme",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 4145,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 3) Admin creates, readiness-checks and activates the evaluation centre",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 4554,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 4) Admin updates the security policy with optimistic locking",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 4318,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 5) Admin provisions the User Manager and the Chairman",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 42361,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 6) Chairman registers a Chief Examiner and nominates the Chief",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 19085,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 7) Chief accepts the nomination and registers the Evaluator",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 15651,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 8) User Manager provisions the Scanner Operator",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 42207,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 9) Scanner Operator digitizes a script and submits the packet",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 18047,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 10) Chief sees the ready packet; allocation is gated on evaluator attendance",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 2905,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 11) Persist the provisioned accounts for the Web role checks",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 2,
+          "reason": ""
+        }
+      ],
+      "error": "Submission blocked at valuation review: Evaluation alert",
+      "paths": {
+        "report": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-197\\report.html",
+        "playwrightHtml": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-197\\html\\index.html",
+        "junit": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-197\\results.xml",
+        "log": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-197\\run.log"
+      },
+      "evaluation": {
+        "status": "failed",
+        "exitCode": 1,
+        "durationMs": 267898,
+        "totals": {
+          "total": 1,
+          "passed": 0,
+          "failed": 1,
+          "skipped": 0
+        },
+        "cases": [
+          {
+            "name": "University matrix — headed evaluation @master @end-to-end › evaluates the submitted packet and delivers the Admin report",
+            "className": "web\\workflow\\evaluate-tenant.spec.ts",
+            "status": "failed",
+            "durationMs": 265520,
+            "reason": "Submission blocked at valuation review: Evaluation alert"
+          }
+        ],
+        "error": "Submission blocked at valuation review: Evaluation alert",
+        "paths": {
+          "report": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-197\\report.html",
+          "playwrightHtml": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-197\\evaluate-html\\index.html",
+          "junit": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-197\\evaluate-results.xml",
+          "log": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-197\\evaluate.log"
+        }
+      }
+    },
+    {
+      "job": {
+        "index": 7,
+        "number": 198,
+        "name": "Automation testing -198",
+        "code": "automation-testing-198",
+        "adminEmail": "automation.testing.198@example.com",
+        "tenantId": "59557c76-afaf-4f66-bb7a-b5a9c092dc44",
+        "tenantUrl": "https://automation-testing-198.35-200-205-253.sslip.io",
+        "dir": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-198",
+        "policyNote": "minimum submission time 0, 10 evaluation flag(s) off"
+      },
+      "status": "passed",
+      "apiStatus": "passed",
+      "exitCode": 0,
+      "startedAt": "2026-11-20T10:24:33.224Z",
+      "durationMs": 165069,
+      "totals": {
+        "total": 11,
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0
+      },
+      "cases": [
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 1) Admin signs in and builds the academic chain",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 6941,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 2) Admin configures the paper, documents and marking scheme",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 8371,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 3) Admin creates, readiness-checks and activates the evaluation centre",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 6545,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 4) Admin updates the security policy with optimistic locking",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 4766,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 5) Admin provisions the User Manager and the Chairman",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 46218,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 6) Chairman registers a Chief Examiner and nominates the Chief",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 15052,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 7) Chief accepts the nomination and registers the Evaluator",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 39615,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 8) User Manager provisions the Scanner Operator",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 20840,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 9) Scanner Operator digitizes a script and submits the packet",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 14120,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 10) Chief sees the ready packet; allocation is gated on evaluator attendance",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 1431,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 11) Persist the provisioned accounts for the Web role checks",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 2,
+          "reason": ""
+        }
+      ],
+      "error": "",
+      "paths": {
+        "report": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-198\\report.html",
+        "playwrightHtml": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-198\\html\\index.html",
+        "junit": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-198\\results.xml",
+        "log": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-198\\run.log"
+      },
+      "evaluation": {
+        "status": "passed",
+        "exitCode": 0,
+        "durationMs": 403716,
+        "totals": {
+          "total": 1,
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0
+        },
+        "cases": [
+          {
+            "name": "University matrix — headed evaluation @master @end-to-end › evaluates the submitted packet and delivers the Admin report",
+            "className": "web\\workflow\\evaluate-tenant.spec.ts",
+            "status": "passed",
+            "durationMs": 401459,
+            "reason": ""
+          }
+        ],
+        "error": "",
+        "paths": {
+          "report": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-198\\report.html",
+          "playwrightHtml": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-198\\evaluate-html\\index.html",
+          "junit": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-198\\evaluate-results.xml",
+          "log": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-198\\evaluate.log",
+          "adminReport": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-198\\reports\\artifacts\\a4db05a8-d2d9-4124-b214-55a840cf0db5\\report.html"
+        }
+      }
+    },
+    {
+      "job": {
+        "index": 8,
+        "number": 199,
+        "name": "Automation testing -199",
+        "code": "automation-testing-199",
+        "adminEmail": "automation.testing.199@example.com",
+        "tenantId": "543506e0-d941-4de6-925b-f7f0d8d97ab3",
+        "tenantUrl": "https://automation-testing-199.35-200-205-253.sslip.io",
+        "dir": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-199",
+        "policyNote": "minimum submission time 0, 10 evaluation flag(s) off"
+      },
+      "status": "passed",
+      "apiStatus": "passed",
+      "exitCode": 0,
+      "startedAt": "2026-11-20T10:26:03.550Z",
+      "durationMs": 121877,
+      "totals": {
+        "total": 11,
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0
+      },
+      "cases": [
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 1) Admin signs in and builds the academic chain",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 40979,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 2) Admin configures the paper, documents and marking scheme",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 9668,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 3) Admin creates, readiness-checks and activates the evaluation centre",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 6488,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 4) Admin updates the security policy with optimistic locking",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 3568,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 5) Admin provisions the User Manager and the Chairman",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 18865,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 6) Chairman registers a Chief Examiner and nominates the Chief",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 8696,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 7) Chief accepts the nomination and registers the Evaluator",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 9619,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 8) User Manager provisions the Scanner Operator",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 9691,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 9) Scanner Operator digitizes a script and submits the packet",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 12474,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 10) Chief sees the ready packet; allocation is gated on evaluator attendance",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 712,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 11) Persist the provisioned accounts for the Web role checks",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 2,
+          "reason": ""
+        }
+      ],
+      "error": "",
+      "paths": {
+        "report": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-199\\report.html",
+        "playwrightHtml": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-199\\html\\index.html",
+        "junit": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-199\\results.xml",
+        "log": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-199\\run.log"
+      },
+      "evaluation": {
+        "status": "passed",
+        "exitCode": 0,
+        "durationMs": 278695,
+        "totals": {
+          "total": 1,
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0
+        },
+        "cases": [
+          {
+            "name": "University matrix — headed evaluation @master @end-to-end › evaluates the submitted packet and delivers the Admin report",
+            "className": "web\\workflow\\evaluate-tenant.spec.ts",
+            "status": "passed",
+            "durationMs": 276507,
+            "reason": ""
+          }
+        ],
+        "error": "",
+        "paths": {
+          "report": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-199\\report.html",
+          "playwrightHtml": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-199\\evaluate-html\\index.html",
+          "junit": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-199\\evaluate-results.xml",
+          "log": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-199\\evaluate.log",
+          "adminReport": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-199\\reports\\artifacts\\2f5cfddb-da14-48c8-b96e-80d19a00965d\\report.html"
+        }
+      }
+    },
+    {
+      "job": {
+        "index": 9,
+        "number": 200,
+        "name": "Automation testing -200",
+        "code": "automation-testing-200",
+        "adminEmail": "automation.testing.200@example.com",
+        "tenantId": "cd24b9d0-638c-4a77-8215-3a0eb8ab82f9",
+        "tenantUrl": "https://automation-testing-200.35-200-205-253.sslip.io",
+        "dir": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-200",
+        "policyNote": "minimum submission time 0, 10 evaluation flag(s) off"
+      },
+      "status": "passed",
+      "apiStatus": "passed",
+      "exitCode": 0,
+      "startedAt": "2026-11-20T10:26:55.308Z",
+      "durationMs": 79060,
+      "totals": {
+        "total": 11,
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0
+      },
+      "cases": [
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 1) Admin signs in and builds the academic chain",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 7990,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 2) Admin configures the paper, documents and marking scheme",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 2905,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 3) Admin creates, readiness-checks and activates the evaluation centre",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 2234,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 4) Admin updates the security policy with optimistic locking",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 2474,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 5) Admin provisions the User Manager and the Chairman",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 19718,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 6) Chairman registers a Chief Examiner and nominates the Chief",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 8415,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 7) Chief accepts the nomination and registers the Evaluator",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 9833,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 8) User Manager provisions the Scanner Operator",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 7122,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 9) Scanner Operator digitizes a script and submits the packet",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 16448,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 10) Chief sees the ready packet; allocation is gated on evaluator attendance",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 657,
+          "reason": ""
+        },
+        {
+          "name": "DVS role-based workflow @smoke @master @api @end-to-end › 11) Persist the provisioned accounts for the Web role checks",
+          "className": "api\\workflow\\dvs-role-workflow.spec.ts",
+          "status": "passed",
+          "durationMs": 4,
+          "reason": ""
+        }
+      ],
+      "error": "",
+      "paths": {
+        "report": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-200\\report.html",
+        "playwrightHtml": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-200\\html\\index.html",
+        "junit": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-200\\results.xml",
+        "log": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-200\\run.log"
+      },
+      "evaluation": {
+        "status": "passed",
+        "exitCode": 0,
+        "durationMs": 363340,
+        "totals": {
+          "total": 1,
+          "passed": 1,
+          "failed": 0,
+          "skipped": 0
+        },
+        "cases": [
+          {
+            "name": "University matrix — headed evaluation @master @end-to-end › evaluates the submitted packet and delivers the Admin report",
+            "className": "web\\workflow\\evaluate-tenant.spec.ts",
+            "status": "passed",
+            "durationMs": 361441,
+            "reason": ""
+          }
+        ],
+        "error": "",
+        "paths": {
+          "report": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-200\\report.html",
+          "playwrightHtml": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-200\\evaluate-html\\index.html",
+          "junit": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-200\\evaluate-results.xml",
+          "log": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-200\\evaluate.log",
+          "adminReport": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\automation-testing-200\\reports\\artifacts\\846bcfe5-f28a-4473-9fa5-091aed9b7cff\\report.html"
+        }
+      }
+    }
+  ],
+  "paths": {
+    "index": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\index.html",
+    "xlsx": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\summary.xlsx",
+    "csv": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\summary.csv",
+    "credentials": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\credentials.csv",
+    "json": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\summary.json",
+    "markdown": "D:\\Playwright_Framework_opercart\\docs\\reports\\university-matrix\\summary.md"
+  }
+}

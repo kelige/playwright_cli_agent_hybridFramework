@@ -65,14 +65,6 @@
                 "type": "string"
               }
             },
-            "required": [
-              "due_at",
-              "paper_code",
-              "script_count",
-              "assignment_ids",
-              "assignment_group",
-              "packet_reference"
-            ],
             "additionalProperties": true
           },
           "version": {

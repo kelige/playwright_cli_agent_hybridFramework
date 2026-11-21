@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test case results · 24 passed / 2 failed</title>
+<style>
+  :root { color-scheme: light; --green:#16a34a; --red:#dc2626; --amber:#b45309; --line:#dde3ea; --muted:#5d6b7a; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:"Segoe UI",system-ui,sans-serif; background:#f4f6f8; color:#1c2430; }
+  main { max-width:1240px; margin:0 auto; padding:36px 24px 56px; }
+  h1 { margin:0 0 6px; font-size:26px; }
+  .sub { color:var(--muted); font-size:13px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin:24px 0; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:16px 18px; }
+  .card span { display:block; color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.06em; }
+  .card strong { display:block; margin-top:6px; font-size:26px; }
+  .card strong.green { color:var(--green); }
+  .card strong.red { color:var(--red); }
+  .panel { background:#fff; border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+  table { width:100%; border-collapse:collapse; }
+  th,td { text-align:left; padding:13px 16px; border-bottom:1px solid #eef1f5; font-size:13px; vertical-align:top; }
+  th { background:#f8fafc; color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.06em; }
+  tr:last-child td { border-bottom:none; }
+  .icon { width:52px; text-align:center; }
+  .tick { display:inline-block; width:26px; height:26px; line-height:26px; border-radius:7px; background:var(--green); color:#fff; font-weight:800; text-align:center; }
+  .cross { display:inline-block; width:26px; height:26px; line-height:26px; border-radius:7px; background:var(--red); color:#fff; font-weight:800; text-align:center; }
+  .skip { display:inline-block; width:26px; height:26px; line-height:26px; border-radius:7px; background:#94a3b8; color:#fff; font-weight:800; text-align:center; }
+  .status { font-size:11px; font-weight:700; text-transform:uppercase; }
+  .status.passed { color:var(--green); }
+  .status.failed { color:var(--red); }
+  .status.skipped { color:var(--amber); }
+  .title { min-width:320px; font-weight:600; }
+  .file { color:var(--muted); font-size:11px; margin-top:3px; font-family:Consolas,monospace; }
+  .duration { white-space:nowrap; color:var(--muted); }
+  .reason pre { margin:0; white-space:pre-wrap; word-break:break-word; color:#991b1b; background:#fef2f2; border:1px solid #fecaca; border-radius:8px; padding:10px; font-size:12px; font-family:Consolas,monospace; max-height:220px; overflow:auto; }
+  .banner { margin:18px 0 0; padding:13px 16px; border-radius:10px; font-size:14px; }
+  .banner.ok { background:#f0fdf4; border:1px solid #bbf7d0; color:#166534; }
+  .banner.bad { background:#fef2f2; border:1px solid #fecaca; color:#991b1b; }
+  footer { margin-top:18px; font-size:12px; color:var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Test case results</h1>
+  <div class="sub">11/19/2026, 4:20:16 PM · suite status passed · 21.5s</div>
+
+  <section class="cards">
+    <div class="card"><span>Passed</span><strong class="green">24</strong></div>
+    <div class="card"><span>Failed</span><strong class="red">2</strong></div>
+    <div class="card"><span>Skipped</span><strong>0</strong></div>
+    <div class="card"><span>Total</span><strong>26</strong></div>
+  </section>
+
+  <div class="banner bad">
+    2 test case(s) failed — reasons are listed below.
+  </div>
+
+  <section class="panel" style="margin-top:16px">
+    <table>
+      <thead><tr><th>Result</th><th>Status</th><th>Test case</th><th>Duration</th><th>Failure reason</th></tr></thead>
+      <tbody><tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">Tenant list is readable<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr>
+<tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">Type-confused login payload is refused<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr>
+<tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">Tenant administrator cannot provision a university<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr>
+<tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">Tenant administrator cannot call the switch route<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr>
+<tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">Overview is not readable from a tenant session<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr>
+<tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">Audit trail is not readable from a tenant session<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr>
+<tr class="failed">
+          <td class="icon"><span class="cross">✕</span></td>
+          <td><span class="status failed">failed</span></td>
+          <td class="title">Tenant administrator cannot read the estate list<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason"><pre>expect(received).toContain(expected) // indexOf
+
+Expected value: 200
+Received array: [401, 403, 404]</pre></td>
+        </tr>
+<tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">Tenant session cannot mutate another tenant<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr>
+<tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">The permanent password grants the administrator role<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr>
+<tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">Unknown tenant id is refused on update<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr>
+<tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">University update requires a CSRF token<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr>
+<tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">Control-plane overview is readable<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr>
+<tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">Audit trail is readable with an explicit limit<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr>
+<tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">Institution list is readable<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr>
+<tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">Domain context resolves a tenant hostname<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr>
+<tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">Tenant list ignores unknown query parameters<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr>
+<tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">Platform session cannot read tenant workspace APIs<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr>
+<tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">A revoked session cannot be replayed<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr>
+<tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">PAC-01<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr>
+<tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">PAC-05<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr>
+<tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">PAC-02<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr>
+<tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">PAC-03<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr>
+<tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">PAC-04<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr>
+<tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">PAC-16<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr>
+<tr class="failed">
+          <td class="icon"><span class="cross">✕</span></td>
+          <td><span class="status failed">failed</span></td>
+          <td class="title">PAC-17<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason"><pre>expect(received).toContain(expected) // indexOf
+
+Expected value: 200
+Received array: [401, 403, 404]</pre></td>
+        </tr>
+<tr class="passed">
+          <td class="icon"><span class="tick">✓</span></td>
+          <td><span class="status passed">passed</span></td>
+          <td class="title">PAC-29<div class="file"></div></td>
+          <td class="duration">0.0s</td>
+          <td class="reason">—</td>
+        </tr></tbody>
+    </table>
+  </section>
+
+  <footer>Generated by CaseResultReporter · 10 project(s)</footer>
+</main>
+</body>
+</html>

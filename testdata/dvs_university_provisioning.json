@@ -1,0 +1,16 @@
+{
+  "_notes": [
+    "Reference template for the Platform Admin -> New university step.",
+    "The tester provisions the university live in the platform console; these values are a fallback for a scripted run.",
+    "The administrator email must belong to a mailbox the tester controls, because the handover temporary password is shown once.",
+    "No passwords or temporary passwords belong in this file."
+  ],
+  "name": "DVS Automation University",
+  "code": "DVSAUTO",
+  "adminFirstName": "first",
+  "adminLastName": "universityadmin",
+  "adminEmailPrefix": "dvs.universityadmin",
+  "plan": "enterprise",
+  "dataRegion": "in-primary",
+  "subdomain": null
+}

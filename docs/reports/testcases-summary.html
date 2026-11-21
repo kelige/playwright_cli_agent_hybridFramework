@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DVS test cases · 0/1 passed</title>
+<style>
+  :root { color-scheme: dark; --bg:#0b1120; --panel:#111a2e; --line:#22304a; --text:#e7eefc; --muted:#8fa3c4; --pass:#22c55e; --fail:#ef4444; --accent:#38bdf8; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:"Segoe UI",system-ui,sans-serif; background:
+    radial-gradient(900px 500px at 15% -10%, #17305c 0%, transparent 60%),
+    radial-gradient(700px 400px at 100% 0%, #123c3a 0%, transparent 55%),
+    var(--bg); color:var(--text); min-height:100vh; }
+  main { max-width:1120px; margin:0 auto; padding:40px 24px 60px; }
+  h1 { margin:0 0 6px; font-size:30px; letter-spacing:-.02em; }
+  .sub { color:var(--muted); font-size:14px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:14px; margin:26px 0; }
+  .card { background:linear-gradient(180deg,#13203a,#0f1729); border:1px solid var(--line); border-radius:14px; padding:18px 20px; }
+  .card span { display:block; color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.08em; }
+  .card strong { display:block; margin-top:8px; font-size:28px; }
+  .card strong.pass { color:var(--pass); }
+  .card strong.fail { color:var(--fail); }
+  .panel { background:var(--panel); border:1px solid var(--line); border-radius:16px; overflow:hidden; }
+  table { width:100%; border-collapse:collapse; }
+  th,td { text-align:left; padding:14px 18px; border-bottom:1px solid var(--line); font-size:14px; vertical-align:middle; }
+  th { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.08em; background:#0e1728; }
+  tr:last-child td { border-bottom:none; }
+  tr:hover td { background:#14203a; }
+  .role { font-weight:600; text-transform:capitalize; }
+  .pill { display:inline-block; padding:4px 10px; border-radius:999px; font-size:12px; font-weight:700; letter-spacing:.04em; }
+  .pill.pass { background:#052e1b; color:#4ade80; border:1px solid #166534; }
+  .pill.fail { background:#3a0b0b; color:#fca5a5; border:1px solid #7f1d1d; }
+  .num { font-variant-numeric:tabular-nums; }
+  .actions { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .button { background:var(--accent); color:#04131f; text-decoration:none; font-weight:700; padding:6px 12px; border-radius:8px; font-size:12px; }
+  .button.alt { background:#1e293b; color:#c7d2fe; border:1px solid #334155; }
+  .link { color:#93c5fd; font-size:12px; text-decoration:none; }
+  .link:hover { text-decoration:underline; }
+  .defect { color:#f87171; font-weight:700; }
+  .muted { color:var(--muted); font-size:12px; }
+  .footer { display:flex; gap:18px; flex-wrap:wrap; margin-top:22px; font-size:13px; }
+  .footer a { color:#93c5fd; }
+  .note { margin-top:16px; color:var(--muted); font-size:12px; line-height:1.6; }
+  .section { margin-top:20px; }
+  .panel-head { display:flex; justify-content:space-between; align-items:baseline; gap:16px; padding:16px 18px; border-bottom:1px solid var(--line); }
+  .panel-head h2 { margin:0; font-size:16px; }
+  .panel-head span { color:var(--muted); font-size:12px; }
+  .defect-group { padding:12px 18px; border-bottom:1px solid var(--line); }
+  .defect-group:last-child { border-bottom:none; }
+  .defect-role { font-weight:700; color:#fca5a5; margin-bottom:6px; text-transform:capitalize; }
+  .defect-group ul { margin:0; padding-left:20px; }
+  .defect-group li { font-size:13px; color:#dbe7fb; padding:3px 0; }
+  .sev { display:inline-block; background:#3a0b0b; color:#fca5a5; border-radius:6px; padding:1px 6px; font-size:11px; font-weight:700; margin-right:6px; }
+  tr.total td { background:#0e1728; font-weight:700; }
+  code { background:#1e293b; padding:1px 5px; border-radius:4px; font-size:12px; }
+  .alert { margin-top:20px; background:#2a1206; border:1px solid #92400e; color:#fdba74; padding:14px 18px; border-radius:12px; font-size:14px; }
+  .alert a { color:#fed7aa; font-weight:700; }
+  .ok-banner { margin-top:20px; background:#052e1b; border:1px solid #166534; color:#86efac; padding:14px 18px; border-radius:12px; font-size:14px; }
+  .tick, .cross, .skip { display:inline-block; width:24px; height:24px; line-height:24px; border-radius:6px; color:#fff; font-weight:800; text-align:center; }
+  .tick { background:var(--pass); }
+  .cross { background:var(--fail); }
+  .skip { background:#64748b; }
+  .icon { width:46px; text-align:center; }
+  .case-title { min-width:320px; font-weight:600; }
+  .case-reason pre { margin:0; white-space:pre-wrap; word-break:break-word; color:#fca5a5; background:#2a0b0b; border:1px solid #7f1d1d; border-radius:8px; padding:10px; font-size:12px; font-family:Consolas,monospace; max-height:180px; overflow:auto; }
+  .case-reason { color:var(--muted); font-size:12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>DVS test cases — run summary</h1>
+  <div class="sub">11/19/2026, 4:20:16 PM · 22s total · command <code>npm run testcases</code></div>
+
+  <section class="cards">
+    <div class="card"><span>Roles passed</span><strong class="pass">0/1</strong></div>
+    <div class="card"><span>Roles failed</span><strong class="fail">1</strong></div>
+    <div class="card"><span>Tests passed</span><strong class="pass">24</strong></div>
+    <div class="card"><span>Tests failed</span><strong class="fail">2</strong></div>
+    <div class="card"><span>Tests skipped</span><strong>0</strong></div>
+    <div class="card"><span>Defects this run</span><strong class="fail">2</strong></div>
+    <div class="card"><span>Cases covered</span><strong>228/1073</strong></div>
+    <div class="card"><span>Pending cases</span><strong class="fail">845</strong></div>
+    <div class="card"><span>Total duration</span><strong>22s</strong></div>
+  </section>
+
+  <section class="panel">
+    <table>
+      <thead><tr><th>Role</th><th>Status</th><th>Duration</th><th>Defects</th><th>Results</th></tr></thead>
+      <tbody><tr>
+      <td><span class="role">platform-admin</span></td>
+      <td><span class="pill fail">FAIL</span></td>
+      <td class="num">22s</td>
+      <td class="num"><a class="defect" href="./defects/platform-admin.md">2</a></td>
+      <td class="actions"><a class="button" href="../../reports/testcases/platform-admin/index.html">HTML report</a> <a class="button alt" href="../../custom-report/testcases/platform-admin/index.html">Dashboard</a> <a class="link" href="../../reports/testcases/platform-admin/results.xml">JUnit</a> <a class="link" href="./logs/platform-admin.log">log</a></td>
+    </tr></tbody>
+    </table>
+  </section>
+
+  <div class="alert">Automation incomplete — 845 of 1073 documented cases are pending. <a href="./testcase-pending.csv">Open the backlog</a></div>
+
+  <section class="panel section">
+    <div class="panel-head"><h2>Defects by role</h2><span>role: defects</span></div>
+    <div class="defect-group">
+      <div class="defect-role">platform-admin: 2 defects</div>
+      <ul><li><span class="sev">S1</span> <code>DVS-MWNFHYJH-8EZ1</code> — Institution estate list is readable from a tenant session</li><li><span class="sev">S1</span> <code>DVS-MWNFIAYD-HP25</code> — A tenant session can read the control plane</li></ul>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="panel-head"><h2>Executed test cases</h2><span>green = passed, red = reason</span></div>
+    <table>
+            <thead><tr><th>Result</th><th>Role</th><th>Test case</th><th>Duration</th><th>Failure reason</th></tr></thead>
+            <tbody><tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">Tenant list is readable</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr>
+<tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">Type-confused login payload is refused</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr>
+<tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">Tenant administrator cannot provision a university</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr>
+<tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">Tenant administrator cannot call the switch route</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr>
+<tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">Overview is not readable from a tenant session</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr>
+<tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">Audit trail is not readable from a tenant session</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr>
+<tr class="failed">
+      <td class="icon"><span class="cross">✕</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">Tenant administrator cannot read the estate list</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason"><pre>expect(received).toContain(expected) // indexOf
+
+Expected value: 200
+Received array: [401, 403, 404]</pre></td>
+    </tr>
+<tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">Tenant session cannot mutate another tenant</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr>
+<tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">The permanent password grants the administrator role</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr>
+<tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">Unknown tenant id is refused on update</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr>
+<tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">University update requires a CSRF token</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr>
+<tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">Control-plane overview is readable</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr>
+<tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">Audit trail is readable with an explicit limit</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr>
+<tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">Institution list is readable</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr>
+<tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">Domain context resolves a tenant hostname</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr>
+<tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">Tenant list ignores unknown query parameters</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr>
+<tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">Platform session cannot read tenant workspace APIs</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr>
+<tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">A revoked session cannot be replayed</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr>
+<tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">PAC-01</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr>
+<tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">PAC-05</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr>
+<tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">PAC-02</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr>
+<tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">PAC-03</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr>
+<tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">PAC-04</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr>
+<tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">PAC-16</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr>
+<tr class="failed">
+      <td class="icon"><span class="cross">✕</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">PAC-17</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason"><pre>expect(received).toContain(expected) // indexOf
+
+Expected value: 200
+Received array: [401, 403, 404]</pre></td>
+    </tr>
+<tr class="passed">
+      <td class="icon"><span class="tick">✓</span></td>
+      <td><span class="role">platform-admin</span></td>
+      <td class="case-title">PAC-29</td>
+      <td class="num">0.0s</td>
+      <td class="case-reason">—</td>
+    </tr></tbody>
+          </table>
+  </section>
+
+  <section class="panel section">
+    <div class="panel-head"><h2>Test case coverage</h2><span>documented vs executable</span></div>
+    <table>
+      <thead><tr><th>Role</th><th>Documented</th><th>Covered</th><th>Automated</th><th>Live/HITL</th><th>Blocked</th><th>Pending</th><th>Coverage</th></tr></thead>
+      <tbody>
+        <tr><td class="role">platform-admin</td><td class="num">150</td><td class="num">35</td><td class="num">35</td><td class="num">0</td><td class="num">0</td><td class="num">115</td><td class="num">23.3%</td></tr><tr><td class="role">admin</td><td class="num">123</td><td class="num">59</td><td class="num">50</td><td class="num">9</td><td class="num">0</td><td class="num">64</td><td class="num">48%</td></tr><tr><td class="role">chairman</td><td class="num">150</td><td class="num">22</td><td class="num">22</td><td class="num">0</td><td class="num">0</td><td class="num">128</td><td class="num">14.7%</td></tr><tr><td class="role">chief-examiner</td><td class="num">117</td><td class="num">32</td><td class="num">30</td><td class="num">2</td><td class="num">0</td><td class="num">85</td><td class="num">27.4%</td></tr><tr><td class="role">evaluator</td><td class="num">147</td><td class="num">35</td><td class="num">30</td><td class="num">5</td><td class="num">0</td><td class="num">112</td><td class="num">23.8%</td></tr><tr><td class="role">scanner-operator</td><td class="num">127</td><td class="num">25</td><td class="num">25</td><td class="num">0</td><td class="num">0</td><td class="num">102</td><td class="num">19.7%</td></tr><tr><td class="role">user-manager</td><td class="num">126</td><td class="num">20</td><td class="num">15</td><td class="num">5</td><td class="num">0</td><td class="num">106</td><td class="num">15.9%</td></tr>
+        <tr><td class="role">Performance/Stress/Load</td><td class="num">133</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">133</td><td class="num">0%</td></tr>
+        <tr class="total"><td>All documented</td><td class="num">1073</td><td class="num">228</td><td class="num">207</td><td class="num">21</td><td class="num">0</td><td class="num">845</td><td class="num">21.2%</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="footer">
+    <a href="../BUG_DVS.md">BUG_DVS.md</a>
+    <a href="../testcases/DVS-TESTCASES.xlsx">Test case workbook</a>
+    <a href="./testcase-coverage.md">Coverage report</a>
+    <a href="./testcase-pending.csv">Pending cases</a>
+    <a href="./testcases-summary.md">Markdown summary</a>
+    <a href="./testcases-summary.json">JSON summary</a>
+    <span class="muted">Allure: run npm run allure:generate</span>
+  </div>
+  <div class="note">
+    Each role has its own Playwright HTML report, custom dashboard, JUnit XML and log.
+    Defects are appended to docs/BUG_DVS.md. Failure media is under test-results/testcases/&lt;role&gt;/.
+  </div>
+</main>
+</body>
+</html>

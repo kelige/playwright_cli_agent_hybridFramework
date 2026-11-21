@@ -10,6 +10,14 @@
 
 # 0. Multi-University and Credential Bootstrap (read first)
 
+0. **The workflow now starts on the Platform Admin console, not at a tenant Admin.**
+   - Sign in at `PLATFORM_URL` (platform control plane), open **Platform → Universities → New university**, and provision the university. This is a live, human-in-the-loop step.
+   - Capture the **Administrator handover** shown once: administrator email, one-time temporary password, and tenant URL (or subdomain derived from `PLATFORM_BASE_DOMAIN`).
+   - Complete the university Admin first login (temporary → permanent password), then write the tenant URL and permanent Admin credentials to `.env`.
+   - Provision endpoint: `POST /api/v1/enterprise/tenants` with `TenantProvisionIn`:
+     `name`, `code`, `admin_email` (required); `admin_first_name`, `admin_last_name`, `subdomain`, `plan`, `enabled_modules`, `data_region`, branding and AI fields (optional).
+   - Never persist, log, or commit the temporary password.
+   - Automated driver: `npm run test:platform` (`tests/web/platform/university-bootstrap.spec.ts`). The remaining prompts below start at the newly created university's Admin.
 1. Each university has its own host and API base URL. Workflow is identical; data differs.
 2. Never hard-code host, tenant id, user id, programme id or any record id.
 3. `.env` starts with **only** `DVS_API_BASE_URL` and the Admin credentials. Do not expect all role credentials up front.
@@ -34,6 +42,18 @@ DVS_ADMIN_PASSWORD=
 # 1. Verified Endpoint Inventory
 
 Every route below was observed in real traffic. Canonical path only; query variants are listed in `RouteBuilders`.
+
+## Platform control plane (platform host, `PLATFORM_URL`)
+| Method | Path | Observed status |
+| ------ | ---- | --------------- |
+| POST | `/api/v1/enterprise/tenants` | 200 (creates tenant + first administrator handover) |
+| GET | `/api/v1/enterprise/tenants` | 200 |
+| GET | `/api/v1/enterprise/control-plane` | 200 |
+| GET | `/api/v1/enterprise/control-plane/audit` | 200 |
+| POST | `/api/v1/enterprise/tenants/switch` | 200 |
+| PATCH | `/api/v1/enterprise/tenants/{tenantId}` | 200 |
+| POST | `/api/v1/enterprise/tenants/{tenantId}/administrator/reset-password` | 200 |
+| POST | `/api/v1/enterprise/institutions` | 200 |
 
 ## Authentication
 | Method | Path | Observed status |

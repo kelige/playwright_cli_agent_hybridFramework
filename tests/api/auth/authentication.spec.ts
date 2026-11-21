@@ -22,7 +22,7 @@ test.describe("DVS API - Authentication @master @api", () => {
     await admin?.dispose();
   });
 
-  test("successful login returns user and session cookie @sanity @regression", async () => {
+  test("successful login returns user and session cookie @smoke @sanity @regression", async () => {
     const { api, response } = await loginContext(email, password);
 
     await test.step("1) login returns 200 and matches schema", async () => {
