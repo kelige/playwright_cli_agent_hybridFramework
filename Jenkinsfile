@@ -85,7 +85,7 @@ pipeline {
     )
     string(
       name: 'NOTIFY_TO',
-      defaultValue: '',
+      defaultValue: 'vinayjenkins1@gmail.com',
       description: 'Primary email recipient for the build summary (blank = only the team lead)'
     )
     string(
@@ -294,6 +294,17 @@ Fix one of these, then rebuild:
         reportFiles: 'index.html',
         reportName: 'Custom Test Report'
       ])
+      // The milestone checklist: one green tick per business step, from the
+      // university being created through to the Admin receiving the report.
+      // Written by the workflow spec, so it only exists after that suite runs.
+      publishHTML([
+        allowMissing: true,
+        alwaysLinkToLastBuild: true,
+        keepAll: true,
+        reportDir: 'docs/reports',
+        reportFiles: 'workflow-summary.html',
+        reportName: 'Workflow Milestones'
+      ])
       // Fails the build when every case skipped itself, which is what happened
       // before .env was supplied. Runs last so reports publish first.
       script {
@@ -307,8 +318,10 @@ Fix one of these, then rebuild:
           echo "Test-execution check failed: ${err.message}"
         }
       }
-    }
-    success {
+
+      // The summary is emailed on failure as well as success. A regression run
+      // that breaks is exactly when the team needs the mail, so this cannot live
+      // in the `success` block.
       script {
         // Both the primary recipient and the team lead get the summary. Blanks
         // are dropped and duplicates collapsed, so NOTIFY_TO can repeat the lead.
@@ -318,31 +331,68 @@ Fix one of these, then rebuild:
           .unique()
           .join(',')
 
-        if (recipients) {
-          echo "Emailing the build summary to: ${recipients}"
-          emailext(
-            subject: "Jenkins Build: ${env.JOB_NAME} #${env.BUILD_NUMBER} - ${currentBuild.currentResult}",
-            body: """
-                <h2>Playwright Test Execution Report</h2>
-                <p><b>Job:</b> ${env.JOB_NAME}</p>
-                <p><b>Build:</b> #${env.BUILD_NUMBER}</p>
-                <p><b>Status:</b> ${currentBuild.currentResult}</p>
-                <p><b>Test Suite:</b> ${params.TEST_SUITE}</p>
-                <p><b>Browser:</b> ${params.BROWSER}</p>
-                <p>
-                  <a href="${env.BUILD_URL}">Open Jenkins Build</a> |
-                  <a href="${env.BUILD_URL}Playwright_20HTML_20Report">Open Playwright HTML Report</a> |
-                  <a href="${env.BUILD_URL}Custom_20Test_20Report">Open Custom Report</a>
-                </p>
-            """,
-            to: recipients,
-            from: 'vinayjenkins1@gmail.com',
-            replyTo: recipients,
-            mimeType: 'text/html'
-          )
-        } else {
+        if (!recipients) {
           echo 'NOTIFY_TO and TEAM_LEAD_TO are both blank, so no email is sent.'
+          return
         }
+
+        // Real counts from the JUnit file, so the mail states what was verified
+        // instead of only "SUCCESS".
+        def passed = 0
+        def failed = 0
+        def skipped = 0
+        def total = 0
+        try {
+          def status = powershell(
+            returnStatus: true,
+            script: 'node scripts/ci-count-results.mjs reports/results.xml'
+          )
+          def counts = readFile('ci-counts.env').trim().split('\\n')
+          counts.each { line ->
+            def pair = line.split('=')
+            if (pair.size() == 2) {
+              if (pair[0] == 'TOTAL') total = pair[1].toInteger()
+              if (pair[0] == 'PASSED') passed = pair[1].toInteger()
+              if (pair[0] == 'FAILED') failed = pair[1].toInteger()
+              if (pair[0] == 'SKIPPED') skipped = pair[1].toInteger()
+            }
+          }
+        } catch (err) {
+          echo "Could not read result counts: ${err.message}"
+        }
+
+        def colour = failed > 0 ? '#b91c1c' : '#15803d'
+        def verdict = failed > 0 ? 'FAILURES PRESENT' : 'ALL PASSED'
+
+        echo "Emailing the build summary to: ${recipients} (${passed} passed, ${failed} failed, ${skipped} skipped)"
+        emailext(
+          subject: "Jenkins: ${env.JOB_NAME} #${env.BUILD_NUMBER} - ${currentBuild.currentResult} - ${passed} passed / ${failed} failed",
+          body: """
+              <h2>Playwright Test Execution Report</h2>
+              <p><b>Verdict:</b> <span style="color:${colour};font-weight:700">${verdict}</span></p>
+              <table cellpadding="6" cellspacing="0" style="border-collapse:collapse;border:1px solid #dde3ea">
+                <tr><td><b>Job</b></td><td>${env.JOB_NAME}</td></tr>
+                <tr><td><b>Build</b></td><td>#${env.BUILD_NUMBER}</td></tr>
+                <tr><td><b>Status</b></td><td>${currentBuild.currentResult}</td></tr>
+                <tr><td><b>Test Suite</b></td><td>${params.TEST_SUITE}</td></tr>
+                <tr><td><b>Browser</b></td><td>${params.BROWSER}</td></tr>
+                <tr><td><b>Total cases</b></td><td>${total}</td></tr>
+                <tr><td><b>Passed</b></td><td style="color:#15803d;font-weight:700">${passed}</td></tr>
+                <tr><td><b>Failed</b></td><td style="color:${failed > 0 ? '#b91c1c' : '#5d6b7a'};font-weight:700">${failed}</td></tr>
+                <tr><td><b>Skipped</b></td><td>${skipped}</td></tr>
+              </table>
+              <p style="margin-top:18px">
+                <a href="${env.BUILD_URL}">Open Jenkins Build</a> |
+                <a href="${env.BUILD_URL}Playwright_20HTML_20Report">Playwright HTML Report</a> |
+                <a href="${env.BUILD_URL}Custom_20Test_20Report">Custom Report</a> |
+                <a href="${env.BUILD_URL}Workflow_20Milestones">Workflow Milestones</a>
+              </p>
+          """,
+          to: recipients,
+          from: 'vinayjenkins1@gmail.com',
+          replyTo: recipients,
+          mimeType: 'text/html'
+        )
       }
     }
   }

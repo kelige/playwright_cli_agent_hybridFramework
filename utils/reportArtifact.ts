@@ -227,6 +227,8 @@ export function saveReportDocs(
 /** One completed checklist row shown at the end of the workflow. */
 export type WorkflowSummaryEntry = {
   title: string;
+  /** Who performed the milestone, e.g. "Platform Admin" or "University Admin". */
+  actor?: string;
   details?: { label: string; value: string }[];
 };
 
@@ -248,17 +250,19 @@ export type WorkflowSummary = {
  * @returns The HTML document
  */
 export function renderWorkflowSummary(summary: WorkflowSummary): string {
+  const total = summary.entries.length;
   const rows = summary.entries
-    .map((entry) => {
+    .map((entry, index) => {
       const details = (entry.details ?? [])
         .map(
           (detail) => `<div class="detail"><span>${escape(detail.label)}</span><strong>${escape(detail.value)}</strong></div>`,
         )
         .join("\n");
+      const actor = entry.actor ? `<span class="actor">${escape(entry.actor)}</span>` : "";
       return `<li class="done">
         <span class="tick" aria-hidden="true">✓</span>
         <div class="row">
-          <div class="title">${escape(entry.title)}</div>
+          <div class="title"><span class="step">${index + 1}</span>${escape(entry.title)}${actor}</div>
           ${details}
         </div>
       </li>`;
@@ -275,15 +279,22 @@ export function renderWorkflowSummary(summary: WorkflowSummary): string {
   :root { color-scheme: light; }
   * { box-sizing: border-box; }
   body { margin: 0; font-family: "Segoe UI", system-ui, sans-serif; background: #f4f6f8; color: #1c2430; }
-  main { max-width: 820px; margin: 0 auto; padding: 36px 24px 56px; }
+  main { max-width: 860px; margin: 0 auto; padding: 36px 24px 56px; }
   h1 { margin: 0 0 6px; font-size: 26px; }
   .muted { color: #5d6b7a; font-size: 13px; }
-  .panel { margin-top: 24px; background: #fff; border: 1px solid #dde3ea; border-radius: 14px; padding: 10px 20px; }
+  .banner { margin-top: 20px; display: flex; align-items: center; gap: 16px; background: #fff; border: 1px solid #dde3ea; border-radius: 14px; padding: 18px 20px; }
+  .banner .count { font-size: 30px; font-weight: 700; color: #16a34a; line-height: 1; }
+  .banner .label { font-weight: 600; font-size: 14px; }
+  .banner .bar { flex: 1; height: 8px; background: #e7edf3; border-radius: 999px; overflow: hidden; }
+  .banner .fill { height: 100%; width: 100%; background: #16a34a; }
+  .panel { margin-top: 20px; background: #fff; border: 1px solid #dde3ea; border-radius: 14px; padding: 10px 20px; }
   ul.checklist { list-style: none; margin: 0; padding: 0; }
   ul.checklist li { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid #eef1f5; }
   ul.checklist li:last-child { border-bottom: none; }
   .tick { flex: 0 0 auto; width: 24px; height: 24px; border-radius: 6px; background: #16a34a; color: #fff; font-weight: 700; font-size: 15px; line-height: 24px; text-align: center; }
-  .title { font-weight: 600; font-size: 15px; }
+  .title { font-weight: 600; font-size: 15px; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .step { display: inline-block; min-width: 22px; height: 22px; border-radius: 999px; background: #eef2f7; color: #47576a; font-size: 12px; font-weight: 700; line-height: 22px; text-align: center; }
+  .actor { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: #2f6f4f; background: #eaf7f0; border: 1px solid #c9ecd9; border-radius: 999px; padding: 2px 9px; }
   .detail { display: flex; gap: 8px; font-size: 13px; margin-top: 5px; }
   .detail span { color: #5d6b7a; min-width: 140px; }
   .detail strong { font-family: "Consolas", monospace; font-weight: 600; word-break: break-all; }
@@ -298,6 +309,15 @@ export function renderWorkflowSummary(summary: WorkflowSummary): string {
 <main>
   <h1>DVS workflow complete</h1>
   <div class="muted">${escape(summary.tenantUrl)} · Run <code>${escape(summary.runId)}</code></div>
+
+  <section class="banner">
+    <div class="count">${total}/${total}</div>
+    <div>
+      <div class="label">Milestones completed</div>
+      <div class="muted">Provisioning through to the Admin receiving the report</div>
+    </div>
+    <div class="bar"><div class="fill"></div></div>
+  </section>
 
   <section class="panel">
     <ul class="checklist">

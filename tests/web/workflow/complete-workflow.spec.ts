@@ -867,14 +867,9 @@ test.describe("DVS continuous workflow @master @end-to-end", () => {
         { label: "Evaluator", email: flow.emails.evaluator ?? "" },
         { label: "Scanner Operator", email: flow.emails.scanner_operator ?? "" },
       ];
-      const roleEntries = roles.map((role) => ({
-        title: `${role.label} created`,
-        details: [
-          { label: "Mail", value: role.email },
-          { label: "Password", value: rolePassword },
-        ],
-      }));
 
+      // One green tick per business milestone, in the order a real customer
+      // journey produces them, ending on the Admin receiving the report.
       const summary = saveWorkflowSummary(reportId, {
         runId,
         tenantUrl,
@@ -883,25 +878,77 @@ test.describe("DVS continuous workflow @master @end-to-end", () => {
         entries: [
           {
             title: "University created",
+            actor: "Platform Admin",
             details: [
               { label: "University name", value: state.university?.name ?? "" },
-              { label: "University admin mail", value: adminEmail },
+              { label: "Tenant URL", value: tenantUrl },
+            ],
+          },
+          {
+            title: "University Admin created and first login completed",
+            actor: "University Admin",
+            details: [
+              { label: "Admin mail", value: adminEmail },
               { label: "Password", value: adminPassword },
             ],
           },
-          { title: "Academic chain configured (programme → subject)" },
-          { title: "Paper, question paper and marking scheme ready" },
-          { title: "Evaluation centre readiness-checked and active" },
-          roleEntries[0],
-          roleEntries[1],
-          roleEntries[2],
-          roleEntries[3],
-          roleEntries[4],
-          { title: "Scripts digitized and packet submitted" },
-          { title: "Secure evaluation marked and submitted" },
-          { title: "Chief moderation approved" },
-          { title: "Chairman forwarded the report" },
-          { title: "Admin received result report" },
+          {
+            title: "Academic chain configured (programme → subject)",
+            actor: "University Admin",
+          },
+          {
+            title: "Paper, question paper and marking scheme ready",
+            actor: "University Admin",
+          },
+          {
+            title: "Evaluation centre readiness-checked and active",
+            actor: "University Admin",
+          },
+          {
+            title: "User Manager and Chairman added",
+            actor: "University Admin",
+            details: [
+              { label: "User Manager", value: flow.emails.user_manager ?? "" },
+              { label: "Chairman", value: flow.emails.chairman ?? "" },
+              { label: "Password", value: rolePassword },
+            ],
+          },
+          {
+            title: "Chief Examiner registered and nominated",
+            actor: "Chairman",
+            details: [
+              { label: "Chief Examiner", value: flow.emails.chief ?? "" },
+              { label: "Password", value: rolePassword },
+            ],
+          },
+          {
+            title: "Evaluator registered and nominated",
+            actor: "Chief Examiner",
+            details: [
+              { label: "Evaluator", value: flow.emails.evaluator ?? "" },
+              { label: "Password", value: rolePassword },
+            ],
+          },
+          {
+            title: "Scanner Operator added",
+            actor: "User Manager",
+            details: [
+              { label: "Scanner Operator", value: flow.emails.scanner_operator ?? "" },
+              { label: "Password", value: rolePassword },
+            ],
+          },
+          { title: "Scripts digitized and packet submitted", actor: "Scanner Operator" },
+          { title: "Packet allocated and evaluation marked", actor: "Evaluator" },
+          { title: "Moderation approved", actor: "Chief Examiner" },
+          { title: "Report forwarded to the Admin", actor: "Chairman" },
+          {
+            title: "Admin received the result report",
+            actor: "University Admin",
+            details: [
+              { label: "Report", value: path.basename(flow.ids.reportHtml) },
+              { label: "Excel", value: path.basename(flow.ids.reportDoc) },
+            ],
+          },
         ],
       });
 

@@ -36,7 +36,49 @@ export default defineConfig({
     ["junit", { outputFile: junitFile }], // JUnit XML Report
     ["./utils/CustomReporter.ts"], // Custom reporter
     ["./utils/CaseResultReporter.ts"], // Green tick / red reason summary
-    ["allure-playwright", { outputFolder: allureDir }], // Allure Report
+    [
+      "allure-playwright",
+      {
+        outputFolder: allureDir,
+        // Populates the "Environment" block of the Allure report. Without this the
+        // panel renders "There are no environment variables".
+        environmentInfo: {
+          Environment: process.env.DVS_ENV ?? process.env.APP_ENV ?? "unknown",
+          Browser: process.env.PLAYWRIGHT_BROWSER ?? "chromium",
+          Headless: process.env.PLAYWRIGHT_HEADLESS ?? "true",
+          "Tenant URL": process.env.WEB_APP_URL ?? "(not provisioned)",
+          Tenant: process.env.DVS_TENANT_NAME ?? "(not provisioned)",
+          Platform: process.env.PLATFORM_URL ?? "(not set)",
+          "DB engine": process.env.DB_ENGINE ?? "sqlite",
+          "Node version": process.version,
+          CI: process.env.CI === "1" ? "1" : "0",
+        },
+        // Populates the "Categories" block so failures group by cause instead of
+        // showing an empty panel.
+        categories: [
+          {
+            name: "Product defects",
+            matchedStatuses: ["failed"],
+            messageRegex: ".*",
+          },
+          {
+            name: "Test defects",
+            matchedStatuses: ["broken"],
+            messageRegex: ".*",
+          },
+          {
+            name: "Environment blocked",
+            matchedStatuses: ["skipped"],
+            messageRegex: ".*(Set |Provision|not provisioned|missing|Run `npm).*",
+          },
+          {
+            name: "Not run",
+            matchedStatuses: ["skipped"],
+            messageRegex: ".*",
+          },
+        ],
+      },
+    ], // Allure Report
   ],
   use: {
     // A zero test timeout (used for the human-in-the-loop face waits) would
