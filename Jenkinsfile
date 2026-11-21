@@ -90,7 +90,7 @@ pipeline {
     )
     string(
       name: 'TEAM_LEAD_TO',
-      defaultValue: 'pallavijhadav1@gmail.com',
+      defaultValue: 'nayakprashanthkumar@gmail.com',
       description: 'Team lead recipient. Always notified alongside NOTIFY_TO (blank disables email)'
     )
   }
