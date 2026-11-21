@@ -365,8 +365,16 @@ Fix one of these, then rebuild:
         def verdict = failed > 0 ? 'FAILURES PRESENT' : 'ALL PASSED'
 
         echo "Emailing the build summary to: ${recipients} (${passed} passed, ${failed} failed, ${skipped} skipped)"
-        emailext(
+        // Uses the `mail` step (E-mail Notification plugin), not `emailext`.
+        // The Extended E-mail Notification config kept reverting to SSL on the
+        // STARTTLS port, so mail failed silently; the plain mailer is configured
+        // correctly and its test e-mail delivers.
+        mail(
+          to: recipients,
+          from: 'vinayjenkins1@gmail.com',
+          replyTo: recipients,
           subject: "Jenkins: ${env.JOB_NAME} #${env.BUILD_NUMBER} - ${currentBuild.currentResult} - ${passed} passed / ${failed} failed",
+          mimeType: 'text/html',
           body: """
               <h2>Playwright Test Execution Report</h2>
               <p><b>Verdict:</b> <span style="color:${colour};font-weight:700">${verdict}</span></p>
@@ -387,11 +395,7 @@ Fix one of these, then rebuild:
                 <a href="${env.BUILD_URL}Custom_20Test_20Report">Custom Report</a> |
                 <a href="${env.BUILD_URL}Workflow_20Milestones">Workflow Milestones</a>
               </p>
-          """,
-          to: recipients,
-          from: 'vinayjenkins1@gmail.com',
-          replyTo: recipients,
-          mimeType: 'text/html'
+          """
         )
       }
     }
